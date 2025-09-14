@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fire Victim Resources - Free Guides & Checklists | Law Offices of Rozsa Gyene</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {margin:0;padding:0;box-sizing:border-box}
+        body {font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.6;color:#333}
+        
+        /* Updated Navigation - Matching Sample */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .navbar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            gap: 2rem;
+        }
+        
+        .navbar-logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            text-decoration: none;
+            letter-spacing: -0.02em;
+            transition: color 0.3s ease;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        
+        .navbar-logo:hover {
+            color: #dc2626;
+        }
+        
+        .navbar-menu {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-grow: 1;
+            justify-content: flex-end;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.2rem;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-link {
+            color: #475569;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.85rem;
+            padding: 0.5rem 0;
+            transition: color 0.3s ease;
+            white-space: nowrap;
+        }
+        
+        .nav-link:hover {
+            color: #dc2626;
+        }
+        
+        .nav-link.active {
+            color: #dc2626;
+            font-weight: 600;
+        }
+        
+        .navbar-cta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-shrink: 0;
+        }
+        
+        .phone-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #dc2626;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+        
+        .phone-link:hover {
+            transform: translateY(-2px);
+        }
+        
+        .btn-nav {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            color: white;
+            padding: 0.65rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 4px 14px rgba(220, 38, 38, 0.25);
+            white-space: nowrap;
+        }
+        
+        .btn-nav:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(220, 38, 38, 0.35);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        
+        .hamburger {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: #1a1a1a;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .hamburger::before,
+        .hamburger::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 2px;
+            background: #1a1a1a;
+            transition: all 0.3s ease;
+        }
+        
+        .hamburger::before {
+            top: -8px;
+        }
+        
+        .hamburger::after {
+            bottom: -8px;
+        }
+        
+        /* Mobile Responsive Navigation */
+        @media (max-width: 1300px) {
+            .nav-links {
+                gap: 0.8rem;
+            }
+            
+            .nav-link {
+                font-size: 0.8rem;
+            }
+            
+            .navbar-logo {
+                font-size: 1.2rem;
+            }
+        }
+        
+        @media (max-width: 1100px) {
+            .nav-links {
+                gap: 0.6rem;
+            }
+            
+            .nav-link {
+                font-size: 0.75rem;
+            }
+            
+            .phone-link {
+                font-size: 0.85rem;
+            }
+            
+            .btn-nav {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.8rem;
+            }
+        }
+        
+        @media (max-width: 968px) {
+            .navbar-menu {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                bottom: auto;
+                max-height: calc(100vh - 70px);
+                background: white;
+                flex-direction: column;
+                padding: 2rem;
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+                overflow-y: auto;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+                z-index: 999;
+            }
+            
+            .navbar-menu.active {
+                transform: translateX(0);
+                height: auto;
+                max-height: calc(100vh - 70px);
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                width: 100%;
+                gap: 0.5rem;
+            }
+            
+            .nav-link {
+                padding: 1rem;
+                font-size: 1.1rem;
+                width: 100%;
+                text-align: left;
+                border-bottom: 1px solid #f1f5f9;
+            }
+            
+            .navbar-cta {
+                flex-direction: column;
+                width: 100%;
+                margin-top: 2rem;
+                padding-top: 2rem;
+                border-top: 1px solid #e5e7eb;
+            }
+            
+            .phone-link {
+                font-size: 1.2rem;
+            }
+            
+            .btn-nav {
+                width: 100%;
+                padding: 1rem;
+                font-size: 1rem;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+        
+        .mobile-menu-btn.active .hamburger {
+            background: transparent;
+        }
+        
+        .mobile-menu-btn.active .hamburger::before {
+            transform: rotate(45deg);
+            top: 0;
+        }
+        
+        .mobile-menu-btn.active .hamburger::after {
+            transform: rotate(-45deg);
+            bottom: 0;
+        }
+        
+        /* Main Content */
+        main {margin-top:70px}
+        .container {max-width:1200px;margin:0 auto;padding:0 20px}
+        h1 {font-size:3em;margin-bottom:20px;font-weight:700}
+        h2 {font-size:2.5em;color:#ff4444;margin-bottom:15px}
+        h3 {font-size:1.5em;margin-bottom:20px}
+        
+        /* Sections */
+        .hero-section {background:linear-gradient(rgba(20,40,80,0.9),rgba(20,40,80,0.9)),url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23234" width="1200" height="600"/><path fill="%23345" opacity="0.3" d="M0 400L200 350L400 400L600 350L800 400L1000 350L1200 400V600H0V400Z"/></svg>');background-size:cover;background-position:center;color:white;padding:80px 20px;text-align:center}
+        .subtitle {font-size:1.5em;margin-bottom:30px;color:#87CEEB}
+        .nav-buttons {display:flex;flex-wrap:wrap;gap:15px;justify-content:center;margin-top:30px}
+        .nav-button {background:rgba(255,255,255,0.2);color:white;padding:12px 25px;text-decoration:none;border-radius:5px;border:2px solid rgba(255,255,255,0.3);transition:all 0.3s}
+        .nav-button:hover {background:rgba(255,255,255,0.3);transform:translateY(-2px)}
+        
+        .section {padding:60px 20px;scroll-margin-top:20px}
+        .section:nth-child(even) {background:#f8f9fa}
+        .section-header {text-align:center;margin-bottom:40px}
+        
+        .checklist-container {max-width:800px;margin:0 auto}
+        .checklist-group {background:white;padding:30px;margin-bottom:30px;border-radius:10px;box-shadow:0 3px 15px rgba(0,0,0,0.1)}
+        .checklist-group h3 {color:#4169E1;margin-bottom:20px;font-size:1.5em;border-bottom:2px solid #4169E1;padding-bottom:10px}
+        .checklist-item {display:flex;align-items:flex-start;margin-bottom:15px;padding:10px;background:#f8f8f8;border-radius:5px}
+        .checkbox {width:24px;height:24px;border:2px solid #4169E1;border-radius:4px;margin-right:15px;flex-shrink:0;margin-top:2px;cursor:pointer;position:relative}
+        .checkbox:hover {background:#e8f0fe}
+        .checklist-content {flex:1}
+        .checklist-content strong {display:block;margin-bottom:5px;color:#333}
+        .checklist-content p {font-size:0.9em;color:#666}
+        
+        .deadline-card {background:white;padding:30px;margin-bottom:25px;border-radius:10px;box-shadow:0 3px 15px rgba(0,0,0,0.1);border-left:5px solid #ff4444}
+        .deadline-urgent {border-left-color:#ff0000;background:#fff5f5}
+        .deadline-card h3 {color:#ff4444;margin-bottom:15px;display:flex;align-items:center;gap:10px}
+        .deadline-time {font-size:1.8em;font-weight:bold;color:#ff0000;margin-bottom:10px}
+        
+        .guide-section {background:white;padding:40px;margin-bottom:30px;border-radius:10px;box-shadow:0 3px 15px rgba(0,0,0,0.1)}
+        .guide-section h3 {color:#2E7D32;margin-bottom:20px;font-size:1.8em}
+        .step-box {background:#f8f8f8;padding:25px;margin-bottom:20px;border-radius:8px;border-left:4px solid #4CAF50}
+        .step-number {display:inline-block;background:#4CAF50;color:white;width:35px;height:35px;border-radius:50%;text-align:center;line-height:35px;font-weight:bold;margin-right:15px}
+        
+        .tax-table {width:100%;border-collapse:collapse;margin:20px 0;background:white;box-shadow:0 2px 10px rgba(0,0,0,0.1)}
+        .tax-table th {background:#4169E1;color:white;padding:15px;text-align:left}
+        .tax-table td {padding:15px;border-bottom:1px solid #ddd}
+        .tax-table tr:nth-child(even) {background:#f8f8f8}
+        
+        .resource-card {background:white;padding:30px;margin-bottom:25px;border-radius:10px;box-shadow:0 3px 15px rgba(0,0,0,0.1);border-top:4px solid #4CAF50}
+        .resource-card h3 {color:#4CAF50;margin-bottom:15px;font-size:1.5em}
+        .resource-links {list-style:none;padding:0}
+        .resource-links li {padding:10px 0;border-bottom:1px solid #eee}
+        .resource-links a {color:#4169E1;text-decoration:none;display:flex;align-items:center;justify-content:space-between}
+        .resource-links a:hover {color:#ff4444}
+        
+        .download-box {background:#e8f5e9;padding:30px;border-radius:10px;text-align:center;margin:40px 0}
+        .download-button {display:inline-block;background:#4CAF50;color:white;padding:15px 40px;text-decoration:none;border-radius:5px;font-weight:bold;font-size:1.1em;transition:all 0.3s;cursor:pointer;border:none}
+        .download-button:hover {background:#2E7D32;transform:translateY(-2px)}
+        
+        .warning-box {background:#fff3cd;border:2px solid #ffeaa7;color:#856404;padding:20px;border-radius:10px;margin:20px 0}
+        .tip-box {background:#e3f2fd;border-left:4px solid #2196F3;padding:20px;margin:20px 0;border-radius:0 5px 5px 0}
+        .footer-cta {background:#1a1a1a;color:white;padding:60px 20px;text-align:center}
+        
+        /* Modal */
+        .modal {display:none;position:fixed;z-index:2000;left:0;top:0;width:100%;height:100%;background-color:rgba(0,0,0,0.8);opacity:0;transition:opacity 0.3s ease;overflow-y:auto}
+        .modal.show {opacity:1}
+        .modal-content {background-color:#fefefe;margin:5% auto;margin-bottom:5%;padding:0;width:90%;max-width:600px;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,0.3);transform:translateY(-50px);transition:transform 0.3s ease;position:relative}
+        .modal.show .modal-content {transform:translateY(0)}
+        .modal-header {background:linear-gradient(135deg,#4CAF50 0%,#2E7D32 100%);color:white;padding:2rem;border-radius:12px 12px 0 0;text-align:center}
+        .modal-header h2 {font-size:2rem;margin-bottom:0.5rem}
+        .modal-header p {font-size:1.1rem;opacity:0.9}
+        .close {color:white;float:right;font-size:28px;font-weight:bold;cursor:pointer;transition:all 0.3s ease}
+        .close:hover {transform:scale(1.2)}
+        .modal-body {padding:2.5rem}
+        .download-form {display:flex;flex-direction:column;gap:1.5rem}
+        .form-group {display:flex;flex-direction:column}
+        .form-label {font-weight:600;margin-bottom:0.5rem;color:#333;font-size:1rem}
+        .form-input,.form-select {padding:0.875rem;border:2px solid #e5e7eb;border-radius:8px;font-size:1rem;transition:all 0.3s ease;font-family:inherit}
+        .form-input:focus,.form-select:focus {outline:none;border-color:#4CAF50;box-shadow:0 0 0 3px rgba(76,175,80,0.1)}
+        .form-button {background:linear-gradient(135deg,#4CAF50 0%,#2E7D32 100%);color:white;padding:1rem 2rem;border:none;border-radius:8px;font-size:1.1rem;font-weight:600;cursor:pointer;transition:all 0.3s ease;box-shadow:0 4px 15px rgba(76,175,80,0.3)}
+        .form-button:hover {transform:translateY(-2px);box-shadow:0 6px 20px rgba(76,175,80,0.4)}
+        .form-note {text-align:center;font-size:0.9rem;color:#666;margin-top:1rem}
+        .download-confirmation {text-align:center;padding:2rem}
+        .download-confirmation h3 {color:#4CAF50;margin-bottom:1rem}
+        .download-link-button {display:inline-block;background:#4CAF50;color:white;padding:1rem 2rem;text-decoration:none;border-radius:8px;font-weight:600;margin-top:1rem;transition:all 0.3s ease}
+        .download-link-button:hover {background:#2E7D32;transform:translateY(-2px)}
+        
+        /* Mobile */
+        @media (max-width:768px) {
+            h1 {font-size:2em}
+            .nav-buttons {flex-direction:column;align-items:center}
+            .nav-button {width:100%;max-width:300px}
+            .modal-content {width:95%;margin:2% auto;margin-bottom:2%;max-height:96vh;overflow-y:auto}
+            .modal-header {position:sticky;top:0;z-index:10}
+            .modal-body {padding:1.5rem;padding-bottom:2rem}
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-content">
+                <!-- Logo -->
+                <a href="/" class="navbar-logo">Law Offices of Rozsa Gyene</a>
+                
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <span class="hamburger"></span>
+                </button>
+                
+                <!-- Navigation Menu -->
+                <div class="navbar-menu" id="navbarMenu">
+                    <ul class="nav-links">
+                        <li><a href="/" class="nav-link">Home</a></li>
+                        <li><a href="/eaton-fire" class="nav-link">Eaton Fire</a></li>
+                        <li><a href="/pacific-palisades-fire" class="nav-link">Pacific Palisades Fire</a></li>
+                        <li><a href="/other-california-fires" class="nav-link">Other California Fires</a></li>
+                        <li><a href="/insurance-claim" class="nav-link">Insurance Claims</a></li>
+                        <li><a href="/estate-planning" class="nav-link">Estate Planning</a></li>
+                        <li><a href="/asset-protection" class="nav-link">Asset Protection</a></li>
+                        <li><a href="/resources" class="nav-link active">Resources</a></li>
+                        <li><a href="/about" class="nav-link">About</a></li>
+                    </ul>
+                    
+                    <!-- CTA Section -->
+                    <div class="navbar-cta">
+                        <a href="tel:818-291-6217" class="phone-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+                            </svg>
+                            (818) 291-6217
+                        </a>
+                        <a href="/#intake-form" class="btn-nav">Free Case Review</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main>
+        <section class="hero-section">
+            <div class="container">
+                <h1>Fire Victim Resources</h1>
+                <p class="subtitle">Free Guides, Checklists, and Tools to Help You Recover</p>
+                <p style="font-size:1.2em;margin-bottom:30px">Everything you need to navigate insurance claims, deadlines, and rebuilding after fire loss.</p>
+                <div class="nav-buttons">
+                    <a href="#insurance-checklist" class="nav-button">Insurance Checklist</a>
+                    <a href="#deadlines" class="nav-button">Important Deadlines</a>
+                    <a href="#fema-guide" class="nav-button">FEMA Guide</a>
+                    <a href="#tax-guide" class="nav-button">Tax Guide</a>
+                    <a href="#rebuilding" class="nav-button">Rebuilding Resources</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="insurance-checklist" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Insurance Claim Checklist</h2>
+                    <p style="font-size:1.2em">Complete guide to maximize your insurance recovery</p>
+                </div>
+                <div class="checklist-container">
+                    <div class="checklist-group">
+                        <h3>📋 Immediate Actions (First 24-48 Hours)</h3>
+                        <div class="checklist-item">
+                            <div class="checkbox"></div>
+                            <div class="checklist-content">
+                                <strong>Report the Loss</strong>
+                                <p>Call your insurance company immediately. Get claim number and adjuster contact info.</p>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checkbox"></div>
+                            <div class="checklist-content">
+                                <strong>Document Everything</strong>
+                                <p>Take photos/videos of all damage before cleanup. Include wide shots and close-ups.</p>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checkbox"></div>
+                            <div class="checklist-content">
+                                <strong>Secure Property</strong>
+                                <p>Board up windows, tarp roofs. Keep receipts for emergency repairs.</p>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checkbox"></div>
+                            <div class="checklist-content">
+                                <strong>Find Your Policy</strong>
+                                <p>Locate all insurance policies. Request copies if lost in fire.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-group">
+                        <h3>📄 Documentation Phase (Week 1-2)</h3>
+                        <div class="checklist-item">
+                            <div class="checkbox"></div>
+                            <div class="checklist-content">
+                                <strong>Create Inventory List</strong>
+                                <p>List every item lost with brand, model, age, and replacement cost.</p>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checkbox"></div>
+                            <div class="checklist-content">
+                                <strong>Gather Proof of Loss</strong>
+                                <p>Collect receipts, credit card statements, photos showing lost items.</p>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checkbox"></div>
+                            <div class="checklist-content">
+                                <strong>Living Expense Tracking</strong>
+                                <p>Keep all receipts for hotels, meals, gas, and other additional expenses.</p>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checkbox"></div>
+                            <div class="checklist-content">
+                                <strong>Get Professional Estimates</strong>
+                                <p>Obtain contractor estimates for rebuilding costs.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-group">
+                        <h3>💰 Claim Submission (Week 2-4)</h3>
+                        <div class="checklist-item">
+                            <div class="checkbox"></div>
+                            <div class="checklist-content">
+                                <strong>Review Coverage Limits</strong>
+                                <p>Understand your dwelling, contents, ALE, and other coverage amounts.</p>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checkbox"></div>
+                            <div class="checklist-content">
+                                <strong>Submit Proof of Loss</strong>
+                                <p>Complete sworn proof of loss forms within deadline (usually 60 days).</p>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checkbox"></div>
+                            <div class="checklist-content">
+                                <strong>Request Advance Payments</strong>
+                                <p>Ask for advances on living expenses and contents claims.</p>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checkbox"></div>
+                            <div class="checklist-content">
+                                <strong>Document Communications</strong>
+                                <p>Keep log of all calls, emails with dates, times, and what was discussed.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="download-box">
+                        <h3>Download Complete Insurance Claim Checklist</h3>
+                        <p>Get our comprehensive 10-page PDF guide with detailed instructions</p>
+                        <button onclick="openModal()" class="download-button">Download Complete Insurance Claim Checklist</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="deadlines" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Important Deadlines</h2>
+                    <p style="font-size:1.2em;color:#ff4444">Missing these deadlines can cost you thousands or forfeit your rights entirely</p>
+                </div>
+                <div class="checklist-container">
+                    <div class="deadline-card deadline-urgent">
+                        <h3>⚠️ EMERGENCY - First 24-72 Hours</h3>
+                        <div class="deadline-time">IMMEDIATE ACTION REQUIRED</div>
+                        <ul>
+                            <li><strong>Report claim to insurance:</strong> Most policies require "prompt" notice</li>
+                            <li><strong>Mitigate damages:</strong> Prevent further damage or insurance may deny</li>
+                            <li><strong>Document condition:</strong> Before any cleanup or changes</li>
+                        </ul>
+                    </div>
+                    <div class="deadline-card deadline-urgent">
+                        <h3>🚨 CRITICAL - 60 Days</h3>
+                        <div class="deadline-time">2 MONTHS FROM FIRE</div>
+                        <ul>
+                            <li><strong>Sworn Proof of Loss:</strong> Many policies require within 60 days</li>
+                            <li><strong>FEMA Registration:</strong> If declared disaster, usually 60 days to apply</li>
+                            <li><strong>Contents Inventory:</strong> Initial list often due in 60 days</li>
+                        </ul>
+                    </div>
+                    <div class="deadline-card">
+                        <h3>📅 IMPORTANT - 6 Months</h3>
+                        <div class="deadline-time">180 DAYS FROM FIRE</div>
+                        <ul>
+                            <li><strong>Government Claims:</strong> Claims against cities/counties for negligence</li>
+                            <li><strong>Complete Contents List:</strong> Final detailed inventory usually due</li>
+                            <li><strong>Some Lawsuit Deadlines:</strong> Certain claims have 6-month limits</li>
+                        </ul>
+                    </div>
+                    <div class="deadline-card">
+                        <h3>📆 STANDARD - 1 Year</h3>
+                        <div class="deadline-time">12 MONTHS FROM FIRE</div>
+                        <ul>
+                            <li><strong>Sue Insurance Company:</strong> Most policies have 1-year suit deadline</li>
+                            <li><strong>Complete Repairs:</strong> Some policies limit time to complete rebuilding</li>
+                            <li><strong>ALE Expiration:</strong> Additional Living Expenses often capped at 12-24 months</li>
+                        </ul>
+                    </div>
+                    <div class="deadline-card">
+                        <h3>⚖️ LEGAL - 2-3 Years</h3>
+                        <div class="deadline-time">STATUTE OF LIMITATIONS</div>
+                        <ul>
+                            <li><strong>Property Damage Claims:</strong> 3 years in California</li>
+                            <li><strong>Personal Injury:</strong> 2 years from injury</li>
+                            <li><strong>Utility Company Lawsuits:</strong> Various deadlines apply</li>
+                            <li><strong>Bad Faith Claims:</strong> May have different deadlines</li>
+                        </ul>
+                    </div>
+                    <div class="warning-box">
+                        <h4>⚠️ WARNING: These are general deadlines</h4>
+                        <p>Your specific situation may have different deadlines. Some can be as short as 30 days. Always consult with an attorney immediately to protect your rights.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="fema-guide" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>FEMA Application Guide</h2>
+                    <p style="font-size:1.2em">Step-by-step guide to federal disaster assistance</p>
+                </div>
+                <div class="checklist-container">
+                    <div class="guide-section">
+                        <h3>Before You Apply - Eligibility Check</h3>
+                        <div class="step-box">
+                            <p><strong>✓ Presidential Disaster Declaration:</strong> Your fire must be part of a declared disaster</p>
+                            <p><strong>✓ Primary Residence:</strong> FEMA only helps with primary homes, not vacation properties</p>
+                            <p><strong>✓ Insurance First:</strong> Must file insurance claim first - FEMA fills gaps</p>
+                            <p><strong>✓ US Citizen/Qualified Alien:</strong> Eligibility requirements apply</p>
+                        </div>
+                    </div>
+                    <div class="guide-section">
+                        <h3>Step-by-Step Application Process</h3>
+                        <div class="step-box">
+                            <span class="step-number">1</span>
+                            <strong>Register Online or by Phone</strong>
+                            <p>Visit DisasterAssistance.gov or call 1-800-621-3362 (TTY: 1-800-462-7585)</p>
+                            <p>Have ready: Social Security number, insurance info, bank account details</p>
+                        </div>
+                        <div class="step-box">
+                            <span class="step-number">2</span>
+                            <strong>Create FEMA Account</strong>
+                            <p>Save your 9-digit registration number</p>
+                            <p>Set up direct deposit for faster payments</p>
+                        </div>
+                        <div class="step-box">
+                            <span class="step-number">3</span>
+                            <strong>Complete Application</strong>
+                            <p>Describe all damages and losses</p>
+                            <p>List all household members</p>
+                            <p>Provide current contact information</p>
+                        </div>
+                        <div class="step-box">
+                            <span class="step-number">4</span>
+                            <strong>Schedule Inspection</strong>
+                            <p>FEMA inspector will contact you within 10 days</p>
+                            <p>Be present for inspection or have adult representative</p>
+                            <p>Point out all damage, including hidden damage</p>
+                        </div>
+                        <div class="step-box">
+                            <span class="step-number">5</span>
+                            <strong>Receive Decision Letter</strong>
+                            <p>Usually within 10 days after inspection</p>
+                            <p>May be approved, denied, or need more information</p>
+                            <p>ALWAYS APPEAL DENIALS - many are reversed</p>
+                        </div>
+                    </div>
+                    <div class="guide-section">
+                        <h3>Types of FEMA Assistance Available</h3>
+                        <div class="resource-card">
+                            <h4>Housing Assistance</h4>
+                            <ul>
+                                <li>Temporary housing (hotels, rentals)</li>
+                                <li>Home repair funds</li>
+                                <li>Replacement housing in some cases</li>
+                            </ul>
+                        </div>
+                        <div class="resource-card">
+                            <h4>Other Needs Assistance</h4>
+                            <ul>
+                                <li>Personal property replacement</li>
+                                <li>Medical and dental expenses</li>
+                                <li>Funeral expenses</li>
+                                <li>Transportation repair/replacement</li>
+                                <li>Moving and storage</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tip-box">
+                        <h4>💡 FEMA Tips from Fire Victims</h4>
+                        <ul>
+                            <li>Don't assume you won't qualify - always apply</li>
+                            <li>Appeal ALL denials - success rate is high</li>
+                            <li>Keep every receipt for everything</li>
+                            <li>Take photos before cleaning up</li>
+                            <li>Get help from local disaster recovery centers</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tax-guide" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Fire Loss Tax Guide</h2>
+                    <p style="font-size:1.2em">Understanding tax implications and potential deductions</p>
+                </div>
+                <div class="checklist-container">
+                    <div class="guide-section">
+                        <h3>Tax Treatment of Insurance Proceeds</h3>
+                        <table class="tax-table">
+                            <thead>
+                                <tr>
+                                    <th>Type of Payment</th>
+                                    <th>Taxable?</th>
+                                    <th>Important Notes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Living Expenses (ALE)</strong></td>
+                                    <td>Sometimes</td>
+                                    <td>Taxable if exceeds normal living costs</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Personal Property</strong></td>
+                                    <td>Usually No</td>
+                                    <td>Not taxable unless exceeds your basis</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Home Structure</strong></td>
+                                    <td>Depends</td>
+                                    <td>May have gain if insurance exceeds basis</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Lawsuit Settlements</strong></td>
+                                    <td>Varies</td>
+                                    <td>Property damage usually not taxable</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>FEMA Grants</strong></td>
+                                    <td>No</td>
+                                    <td>Disaster relief not taxable</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="guide-section">
+                        <h3>Casualty Loss Deduction</h3>
+                        <div class="warning-box">
+                            <h4>⚠️ Major Tax Law Change</h4>
+                            <p>Personal casualty losses are NO LONGER deductible unless in a federally declared disaster area (2018-2025)</p>
+                        </div>
+                        <div class="step-box">
+                            <h4>If Your Fire Qualifies (Declared Disaster):</h4>
+                            <p><strong>Calculate Your Loss:</strong></p>
+                            <ol>
+                                <li>Determine decrease in fair market value OR adjusted basis (whichever is less)</li>
+                                <li>Subtract insurance and other reimbursements</li>
+                                <li>Subtract $100 per casualty event</li>
+                                <li>Subtract 10% of your adjusted gross income</li>
+                                <li>Remaining amount is deductible</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="guide-section">
+                        <h3>Special Tax Provisions for Fire Victims</h3>
+                        <div class="resource-card">
+                            <h4>Gain Deferral - IRC Section 1033</h4>
+                            <p>If insurance proceeds exceed your basis:</p>
+                            <ul>
+                                <li>Can defer gain by purchasing replacement property</li>
+                                <li>Must replace within 4 years (extended from usual 2)</li>
+                                <li>Replacement property must be similar use</li>
+                                <li>Main home gets special favorable treatment</li>
+                            </ul>
+                        </div>
+                        <div class="resource-card">
+                            <h4>Claim Year Election</h4>
+                            <p>Can claim disaster loss on:</p>
+                            <ul>
+                                <li>Current year tax return, OR</li>
+                                <li>Amend prior year return for faster refund</li>
+                                <li>Must elect within 6 months of original due date</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tip-box">
+                        <h4>🧮 Tax Planning Tips</h4>
+                        <ul>
+                            <li>Keep detailed records of all basis in property</li>
+                            <li>Document all improvements made over the years</li>
+                            <li>Photograph all receipts and store digitally</li>
+                            <li>Consider hiring a tax professional familiar with disasters</li>
+                            <li>Don't forget state tax implications may differ</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="rebuilding" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Rebuilding Resources</h2>
+                    <p style="font-size:1.2em">Trusted resources to help you rebuild after fire loss</p>
+                </div>
+                <div class="checklist-container">
+                    <div class="resource-card">
+                        <h3>🏗️ Contractor Resources</h3>
+                        <ul class="resource-links">
+                            <li><a href="#">California Contractors License Board <span>→</span></a></li>
+                            <li><a href="#">How to Verify Contractor Licenses <span>→</span></a></li>
+                            <li><a href="#">Red Flags: Avoiding Contractor Fraud <span>→</span></a></li>
+                            <li><a href="#">Sample Construction Contracts <span>→</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="resource-card">
+                        <h3>🏛️ Permit & Code Information</h3>
+                        <ul class="resource-links">
+                            <li><a href="#">Building Code Upgrade Coverage Guide <span>→</span></a></li>
+                            <li><a href="#">Wildfire Rebuilding Standards (WUI) <span>→</span></a></li>
+                            <li><a href="#">County Permit Offices Directory <span>→</span></a></li>
+                            <li><a href="#">Expedited Permit Programs <span>→</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="resource-card">
+                        <h3>💰 Financial Resources</h3>
+                        <ul class="resource-links">
+                            <li><a href="#">SBA Disaster Loans Information <span>→</span></a></li>
+                            <li><a href="#">Construction Loan Guidelines <span>→</span></a></li>
+                            <li><a href="#">Bridge Loan Options <span>→</span></a></li>
+                            <li><a href="#">Rebuilding vs. Buying Analysis <span>→</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="resource-card">
+                        <h3>🌱 Landscaping & Environment</h3>
+                        <ul class="resource-links">
+                            <li><a href="#">Fire-Resistant Landscaping Guide <span>→</span></a></li>
+                            <li><a href="#">Erosion Control After Fire <span>→</span></a></li>
+                            <li><a href="#">Native Plant Restoration <span>→</span></a></li>
+                            <li><a href="#">Debris Removal Programs <span>→</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="resource-card">
+                        <h3>🤝 Support Organizations</h3>
+                        <ul class="resource-links">
+                            <li><a href="#">United Policyholders (UP) <span>→</span></a></li>
+                            <li><a href="#">Red Cross Disaster Relief <span>→</span></a></li>
+                            <li><a href="#">After the Fire USA <span>→</span></a></li>
+                            <li><a href="#">Local Fire Recovery Groups <span>→</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="resource-card">
+                        <h3>📚 Educational Resources</h3>
+                        <ul class="resource-links">
+                            <li><a href="#">"The Disaster Recovery Handbook" <span>→</span></a></li>
+                            <li><a href="#">Insurance Claim Tips from UP <span>→</span></a></li>
+                            <li><a href="#">Rebuilding After Wildfire Video Series <span>→</span></a></li>
+                            <li><a href="#">Fire Survivor Support Groups <span>→</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="footer-cta">
+            <div class="container">
+                <h2 style="font-size:2.5em;margin-bottom:20px;color:#ffa500">Need Legal Help?</h2>
+                <p style="font-size:1.3em;margin:20px 0">These resources are provided free to help all fire victims. If you need legal assistance with your claim, we're here to help.</p>
+                <div style="background:rgba(255,255,255,0.1);padding:30px;border-radius:10px;margin:30px auto;max-width:600px">
+                    <p style="font-size:1.2em;margin-bottom:15px">✓ Free consultation</p>
+                    <p style="font-size:1.2em;margin-bottom:15px">✓ No upfront costs</p>
+                    <p style="font-size:1.2em;margin-bottom:15px">✓ 25+ years experience</p>
+                    <p style="font-size:1.2em">✓ We handle all types of fire claims</p>
+                </div>
+                <div style="margin:30px 0;font-size:1.2em">
+                    <p>📞 Call: 818-291-6217</p>
+                    <p>📧 Email: rozsa@fireclaimslawyer.com</p>
+                    <p>💬 Text: 818-434-4541</p>
+                </div>
+                <p style="margin-top:30px">
+                    <strong>Law Offices of Rozsa Gyene</strong><br>
+                    450 N Brand Blvd Suite 600, Glendale CA 91203
+                </p>
+                <p style="margin-top:20px;font-size:0.9em;opacity:0.8">
+                    These resources are for informational purposes only and do not constitute legal advice.<br>
+                    Always consult with an attorney for your specific situation.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal -->
+    <div id="downloadModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2>Download Insurance Claim Checklist</h2>
+                <p>Get Your Free Comprehensive Guide</p>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <form action="https://getform.io/f/bolzgzla" method="POST" class="download-form" onsubmit="handleFormSubmit(event)">
+                    <div class="form-group">
+                        <label class="form-label">First Name</label>
+                        <input type="text" name="first_name" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Last Name</label>
+                        <input type="text" name="last_name" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email Address</label>
+                        <input type="email" name="email" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Phone (Optional)</label>
+                        <input type="tel" name="phone" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Which fire affected you?</label>
+                        <select name="fire_affected" class="form-select">
+                            <option value="">Select a fire</option>
+                            <option value="Pacific Palisades Fire">Pacific Palisades Fire</option>
+                            <option value="Eaton Fire">Eaton Fire</option>
+                            <option value="Santa Maria Fire">Santa Maria Fire</option>
+                            <option value="Other California Fire">Other California Fire</option>
+                            <option value="Not a fire victim">Not a fire victim</option>
+                        </select>
+                    </div>
+                    <input type="hidden" name="form_type" value="insurance_checklist_download">
+                    <input type="hidden" name="resource_requested" value="Insurance Claim Checklist PDF">
+                    <button type="submit" class="form-button">Get My Free Checklist</button>
+                    <p class="form-note">We'll email you the download link immediately and follow up with additional helpful resources.</p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('navbarMenu');
+            const btn = document.querySelector('.mobile-menu-btn');
+            
+            menu.classList.toggle('active');
+            btn.classList.toggle('active');
+        }
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const navbar = document.querySelector('.navbar');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            
+            if (!navbar.contains(event.target)) {
+                document.getElementById('navbarMenu').classList.remove('active');
+                menuBtn.classList.remove('active');
+            }
+        });
+        
+        // Modal functions
+        function openModal() {
+            const modal = document.getElementById('downloadModal');
+            modal.style.display = 'block';
+            setTimeout(() => {
+                modal.classList.add('show');
+            }, 10);
+        }
+        
+        function closeModal() {
+            const modal = document.getElementById('downloadModal');
+            modal.classList.remove('show');
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 300);
+        }
+        
+        // Handle form submission
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const form = event.target;
+            
+            fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form)
+            })
+            .then(() => {
+                document.getElementById('modalBody').innerHTML = `
+                    <div class="download-confirmation">
+                        <h3>Thank you! Your checklist is ready.</h3>
+                        <p>We've sent the download link to your email address.</p>
+                        <p>You can also download it directly below:</p>
+                        <a href="https://drive.google.com/file/d/1aeQ3DPpd0a-C__OMhZqw_wf-mf2lwR5o/view?usp=sharing" target="_blank" class="download-link-button">Download Insurance Claim Checklist</a>
+                        <p style="margin-top:2rem;font-size:0.9rem">Having trouble? Call us at 818-291-6217</p>
+                    </div>
+                `;
+            })
+            .catch(() => {
+                alert('There was an error. Please try again or call us at 818-291-6217');
+            });
+        }
+        
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('downloadModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>
