@@ -42,8 +42,14 @@ input[type="radio"], input[type="checkbox"] {margin-right: 5px;}
 <h1 style="font-size: 32px; color: #2c3e50; margin: 0; padding: 0;">Estate Planning Questionnaire</h1>
 </div>
 <div class="container">
-<form id="estatePlanningForm" name=“estate-planning-questionnaire-intake-form“ method="POST" data-netlify="true" action="/thank-you.html">
-<input type="hidden" name="form-name" value="estate-planning-questionnaire-intake-form">
+<form id="estatePlanningForm" 
+      name="estate-planning-questionnaire-intake-form" 
+      method="POST" 
+      data-netlify="true" 
+      action="/thank-you.html">
+  
+  <!-- This hidden input MUST match the name attribute above -->
+  <input type="hidden" name="form-name" value="estate-planning-questionnaire-intake-form">
 
 <!-- EMAIL -->
 <div class="section">
