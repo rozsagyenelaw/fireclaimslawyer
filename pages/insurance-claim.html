@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fire Insurance Claims Attorney | Law Offices of Rozsa Gyene</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        /* Simplified Navigation Bar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .navbar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            gap: 2rem;
+        }
+        
+        .navbar-logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            text-decoration: none;
+            letter-spacing: -0.02em;
+            transition: color 0.3s ease;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        
+        .navbar-logo:hover {
+            color: #dc2626;
+        }
+        
+        .navbar-menu {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-grow: 1;
+            justify-content: flex-end;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.2rem;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-link {
+            color: #475569;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.85rem;
+            padding: 0.5rem 0;
+            transition: color 0.3s ease;
+            white-space: nowrap;
+        }
+        
+        .nav-link:hover {
+            color: #dc2626;
+        }
+        
+        .nav-link.active {
+            color: #dc2626;
+            font-weight: 600;
+        }
+        
+        .navbar-cta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-shrink: 0;
+        }
+        
+        .phone-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #dc2626;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+        
+        .phone-link:hover {
+            transform: translateY(-2px);
+        }
+        
+        .btn-nav {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            color: white;
+            padding: 0.65rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 4px 14px rgba(220, 38, 38, 0.25);
+            white-space: nowrap;
+        }
+        
+        .btn-nav:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(220, 38, 38, 0.35);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        
+        .hamburger {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: #1a1a1a;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .hamburger::before,
+        .hamburger::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 2px;
+            background: #1a1a1a;
+            transition: all 0.3s ease;
+        }
+        
+        .hamburger::before {
+            top: -8px;
+        }
+        
+        .hamburger::after {
+            bottom: -8px;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 1300px) {
+            .nav-links {
+                gap: 0.8rem;
+            }
+            
+            .nav-link {
+                font-size: 0.8rem;
+            }
+            
+            .navbar-logo {
+                font-size: 1.2rem;
+            }
+        }
+        
+        @media (max-width: 1100px) {
+            .nav-links {
+                gap: 0.6rem;
+            }
+            
+            .nav-link {
+                font-size: 0.75rem;
+            }
+            
+            .phone-link {
+                font-size: 0.85rem;
+            }
+            
+            .btn-nav {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.8rem;
+            }
+        }
+        
+        @media (max-width: 968px) {
+            .navbar-menu {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                bottom: auto;
+                max-height: calc(100vh - 70px);
+                background: white;
+                flex-direction: column;
+                padding: 2rem;
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+                overflow-y: auto;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+                z-index: 999;
+            }
+            
+            .navbar-menu.active {
+                transform: translateX(0);
+                height: auto;
+                max-height: calc(100vh - 70px);
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                width: 100%;
+                gap: 0.5rem;
+            }
+            
+            .nav-link {
+                padding: 1rem;
+                font-size: 1.1rem;
+                width: 100%;
+                text-align: left;
+                border-bottom: 1px solid #f1f5f9;
+            }
+            
+            .navbar-cta {
+                flex-direction: column;
+                width: 100%;
+                margin-top: 2rem;
+                padding-top: 2rem;
+                border-top: 1px solid #e5e7eb;
+            }
+            
+            .phone-link {
+                font-size: 1.2rem;
+            }
+            
+            .btn-nav {
+                width: 100%;
+                padding: 1rem;
+                font-size: 1rem;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+        
+        .mobile-menu-btn.active .hamburger {
+            background: transparent;
+        }
+        
+        .mobile-menu-btn.active .hamburger::before {
+            transform: rotate(45deg);
+            top: 0;
+        }
+        
+        .mobile-menu-btn.active .hamburger::after {
+            transform: rotate(-45deg);
+            bottom: 0;
+        }
+        
+        /* Main Content Styles */
+        main {
+            margin-top: 70px;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.95) 0%, rgba(37, 99, 235, 0.95) 100%);
+            color: white;
+            padding: 6rem 0 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+            animation: float 20s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-50px, -50px) rotate(180deg); }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.4rem;
+            font-weight: 400;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+        }
+        
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .hero-cta {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary {
+            background: white;
+            color: #3b82f6;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 1rem 2.5rem;
+            border: 2px solid white;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        /* Service Overview */
+        .service-overview {
+            padding: 5rem 0;
+            background: #f8fafc;
+        }
+        
+        .overview-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .overview-content h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 1.5rem;
+        }
+        
+        .overview-content p {
+            font-size: 1.1rem;
+            color: #475569;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        .overview-list {
+            list-style: none;
+            margin-top: 2rem;
+        }
+        
+        .overview-list li {
+            padding: 1rem 0;
+            padding-left: 2.5rem;
+            position: relative;
+            color: #475569;
+            font-size: 1.05rem;
+        }
+        
+        .overview-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #22c55e;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        
+        .overview-image {
+            background: white;
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .process-icon {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Policy Upload Form */
+        .policy-upload-form {
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-top: 1.5rem;
+            border: 2px dashed #cbd5e1;
+            transition: all 0.3s ease;
+        }
+        
+        .policy-upload-form:hover {
+            border-color: #3b82f6;
+            background: #f0f9ff;
+        }
+        
+        .upload-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1e40af;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .upload-input-wrapper {
+            position: relative;
+            margin-bottom: 1rem;
+        }
+        
+        .upload-input {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            cursor: pointer;
+            background: white;
+        }
+        
+        .upload-label {
+            display: block;
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-bottom: 0.5rem;
+        }
+        
+        .upload-submit {
+            width: 100%;
+            background: #3b82f6;
+            color: white;
+            padding: 0.875rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .upload-submit:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+        }
+        
+        .upload-note {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #64748b;
+            margin-top: 0.75rem;
+        }
+        
+        /* Services Grid */
+        .services-section {
+            padding: 5rem 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 1rem;
+        }
+        
+        .section-subtitle {
+            font-size: 1.25rem;
+            color: #64748b;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 1rem;
+        }
+        
+        .service-description {
+            color: #64748b;
+            line-height: 1.6;
+        }
+        
+        /* Process Section */
+        .process-section {
+            padding: 5rem 0;
+            background: #f8fafc;
+        }
+        
+        .process-timeline {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .process-step {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            align-items: flex-start;
+        }
+        
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: #3b82f6;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+            position: relative;
+        }
+        
+        .step-number::after {
+            content: '';
+            position: absolute;
+            top: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 3rem;
+            background: #e5e7eb;
+        }
+        
+        .process-step:last-child .step-number::after {
+            display: none;
+        }
+        
+        .step-content h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 0.75rem;
+        }
+        
+        .step-content p {
+            color: #64748b;
+            line-height: 1.6;
+        }
+        
+        /* Coverage Types */
+        .coverage-section {
+            padding: 5rem 0;
+        }
+        
+        .coverage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        
+        .coverage-item {
+            background: #f0f9ff;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .coverage-item:hover {
+            background: #dbeafe;
+            transform: translateY(-3px);
+        }
+        
+        .coverage-item h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1e40af;
+            margin-bottom: 0.5rem;
+        }
+        
+        .coverage-item p {
+            font-size: 0.9rem;
+            color: #3730a3;
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            padding: 5rem 0;
+            background: #f8fafc;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: white;
+            margin-bottom: 1.5rem;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .faq-question {
+            padding: 1.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #0f172a;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background: #f8fafc;
+        }
+        
+        .faq-arrow {
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            color: #64748b;
+            line-height: 1.8;
+            display: none;
+        }
+        
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        
+        .faq-item.active .faq-arrow {
+            transform: rotate(180deg);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+        }
+        
+        .cta-content h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-content p {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-cta {
+            background: white;
+            color: #1e40af;
+            padding: 1.25rem 3rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Footer */
+        .footer {
+            background: #0a0a0a;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .contact-info {
+            margin-bottom: 2rem;
+        }
+        
+        .contact-info p {
+            margin: 0.5rem 0;
+            font-size: 1.1rem;
+        }
+        
+        .contact-info a {
+            color: #ffd700;
+            text-decoration: none;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .overview-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-stats {
+                justify-content: center;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-buttons a {
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-content">
+                <!-- Logo -->
+                <a href="/" class="navbar-logo">Law Offices of Rozsa Gyene</a>
+                
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <span class="hamburger"></span>
+                </button>
+                
+                <!-- Navigation Menu -->
+                <div class="navbar-menu" id="navbarMenu">
+                    <ul class="nav-links">
+                        <li><a href="/" class="nav-link">Home</a></li>
+                        <li><a href="/eaton-fire" class="nav-link">Eaton Fire</a></li>
+                        <li><a href="/pacific-palisades-fire" class="nav-link">Pacific Palisades Fire</a></li>
+                        <li><a href="/other-california-fires" class="nav-link">Other California Fires</a></li>
+                        <li><a href="/insurance-claim" class="nav-link active">Insurance Claims</a></li>
+                        <li><a href="/estate-planning" class="nav-link">Estate Planning</a></li>
+                        <li><a href="/asset-protection" class="nav-link">Asset Protection</a></li>
+                        <li><a href="/resources" class="nav-link">Resources</a></li>
+                        <li><a href="/about" class="nav-link">About</a></li>
+                    </ul>
+                    
+                    <!-- CTA Section -->
+                    <div class="navbar-cta">
+                        <a href="tel:818-291-6217" class="phone-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+                            </svg>
+                            (818) 291-6217
+                        </a>
+                        <a href="/#intake-form" class="btn-nav">Free Case Review</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Fire Insurance Claim Attorney</h1>
+                    <p class="hero-subtitle">We Maximize Your Insurance Recovery - From Filing to Final Payment</p>
+                    
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">40%</span>
+                            <span class="stat-label">More Recovery with Attorney</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">$50M+</span>
+                            <span class="stat-label">Recovered for Clients</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">No Fee</span>
+                            <span class="stat-label">Unless We Win</span>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-cta">
+                        <a href="tel:818-291-6217" class="btn-primary">
+                            Get Free Claim Review: (818) 291-6217
+                        </a>
+                        <a href="https://square.site/book/0W2A8PKKPYC21/law-offices-of-rozsa-gyene-glendale-ca" class="btn-secondary" target="_blank">Schedule Free Review</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service Overview -->
+        <section class="service-overview">
+            <div class="container">
+                <div class="overview-grid">
+                    <div class="overview-content">
+                        <h2>Don't Let Insurance Companies Shortchange You</h2>
+                        <p>After losing your home or business to fire, the last thing you need is a battle with your insurance company. Yet that's exactly what many fire victims face - denied claims, delays, and settlement offers that don't come close to covering their losses.</p>
+                        <p>With 25+ years of experience, we know every tactic insurance companies use to minimize payouts. We level the playing field and fight for every dollar you're owed.</p>
+                        
+                        <ul class="overview-list">
+                            <li>Complete policy review to find ALL coverage</li>
+                            <li>Professional damage documentation</li>
+                            <li>Direct negotiation with adjusters</li>
+                            <li>Appeals and supplemental claims</li>
+                            <li>Bad faith litigation when necessary</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="overview-image">
+                        <div class="process-icon">📋</div>
+                        <h3 style="font-size: 1.5rem; color: #0f172a; margin-bottom: 1rem;">Free Policy Review</h3>
+                        <p style="color: #64748b;">We'll analyze your policy and tell you exactly what you're entitled to - no obligation</p>
+                        
+                        <!-- Policy Upload Form -->
+                        <form action="https://getform.io/f/bolzgzla" method="POST" enctype="multipart/form-data" class="policy-upload-form">
+                            <h4 class="upload-title">Upload Your Policy for Instant Review</h4>
+                            
+                            <div class="upload-input-wrapper">
+                                <label class="upload-label">Your Name</label>
+                                <input type="text" name="name" class="upload-input" placeholder="Enter your name" required>
+                            </div>
+                            
+                            <div class="upload-input-wrapper">
+                                <label class="upload-label">Email</label>
+                                <input type="email" name="email" class="upload-input" placeholder="Your email address" required>
+                            </div>
+                            
+                            <div class="upload-input-wrapper">
+                                <label class="upload-label">Phone (Optional)</label>
+                                <input type="tel" name="phone" class="upload-input" placeholder="Your phone number">
+                            </div>
+                            
+                            <div class="upload-input-wrapper">
+                                <label class="upload-label">Upload Insurance Policy</label>
+                                <input type="file" name="policy_file" class="upload-input" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx" required>
+                            </div>
+                            
+                            <input type="hidden" name="form_type" value="insurance_policy_review">
+                            
+                            <button type="submit" class="upload-submit">Get Free Policy Review</button>
+                            
+                            <p class="upload-note">100% Confidential • No Obligation • Instant Upload</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Grid -->
+        <section class="services-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Complete Insurance Claim Services</h2>
+                    <p class="section-subtitle">From Initial Filing to Maximum Recovery</p>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">📄</div>
+                        <h3 class="service-title">Regular Claim Filing</h3>
+                        <p class="service-description">We handle your entire claim from start to finish. Document losses, prepare inventories, submit paperwork, and ensure nothing is missed that could reduce your recovery.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">🔍</div>
+                        <h3 class="service-title">Coverage Analysis</h3>
+                        <p class="service-description">Most people don't understand their full coverage. We find benefits you didn't know existed - additional living expenses, code upgrades, landscape coverage, and more.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">💬</div>
+                        <h3 class="service-title">Adjuster Negotiation</h3>
+                        <p class="service-description">Insurance adjusters work for the insurance company, not you. We speak their language and know their tactics. Let us handle all communications to protect your interests.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">📈</div>
+                        <h3 class="service-title">Supplemental Claims</h3>
+                        <p class="service-description">Initial settlements rarely cover everything. We identify missed damages and file supplemental claims to recover additional compensation you deserve.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">⚖️</div>
+                        <h3 class="service-title">Bad Faith Claims</h3>
+                        <p class="service-description">When insurers wrongfully deny claims or unreasonably delay payment, we hold them accountable. Bad faith claims can result in significant additional compensation.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">🏠</div>
+                        <h3 class="service-title">Total Loss Expertise</h3>
+                        <p class="service-description">Complete destruction requires special handling. We ensure proper valuation, code upgrade coverage, debris removal, and all additional coverages are maximized.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section class="process-section" id="process">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Our Proven Process</h2>
+                    <p class="section-subtitle">How We Maximize Your Insurance Recovery</p>
+                </div>
+                
+                <div class="process-timeline">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Free Policy Review</h3>
+                            <p>We analyze your insurance policy to identify all available coverages and benefits. No obligation consultation to explain your rights and options.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Document Everything</h3>
+                            <p>Our team helps document all losses comprehensively - structure, contents, landscaping, additional living expenses. We know what insurers require.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>File & Negotiate</h3>
+                            <p>We submit your claim with professional documentation and handle all adjuster communications. No more stress of dealing with the insurance company.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Fight for More</h3>
+                            <p>Initial offers are rarely adequate. We negotiate aggressively, file supplements, and if necessary, pursue bad faith claims to maximize recovery.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h3>Get Paid Fully</h3>
+                            <p>We don't stop until you receive every dollar you're entitled to. Our fee comes only from the additional money we recover for you.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Coverage Types -->
+        <section class="coverage-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Coverage We Help You Claim</h2>
+                    <p class="section-subtitle">Most Fire Victims Miss These Benefits</p>
+                </div>
+                
+                <div class="coverage-grid">
+                    <div class="coverage-item">
+                        <h4>Dwelling Coverage</h4>
+                        <p>Full replacement cost, not just market value</p>
+                    </div>
+                    <div class="coverage-item">
+                        <h4>Contents/Personal Property</h4>
+                        <p>Everything inside your home at replacement cost</p>
+                    </div>
+                    <div class="coverage-item">
+                        <h4>Additional Living Expenses</h4>
+                        <p>Temporary housing, meals, storage costs</p>
+                    </div>
+                    <div class="coverage-item">
+                        <h4>Code Upgrades</h4>
+                        <p>Building code compliance for rebuilding</p>
+                    </div>
+                    <div class="coverage-item">
+                        <h4>Landscaping</h4>
+                        <p>Trees, plants, outdoor structures</p>
+                    </div>
+                    <div class="coverage-item">
+                        <h4>Debris Removal</h4>
+                        <p>Cleanup and hauling costs</p>
+                    </div>
+                    <div class="coverage-item">
+                        <h4>Extended Replacement</h4>
+                        <p>Coverage above policy limits</p>
+                    </div>
+                    <div class="coverage-item">
+                        <h4>Loss of Use</h4>
+                        <p>Lost rental income for landlords</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Insurance Claim FAQs</h2>
+                    <p class="section-subtitle">Answers to Common Questions</p>
+                </div>
+                
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>Do I really need an attorney for my insurance claim?</span>
+                            <span class="faq-arrow">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>While not required, statistics show policyholders with attorneys receive 40% more on average. Insurance companies have teams of lawyers and adjusters working to minimize payouts. We level the playing field and ensure you get every dollar you're entitled to. Our fee only comes from the additional money we recover.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>My insurance company already made an offer. Is it too late?</span>
+                            <span class="faq-arrow">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>It's not too late! Initial offers rarely include everything you're owed. We can file supplemental claims for missed items, challenge undervaluations, and pursue additional coverages. Many clients come to us after receiving lowball offers and we significantly increase their recovery.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>How much do you charge?</span>
+                            <span class="faq-arrow">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We work on contingency - no upfront costs. We only get paid if we increase your recovery. Our fee is a percentage of the additional money we obtain above what the insurance company initially offers. If we don't increase your settlement, you owe us nothing.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>What if my claim was denied?</span>
+                            <span class="faq-arrow">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Don't give up! Many denied claims are wrongfully rejected. We can appeal the denial, provide additional documentation, and if necessary, file a bad faith lawsuit. Insurance companies often reverse denials when an attorney gets involved. Let us review your denial letter for free.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>How long does the process take?</span>
+                            <span class="faq-arrow">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Timeline varies by case complexity. Simple claims may resolve in 2-3 months. Complex total loss claims can take 6-12 months. Bad faith litigation may take longer but can result in significant additional compensation. We work to resolve claims as quickly as possible while maximizing your recovery.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Don't Accept Less Than You Deserve</h2>
+                    <p>Insurance companies count on you not knowing your rights. We know them all.</p>
+                    
+                    <div class="cta-buttons">
+                        <a href="tel:818-291-6217" class="btn-cta">
+                            Call: (818) 291-6217
+                        </a>
+                        <a href="https://square.site/book/0W2A8PKKPYC21/law-offices-of-rozsa-gyene-glendale-ca" class="btn-cta" style="background: transparent; border: 2px solid white; color: white;" target="_blank">
+                            Schedule Consultation
+                        </a>
+                    </div>
+                    
+                    <p style="margin-top: 2rem; font-size: 1rem; opacity: 0.9;">
+                        Free Policy Review • No Upfront Costs • 25+ Years Experience
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="contact-info">
+                    <h3 style="margin-bottom: 1rem;">Law Offices of Rozsa Gyene</h3>
+                    <p>450 N Brand Blvd Suite 600</p>
+                    <p>Glendale, CA 91203</p>
+                    <p style="margin-top: 1rem;">
+                        <strong>Phone:</strong> <a href="tel:818-291-6217">818-291-6217</a><br>
+                        <strong>Email:</strong> <a href="mailto:rozsa@fireclaimslawyer.com">rozsa@fireclaimslawyer.com</a><br>
+                        <strong>Text:</strong> <a href="sms:818-434-4541">818-434-4541</a>
+                    </p>
+                </div>
+                <p style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.8;">
+                    © 2025 Law Offices of Rozsa Gyene. All rights reserved. | 25+ Years Serving California Fire Victims
+                </p>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            faqItem.classList.toggle('active');
+        }
+        
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('navbarMenu');
+            const btn = document.querySelector('.mobile-menu-btn');
+            
+            menu.classList.toggle('active');
+            btn.classList.toggle('active');
+        }
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const navbar = document.querySelector('.navbar');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            
+            if (!navbar.contains(event.target)) {
+                document.getElementById('navbarMenu').classList.remove('active');
+                menuBtn.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
