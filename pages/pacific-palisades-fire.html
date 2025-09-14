@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacific Palisades Fire Victims - Legal Help | Law Offices of Rozsa Gyene</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        /* Simplified Navigation Bar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .navbar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            gap: 2rem;
+        }
+        
+        .navbar-logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            text-decoration: none;
+            letter-spacing: -0.02em;
+            transition: color 0.3s ease;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        
+        .navbar-logo:hover {
+            color: #dc2626;
+        }
+        
+        .navbar-menu {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-grow: 1;
+            justify-content: flex-end;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.2rem;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-link {
+            color: #475569;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.85rem;
+            padding: 0.5rem 0;
+            transition: color 0.3s ease;
+            white-space: nowrap;
+        }
+        
+        .nav-link:hover {
+            color: #dc2626;
+        }
+        
+        .nav-link.active {
+            color: #dc2626;
+            font-weight: 600;
+        }
+        
+        .navbar-cta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-shrink: 0;
+        }
+        
+        .phone-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #dc2626;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+        
+        .phone-link:hover {
+            transform: translateY(-2px);
+        }
+        
+        .btn-nav {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            color: white;
+            padding: 0.65rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 4px 14px rgba(220, 38, 38, 0.25);
+            white-space: nowrap;
+        }
+        
+        .btn-nav:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(220, 38, 38, 0.35);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        
+        .hamburger {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: #1a1a1a;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .hamburger::before,
+        .hamburger::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 2px;
+            background: #1a1a1a;
+            transition: all 0.3s ease;
+        }
+        
+        .hamburger::before {
+            top: -8px;
+        }
+        
+        .hamburger::after {
+            bottom: -8px;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 1300px) {
+            .nav-links {
+                gap: 0.8rem;
+            }
+            
+            .nav-link {
+                font-size: 0.8rem;
+            }
+            
+            .navbar-logo {
+                font-size: 1.2rem;
+            }
+        }
+        
+        @media (max-width: 1100px) {
+            .nav-links {
+                gap: 0.6rem;
+            }
+            
+            .nav-link {
+                font-size: 0.75rem;
+            }
+            
+            .phone-link {
+                font-size: 0.85rem;
+            }
+            
+            .btn-nav {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.8rem;
+            }
+        }
+        
+        @media (max-width: 968px) {
+            .navbar-menu {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                bottom: auto;
+                max-height: calc(100vh - 70px);
+                background: white;
+                flex-direction: column;
+                padding: 2rem;
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+                overflow-y: auto;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+                z-index: 999;
+            }
+            
+            .navbar-menu.active {
+                transform: translateX(0);
+                height: auto;
+                max-height: calc(100vh - 70px);
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                width: 100%;
+                gap: 0.5rem;
+            }
+            
+            .nav-link {
+                padding: 1rem;
+                font-size: 1.1rem;
+                width: 100%;
+                text-align: left;
+                border-bottom: 1px solid #f1f5f9;
+            }
+            
+            .navbar-cta {
+                flex-direction: column;
+                width: 100%;
+                margin-top: 2rem;
+                padding-top: 2rem;
+                border-top: 1px solid #e5e7eb;
+            }
+            
+            .phone-link {
+                font-size: 1.2rem;
+            }
+            
+            .btn-nav {
+                width: 100%;
+                padding: 1rem;
+                font-size: 1rem;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+        
+        .mobile-menu-btn.active .hamburger {
+            background: transparent;
+        }
+        
+        .mobile-menu-btn.active .hamburger::before {
+            transform: rotate(45deg);
+            top: 0;
+        }
+        
+        .mobile-menu-btn.active .hamburger::after {
+            transform: rotate(-45deg);
+            bottom: 0;
+        }
+        
+        /* Page Content Styles */
+        main {
+            margin-top: 70px;
+        }
+        
+        .alert-banner {
+            background: #ffc107;
+            color: #000;
+            padding: 1rem;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23111" width="1200" height="600"/><path fill="%23222" d="M0 300L50 325L100 300L150 275L200 300L250 325L300 300L350 275L400 300L450 325L500 300L550 275L600 300L650 325L700 300L750 275L800 300L850 325L900 300L950 275L1000 300L1050 325L1100 300L1150 275L1200 300V600H0V300Z"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            color: #ffa500;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #ff4444;
+            color: white;
+            padding: 15px 40px;
+            font-size: 1.2em;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        
+        .cta-button:hover {
+            background: #cc0000;
+        }
+        
+        .info-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+        
+        .card {
+            background: #f8f8f8;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .card h3 {
+            color: #ff4444;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+        
+        .stats-section {
+            background: #f0f0f0;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .stat-box {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .stat-number {
+            font-size: 2.5em;
+            color: #ff4444;
+            font-weight: bold;
+        }
+        
+        .claim-types {
+            padding: 60px 20px;
+        }
+        
+        .claim-types h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            color: #333;
+        }
+        
+        .claim-list {
+            list-style: none;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .claim-list li {
+            background: white;
+            margin: 15px 0;
+            padding: 20px;
+            border-left: 5px solid #ff4444;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .timeline-section {
+            background: #fff;
+            padding: 60px 20px;
+        }
+        
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline-item {
+            background: #f8f8f8;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            position: relative;
+            padding-left: 40px;
+        }
+        
+        .timeline-item::before {
+            content: '→';
+            position: absolute;
+            left: 15px;
+            color: #ff4444;
+            font-size: 1.5em;
+        }
+        
+        .footer-cta {
+            background: #333;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .footer-cta h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info {
+            margin: 30px 0;
+            font-size: 1.2em;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+            
+            .subtitle {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-content">
+                <!-- Logo -->
+                <a href="/" class="navbar-logo">Law Offices of Rozsa Gyene</a>
+                
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <span class="hamburger"></span>
+                </button>
+                
+                <!-- Navigation Menu -->
+                <div class="navbar-menu" id="navbarMenu">
+                    <ul class="nav-links">
+                        <li><a href="/" class="nav-link">Home</a></li>
+                        <li><a href="/eaton-fire" class="nav-link">Eaton Fire</a></li>
+                        <li><a href="/pacific-palisades-fire" class="nav-link active">Pacific Palisades Fire</a></li>
+                        <li><a href="/other-california-fires" class="nav-link">Other California Fires</a></li>
+                        <li><a href="/insurance-claim" class="nav-link">Insurance Claims</a></li>
+                        <li><a href="/estate-planning" class="nav-link">Estate Planning</a></li>
+                        <li><a href="/asset-protection" class="nav-link">Asset Protection</a></li>
+                        <li><a href="/resources" class="nav-link">Resources</a></li>
+                        <li><a href="/about" class="nav-link">About</a></li>
+                    </ul>
+                    
+                    <!-- CTA Section -->
+                    <div class="navbar-cta">
+                        <a href="tel:818-291-6217" class="phone-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+                            </svg>
+                            (818) 291-6217
+                        </a>
+                        <a href="/#intake-form" class="btn-nav">Free Case Review</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main>
+        <!-- Alert Banner -->
+        <div class="alert-banner">
+            ⚠️ URGENT: California law limits the time to file fire claims. Act now to protect your rights.
+        </div>
+
+        <section class="hero-section">
+            <div class="container">
+                <h1>Pacific Palisades Fire Victims</h1>
+                <p class="subtitle">We're Fighting for Maximum Compensation for Your Losses</p>
+                <p style="font-size: 1.2em; margin-bottom: 30px;">Lost your home or property in the Pacific Palisades fire? We'll help you get every dollar you deserve.</p>
+                <a href="/#intake-form" class="cta-button">Get Legal Help Now</a>
+            </div>
+        </section>
+
+        <section class="stats-section">
+            <div class="container">
+                <h2 style="font-size: 2.5em; margin-bottom: 20px;">Pacific Palisades Fire Impact</h2>
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <div class="stat-number">20,000+</div>
+                        <p>Acres Burned</p>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">5,000+</div>
+                        <p>Structures Destroyed</p>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">30,000+</div>
+                        <p>Residents Displaced</p>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">$10B+</div>
+                        <p>Estimated Damages</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container" style="padding: 60px 20px;">
+            <div class="info-cards">
+                <div class="card">
+                    <h3>Insurance Claim Denials</h3>
+                    <p>Is your insurance company delaying, underpaying, or denying your claim? We fight back against unfair insurance practices and get you the full coverage you paid for.</p>
+                    <ul style="margin-top: 15px; padding-left: 20px;">
+                        <li>Wrongful claim denials</li>
+                        <li>Undervalued property losses</li>
+                        <li>Delayed payments</li>
+                        <li>Bad faith practices</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3>Utility Company Liability</h3>
+                    <p>If utility equipment or power lines caused or contributed to the Pacific Palisades fire, you may be entitled to compensation beyond insurance limits.</p>
+                    <ul style="margin-top: 15px; padding-left: 20px;">
+                        <li>Equipment failure claims</li>
+                        <li>Negligent maintenance</li>
+                        <li>Failure to de-energize</li>
+                        <li>Vegetation management failures</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3>Total Loss Recovery</h3>
+                    <p>We help you document and recover compensation for ALL your losses, not just what insurance wants to pay.</p>
+                    <ul style="margin-top: 15px; padding-left: 20px;">
+                        <li>Home and structures</li>
+                        <li>Personal property</li>
+                        <li>Additional living expenses</li>
+                        <li>Lost income</li>
+                        <li>Emotional distress</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="claim-types">
+            <div class="container">
+                <h2>We Handle All Pacific Palisades Fire Claims</h2>
+                <ul class="claim-list">
+                    <li>
+                        <strong>Homeowner Claims:</strong> Total loss of residence, smoke damage, water damage from firefighting efforts, landscaping losses
+                    </li>
+                    <li>
+                        <strong>Business Losses:</strong> Commercial property damage, business interruption, lost inventory, equipment losses
+                    </li>
+                    <li>
+                        <strong>Personal Property:</strong> Furniture, electronics, jewelry, artwork, vehicles, family heirlooms
+                    </li>
+                    <li>
+                        <strong>Additional Living Expenses:</strong> Temporary housing, increased food costs, transportation, storage fees
+                    </li>
+                    <li>
+                        <strong>Emotional Distress:</strong> Trauma from evacuation, loss of irreplaceable items, displacement anxiety
+                    </li>
+                    <li>
+                        <strong>Property Value Loss:</strong> Diminished value claims for partially damaged properties
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <div class="container">
+                <h2 style="text-align: center; font-size: 2.5em; margin-bottom: 40px;">Your Path to Recovery</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h4>Step 1: Free Consultation</h4>
+                        <p>Call us today for a free, no-obligation review of your situation. We'll explain all your legal options.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Step 2: Document Your Losses</h4>
+                        <p>We help you properly document all damages and losses to maximize your recovery.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Step 3: File All Claims</h4>
+                        <p>We handle insurance claims, appeals, and lawsuits against responsible parties.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Step 4: Fight for Maximum Recovery</h4>
+                        <p>We negotiate aggressively and litigate when necessary to get you every dollar you deserve.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Step 5: Rebuild Your Life</h4>
+                        <p>Get the compensation you need to rebuild your home and move forward.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section style="background: #fff5f5; padding: 60px 20px;">
+            <div class="container">
+                <h2 style="text-align: center; font-size: 2.5em; margin-bottom: 40px; color: #ff4444;">Why Pacific Palisades Victims Choose Us</h2>
+                <div class="info-cards">
+                    <div class="card">
+                        <h3>No Upfront Costs</h3>
+                        <p>You pay nothing unless we win. We advance all costs and only get paid when you get compensated.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Local Experience</h3>
+                        <p>We understand Pacific Palisades property values, local regulations, and community needs.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Proven Results</h3>
+                        <p>Track record of securing maximum compensation for wildfire victims throughout California.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="footer-cta" id="contact">
+            <div class="container">
+                <h2>Don't Let Time Run Out on Your Pacific Palisades Fire Claim</h2>
+                <p style="font-size: 1.3em; margin: 20px 0;">California law sets strict deadlines for fire-related claims. Every day matters.</p>
+                
+                <div class="contact-info">
+                    <p style="font-size: 1.5em; font-weight: bold; color: #ffa500;">Free Consultation Available Now</p>
+                    <p>📞 Call: <a href="tel:818-291-6217" style="color: white;">818-291-6217</a></p>
+                    <p>📧 Email: <a href="mailto:rozsa@fireclaimslawyer.com" style="color: white;">rozsa@fireclaimslawyer.com</a></p>
+                    <p>💬 Text: 818-434-4541</p>
+                    <p>🗣️ Se Habla Español</p>
+                </div>
+                
+                <a href="/#intake-form" class="cta-button" style="margin-top: 20px;">Start Your Case Review</a>
+                
+                <p style="margin-top: 30px; font-size: 0.9em; opacity: 0.8;">
+                    Law Offices of Rozsa Gyene | 450 N Brand Blvd Suite 600, Glendale CA 91203<br>
+                    Serving all Pacific Palisades fire victims including Highlands, Huntington Palisades, Alphabet Streets, Marquez Knolls, and surrounding areas.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('navbarMenu');
+            const btn = document.querySelector('.mobile-menu-btn');
+            
+            menu.classList.toggle('active');
+            btn.classList.toggle('active');
+        }
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const navbar = document.querySelector('.navbar');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            
+            if (!navbar.contains(event.target)) {
+                document.getElementById('navbarMenu').classList.remove('active');
+                menuBtn.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
