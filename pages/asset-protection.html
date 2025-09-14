@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asset Protection for Fire Victims - Shield Your Recovery | Law Offices of Rozsa Gyene</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {margin:0;padding:0;box-sizing:border-box}
+        body {font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.6;color:#333}
+        
+        /* Updated Navigation - Matching Sample */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .navbar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            gap: 2rem;
+        }
+        
+        .navbar-logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            text-decoration: none;
+            letter-spacing: -0.02em;
+            transition: color 0.3s ease;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        
+        .navbar-logo:hover {
+            color: #dc2626;
+        }
+        
+        .navbar-menu {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-grow: 1;
+            justify-content: flex-end;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.2rem;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-link {
+            color: #475569;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.85rem;
+            padding: 0.5rem 0;
+            transition: color 0.3s ease;
+            white-space: nowrap;
+        }
+        
+        .nav-link:hover {
+            color: #dc2626;
+        }
+        
+        .nav-link.active {
+            color: #dc2626;
+            font-weight: 600;
+        }
+        
+        .navbar-cta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-shrink: 0;
+        }
+        
+        .phone-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #dc2626;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+        
+        .phone-link:hover {
+            transform: translateY(-2px);
+        }
+        
+        .btn-nav {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            color: white;
+            padding: 0.65rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 4px 14px rgba(220, 38, 38, 0.25);
+            white-space: nowrap;
+        }
+        
+        .btn-nav:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(220, 38, 38, 0.35);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        
+        .hamburger {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: #1a1a1a;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .hamburger::before,
+        .hamburger::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 2px;
+            background: #1a1a1a;
+            transition: all 0.3s ease;
+        }
+        
+        .hamburger::before {
+            top: -8px;
+        }
+        
+        .hamburger::after {
+            bottom: -8px;
+        }
+        
+        /* Mobile Responsive Navigation */
+        @media (max-width: 1300px) {
+            .nav-links {
+                gap: 0.8rem;
+            }
+            
+            .nav-link {
+                font-size: 0.8rem;
+            }
+            
+            .navbar-logo {
+                font-size: 1.2rem;
+            }
+        }
+        
+        @media (max-width: 1100px) {
+            .nav-links {
+                gap: 0.6rem;
+            }
+            
+            .nav-link {
+                font-size: 0.75rem;
+            }
+            
+            .phone-link {
+                font-size: 0.85rem;
+            }
+            
+            .btn-nav {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.8rem;
+            }
+        }
+        
+        @media (max-width: 968px) {
+            .navbar-menu {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                bottom: auto;
+                max-height: calc(100vh - 70px);
+                background: white;
+                flex-direction: column;
+                padding: 2rem;
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+                overflow-y: auto;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+                z-index: 999;
+            }
+            
+            .navbar-menu.active {
+                transform: translateX(0);
+                height: auto;
+                max-height: calc(100vh - 70px);
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                width: 100%;
+                gap: 0.5rem;
+            }
+            
+            .nav-link {
+                padding: 1rem;
+                font-size: 1.1rem;
+                width: 100%;
+                text-align: left;
+                border-bottom: 1px solid #f1f5f9;
+            }
+            
+            .navbar-cta {
+                flex-direction: column;
+                width: 100%;
+                margin-top: 2rem;
+                padding-top: 2rem;
+                border-top: 1px solid #e5e7eb;
+            }
+            
+            .phone-link {
+                font-size: 1.2rem;
+            }
+            
+            .btn-nav {
+                width: 100%;
+                padding: 1rem;
+                font-size: 1rem;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+        
+        .mobile-menu-btn.active .hamburger {
+            background: transparent;
+        }
+        
+        .mobile-menu-btn.active .hamburger::before {
+            transform: rotate(45deg);
+            top: 0;
+        }
+        
+        .mobile-menu-btn.active .hamburger::after {
+            transform: rotate(-45deg);
+            bottom: 0;
+        }
+        
+        /* Main Content */
+        main {margin-top:70px}
+        .container {max-width:1200px;margin:0 auto;padding:0 20px}
+        h1 {font-size:3.5em;margin-bottom:20px;font-weight:700;text-shadow:2px 2px 4px rgba(0,0,0,0.5)}
+        h2 {font-size:2.5em;margin-bottom:40px;text-align:center}
+        h3 {font-size:1.5em;margin-bottom:15px}
+        
+        /* Sections */
+        .hero-section {background:linear-gradient(rgba(20,40,20,0.9),rgba(20,40,20,0.9)),url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23142814" width="1200" height="600"/><circle cx="600" cy="300" r="200" fill="none" stroke="%234CAF50" stroke-width="3" opacity="0.3"/></svg>');background-size:cover;background-position:center;color:white;padding:100px 20px;text-align:center}
+        .subtitle {font-size:1.5em;margin-bottom:30px;color:#90EE90}
+        .experience-badge {display:inline-block;background:#ffd700;color:#1a1a1a;padding:10px 25px;border-radius:50px;font-weight:bold;font-size:1.1em;margin-bottom:20px}
+        .cta-button {display:inline-block;background:#4CAF50;color:white;padding:18px 45px;font-size:1.3em;text-decoration:none;border-radius:5px;font-weight:bold;transition:all 0.3s;box-shadow:0 4px 15px rgba(76,175,80,0.4);cursor:pointer;border:none}
+        .cta-button:hover {background:#2E7D32;transform:translateY(-2px);box-shadow:0 6px 20px rgba(76,175,80,0.5)}
+        
+        .threat-banner {background:#ff4444;color:white;padding:25px 20px;text-align:center;font-size:1.2em;font-weight:bold}
+        .threats-section,.case-studies,.faq-section {padding:60px 20px;background:#f8f9fa}
+        .strategies-section,.process-section {padding:60px 20px;background:white}
+        .solutions-section {background:#2E7D32;color:white;padding:60px 20px}
+        .timing-section {background:#1a1a1a;color:white;padding:60px 20px}
+        .footer-cta {background:linear-gradient(135deg,#1a1a1a 0%,#2E7D32 100%);color:white;padding:80px 20px;text-align:center}
+        
+        /* Grids */
+        .threat-grid,.case-grid,.solution-boxes,.process-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:30px;margin-top:40px}
+        .process-grid {grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+        .faq-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(400px,1fr));gap:30px;margin-top:40px}
+        
+        /* Cards */
+        .threat-card,.case-card,.faq-item {background:white;padding:35px;border-radius:10px;box-shadow:0 5px 20px rgba(0,0,0,0.1)}
+        .threat-card {border-top:5px solid #ff4444}
+        .threat-card h3 {color:#ff4444;display:flex;align-items:center;gap:10px}
+        .threat-icon {font-size:1.5em}
+        
+        .solution-box {background:rgba(255,255,255,0.1);padding:35px;border-radius:10px;border:2px solid #90EE90;transition:transform 0.3s}
+        .solution-box:hover {transform:translateY(-5px);background:rgba(255,255,255,0.15)}
+        .solution-box h3 {color:#90EE90;margin-bottom:20px;font-size:1.6em}
+        .solution-box ul {list-style:none;padding:0}
+        .solution-box li {padding:8px 0 8px 25px;position:relative}
+        .solution-box li::before {content:'✓';position:absolute;left:0;color:#90EE90;font-weight:bold;font-size:1.2em}
+        
+        .case-card {position:relative;overflow:hidden}
+        .case-card::before {content:'PROTECTED';position:absolute;top:10px;right:-30px;background:#4CAF50;color:white;padding:5px 40px;transform:rotate(45deg);font-weight:bold;font-size:0.8em}
+        .case-result {font-size:1.5em;color:#4CAF50;font-weight:bold;margin-top:15px}
+        
+        .process-card {text-align:center;padding:30px;background:#f8f8f8;border-radius:10px;transition:all 0.3s}
+        .process-card:hover {transform:translateY(-5px);box-shadow:0 10px 30px rgba(0,0,0,0.1)}
+        .process-number {display:inline-block;width:60px;height:60px;background:#4CAF50;color:white;border-radius:50%;line-height:60px;font-size:1.5em;font-weight:bold;margin-bottom:20px}
+        
+        .faq-item {border-left:4px solid #4CAF50}
+        .faq-item h3 {color:#4CAF50}
+        
+        /* Table */
+        .strategy-table {background:#f8f8f8;border-radius:10px;overflow:hidden;box-shadow:0 5px 20px rgba(0,0,0,0.1);margin-top:40px}
+        .strategy-table table {width:100%;border-collapse:collapse}
+        .strategy-table th {background:#4CAF50;color:white;padding:20px;text-align:left;font-size:1.2em}
+        .strategy-table td {padding:20px;border-bottom:1px solid #ddd}
+        .strategy-table tr:last-child td {border-bottom:none}
+        .strategy-table tr:nth-child(even) {background:white}
+        .level-badge {display:inline-block;padding:5px 15px;border-radius:20px;font-size:0.9em;font-weight:bold}
+        .level-basic {background:#e3f2fd;color:#1976d2}
+        .level-enhanced {background:#fff3e0;color:#f57c00}
+        .level-maximum {background:#f3e5f5;color:#7b1fa2}
+        
+        /* Timeline */
+        .timeline {max-width:900px;margin:40px auto;position:relative}
+        .timeline::before {content:'';position:absolute;left:50%;top:0;bottom:0;width:3px;background:#4CAF50}
+        .timeline-item {position:relative;width:50%;padding:30px}
+        .timeline-item:nth-child(odd) {left:0;text-align:right;padding-right:50px}
+        .timeline-item:nth-child(even) {left:50%;padding-left:50px}
+        .timeline-dot {position:absolute;width:20px;height:20px;background:#4CAF50;border:4px solid #1a1a1a;border-radius:50%;top:35px}
+        .timeline-item:nth-child(odd) .timeline-dot {right:-10px}
+        .timeline-item:nth-child(even) .timeline-dot {left:-10px}
+        .timeline-item h3 {color:#4CAF50;margin-bottom:10px}
+        
+        .urgency-box {background:rgba(255,68,68,0.1);border:2px solid #ff4444;padding:30px;margin:30px auto;max-width:800px;border-radius:10px}
+        
+        /* Modal */
+        .modal {display:none;position:fixed;z-index:2000;left:0;top:0;width:100%;height:100%;background-color:rgba(0,0,0,0.8);opacity:0;transition:opacity 0.3s ease;overflow-y:auto}
+        .modal.show {opacity:1}
+        .modal-content {background-color:#fefefe;margin:5% auto;margin-bottom:5%;padding:0;width:90%;max-width:600px;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,0.3);transform:translateY(-50px);transition:transform 0.3s ease;position:relative}
+        .modal.show .modal-content {transform:translateY(0)}
+        .modal-header {background:linear-gradient(135deg,#4CAF50 0%,#2E7D32 100%);color:white;padding:2rem;border-radius:12px 12px 0 0;text-align:center}
+        .modal-header h2 {font-size:2rem;margin-bottom:0.5rem}
+        .modal-header p {font-size:1.1rem;opacity:0.9}
+        .close {color:white;float:right;font-size:28px;font-weight:bold;cursor:pointer;transition:all 0.3s ease}
+        .close:hover {transform:scale(1.2)}
+        .modal-body {padding:2.5rem}
+        .analysis-form {display:flex;flex-direction:column;gap:1.5rem}
+        .form-group {display:flex;flex-direction:column}
+        .form-label {font-weight:600;margin-bottom:0.5rem;color:#333;font-size:1rem}
+        .form-input,.form-select,.form-textarea {padding:0.875rem;border:2px solid #e5e7eb;border-radius:8px;font-size:1rem;transition:all 0.3s ease;font-family:inherit}
+        .form-input:focus,.form-select:focus,.form-textarea:focus {outline:none;border-color:#4CAF50;box-shadow:0 0 0 3px rgba(76,175,80,0.1)}
+        .form-textarea {min-height:100px;resize:vertical}
+        .form-button {background:linear-gradient(135deg,#4CAF50 0%,#2E7D32 100%);color:white;padding:1rem 2rem;border:none;border-radius:8px;font-size:1.1rem;font-weight:600;cursor:pointer;transition:all 0.3s ease;box-shadow:0 4px 15px rgba(76,175,80,0.3)}
+        .form-button:hover {transform:translateY(-2px);box-shadow:0 6px 20px rgba(76,175,80,0.4)}
+        .form-note {text-align:center;font-size:0.9rem;color:#666;margin-top:1rem}
+        
+        /* Mobile */
+        @media (max-width:768px) {
+            h1 {font-size:2.5em}
+            .timeline::before {left:20px}
+            .timeline-item {width:100%;left:0!important;padding-left:60px!important;text-align:left!important;padding-right:20px!important}
+            .timeline-dot {left:10px!important}
+            .threat-grid,.faq-grid {grid-template-columns:1fr}
+            .modal-content {width:95%;margin:2% auto;margin-bottom:2%;max-height:96vh;overflow-y:auto}
+            .modal-header {position:sticky;top:0;z-index:10}
+            .modal-body {padding:1.5rem;padding-bottom:2rem}
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-content">
+                <!-- Logo -->
+                <a href="/" class="navbar-logo">Law Offices of Rozsa Gyene</a>
+                
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <span class="hamburger"></span>
+                </button>
+                
+                <!-- Navigation Menu -->
+                <div class="navbar-menu" id="navbarMenu">
+                    <ul class="nav-links">
+                        <li><a href="/" class="nav-link">Home</a></li>
+                        <li><a href="/eaton-fire" class="nav-link">Eaton Fire</a></li>
+                        <li><a href="/pacific-palisades-fire" class="nav-link">Pacific Palisades Fire</a></li>
+                        <li><a href="/other-california-fires" class="nav-link">Other California Fires</a></li>
+                        <li><a href="/insurance-claim" class="nav-link">Insurance Claims</a></li>
+                        <li><a href="/estate-planning" class="nav-link">Estate Planning</a></li>
+                        <li><a href="/asset-protection" class="nav-link active">Asset Protection</a></li>
+                        <li><a href="/resources" class="nav-link">Resources</a></li>
+                        <li><a href="/about" class="nav-link">About</a></li>
+                    </ul>
+                    
+                    <!-- CTA Section -->
+                    <div class="navbar-cta">
+                        <a href="tel:818-291-6217" class="phone-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+                            </svg>
+                            (818) 291-6217
+                        </a>
+                        <a href="/#intake-form" class="btn-nav">Free Case Review</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="threat-banner">
+            ⚠️ WARNING: Fire settlements and insurance payouts make you a target for lawsuits, creditors, and predators ⚠️
+        </div>
+
+        <section class="hero-section">
+            <div class="container">
+                <div class="experience-badge">25+ Years Protecting California Families</div>
+                <h1>Asset Protection for Fire Victims</h1>
+                <p class="subtitle">Shield Your Settlement. Secure Your Recovery. Sleep Soundly Again.</p>
+                <p style="font-size:1.3em;margin-bottom:30px">Don't let creditors, lawsuits, or predators take what the fire couldn't.</p>
+                <a href="https://square.site/book/0W2A8PKKPYC21/law-offices-of-rozsa-gyene-glendale-ca" class="cta-button" target="_blank">Protect Your Assets Now</a>
+            </div>
+        </section>
+
+        <section class="threats-section">
+            <div class="container">
+                <h2>Threats to Your Fire Recovery</h2>
+                <p style="text-align:center;font-size:1.2em;max-width:800px;margin:0 auto 40px">After receiving insurance settlements or lawsuit awards, fire victims face new vulnerabilities. Here's what you're up against:</p>
+                
+                <div class="threat-grid">
+                    <div class="threat-card">
+                        <h3><span class="threat-icon">⚖️</span> Lawsuit Target</h3>
+                        <p>Large settlements make you a magnet for frivolous lawsuits. Contractors, business partners, even family members may see you as a "deep pocket" worth suing.</p>
+                    </div>
+                    <div class="threat-card">
+                        <h3><span class="threat-icon">💔</span> Divorce Risk</h3>
+                        <p>Fire trauma strains marriages. Statistics show 75% of couples face relationship stress after disasters. Without protection, your settlement could be split in divorce.</p>
+                    </div>
+                    <div class="threat-card">
+                        <h3><span class="threat-icon">🏥</span> Medical Creditors</h3>
+                        <p>Future medical issues or long-term care needs could consume your entire recovery. Medicare and Medicaid can place liens on unprotected assets.</p>
+                    </div>
+                    <div class="threat-card">
+                        <h3><span class="threat-icon">🏗️</span> Contractor Disputes</h3>
+                        <p>Rebuilding creates contractor liability. Mechanics liens, construction defects, and payment disputes can attach to your settlement funds.</p>
+                    </div>
+                    <div class="threat-card">
+                        <h3><span class="threat-icon">💸</span> Tax Liabilities</h3>
+                        <p>Improper handling of settlements creates massive tax bills. The IRS has extraordinary collection powers that pierce most basic protections.</p>
+                    </div>
+                    <div class="threat-card">
+                        <h3><span class="threat-icon">👥</span> Family Predators</h3>
+                        <p>Relatives with "business opportunities" or financial emergencies suddenly appear. Elder abuse and financial exploitation spike after large settlements.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="solutions-section">
+            <div class="container">
+                <h2>Proven Asset Protection Solutions</h2>
+                <p style="text-align:center;font-size:1.2em;margin-bottom:40px">With 25+ years of experience, I implement sophisticated strategies to shield your recovery.</p>
+                
+                <div class="solution-boxes">
+                    <div class="solution-box">
+                        <h3>🏛️ Domestic Asset Protection Trusts</h3>
+                        <p>The gold standard of protection. Your assets are shielded from creditors while you maintain beneficial access.</p>
+                        <ul>
+                            <li>Complete creditor protection</li>
+                            <li>You remain a beneficiary</li>
+                            <li>Flexible distribution terms</li>
+                            <li>Estate tax benefits</li>
+                            <li>Privacy protection</li>
+                        </ul>
+                    </div>
+                    <div class="solution-box">
+                        <h3>🏘️ Limited Liability Companies</h3>
+                        <p>Perfect for protecting rebuilt properties and rental income. Creates legal separation between you and assets.</p>
+                        <ul>
+                            <li>Charging order protection</li>
+                            <li>Operational flexibility</li>
+                            <li>Pass-through taxation</li>
+                            <li>Multi-member enhanced protection</li>
+                            <li>Series LLC options</li>
+                        </ul>
+                    </div>
+                    <div class="solution-box">
+                        <h3>👨‍👩‍👧‍👦 Family Limited Partnerships</h3>
+                        <p>Protect wealth while maintaining family control. Excellent for larger settlements with estate planning goals.</p>
+                        <ul>
+                            <li>Valuation discounts</li>
+                            <li>Centralized management</li>
+                            <li>Successor planning</li>
+                            <li>Creditor protection</li>
+                            <li>Tax efficiency</li>
+                        </ul>
+                    </div>
+                    <div class="solution-box">
+                        <h3>🌴 Offshore Protection</h3>
+                        <p>For maximum protection of larger settlements. Legal, ethical, and extremely effective when properly structured.</p>
+                        <ul>
+                            <li>Highest level protection</li>
+                            <li>Favorable foreign laws</li>
+                            <li>Statute of limitations benefits</li>
+                            <li>Enhanced privacy</li>
+                            <li>Geographic diversification</li>
+                        </ul>
+                    </div>
+                    <div class="solution-box">
+                        <h3>🏡 Homestead & Exemptions</h3>
+                        <p>Maximize California's protection laws for your rebuilt home and essential assets.</p>
+                        <ul>
+                            <li>Homestead declarations</li>
+                            <li>Retirement account protection</li>
+                            <li>Life insurance exemptions</li>
+                            <li>Personal property exemptions</li>
+                            <li>Wage exemptions</li>
+                        </ul>
+                    </div>
+                    <div class="solution-box">
+                        <h3>📊 Equity Stripping</h3>
+                        <p>Strategic use of liens and encumbrances to make assets unattractive to creditors.</p>
+                        <ul>
+                            <li>Friendly liens</li>
+                            <li>Sale-leaseback arrangements</li>
+                            <li>Strategic debt placement</li>
+                            <li>Cross-collateralization</li>
+                            <li>Synthetic equity reduction</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="strategies-section">
+            <div class="container">
+                <h2>Protection Levels Based on Settlement Size</h2>
+                <div class="strategy-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Settlement Amount</th>
+                                <th>Protection Strategy</th>
+                                <th>Key Benefits</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Under $500,000</strong><br><span class="level-badge level-basic">Basic Protection</span></td>
+                                <td>• Revocable Trust with spendthrift provisions<br>• Homestead declaration<br>• Basic LLC for rental property<br>• Retirement account maximization</td>
+                                <td>Cost-effective protection, maintains flexibility, shields primary assets</td>
+                            </tr>
+                            <tr>
+                                <td><strong>$500,000 - $2 Million</strong><br><span class="level-badge level-enhanced">Enhanced Protection</span></td>
+                                <td>• Domestic Asset Protection Trust<br>• Multiple LLCs for properties<br>• Family Limited Partnership<br>• Strategic life insurance placement</td>
+                                <td>Strong creditor protection, estate tax planning, maintains control</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Over $2 Million</strong><br><span class="level-badge level-maximum">Maximum Protection</span></td>
+                                <td>• Offshore trust structures<br>• Multiple entity layering<br>• Private placement insurance<br>• International diversification</td>
+                                <td>Highest protection level, global diversification, maximum privacy</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section class="timing-section">
+            <div class="container">
+                <h2 style="color:#4CAF50">Critical Timing for Fire Victims</h2>
+                <p style="text-align:center;font-size:1.2em;margin-bottom:40px">Asset protection must be implemented BEFORE threats materialize. Here's your timeline:</p>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h3>Immediately After Fire</h3>
+                        <p>Begin planning before settlements arrive. Pre-positioning provides maximum options and protection.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h3>Before Settlement Receipt</h3>
+                        <p>Structure protection BEFORE receiving funds. This avoids fraudulent transfer issues and maximizes effectiveness.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h3>During Rebuilding</h3>
+                        <p>Protect construction funds and progress payments. Shield yourself from contractor disputes and mechanics liens.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h3>Post-Recovery</h3>
+                        <p>Maintain and update protection as assets grow. Regular reviews ensure continued effectiveness.</p>
+                    </div>
+                </div>
+                
+                <p style="text-align:center;margin-top:40px;font-size:1.3em;color:#ff4444">
+                    ⚠️ WARNING: Protection implemented after threats arise may be reversed as fraudulent transfers
+                </p>
+            </div>
+        </section>
+
+        <section class="case-studies">
+            <div class="container">
+                <h2>Real Protection Success Stories</h2>
+                <div class="case-grid">
+                    <div class="case-card">
+                        <h3>Paradise Fire Couple</h3>
+                        <p><strong>Threat:</strong> $1.2M settlement attracted lawsuit from former business partner claiming old debt.</p>
+                        <p><strong>Protection:</strong> Domestic Asset Protection Trust created before settlement receipt.</p>
+                        <div class="case-result">Result: 100% Protected - Lawsuit Dismissed</div>
+                    </div>
+                    <div class="case-card">
+                        <h3>Woolsey Fire Family</h3>
+                        <p><strong>Threat:</strong> Contractor filed $400K lien during rebuild, claiming underpayment.</p>
+                        <p><strong>Protection:</strong> Construction funds held in protected LLC with proper contracts.</p>
+                        <div class="case-result">Result: Settlement Funds Safe - Lien Defeated</div>
+                    </div>
+                    <div class="case-card">
+                        <h3>Wine Country Business Owner</h3>
+                        <p><strong>Threat:</strong> IRS claimed $800K in taxes on improperly structured settlement.</p>
+                        <p><strong>Protection:</strong> Advance tax planning and qualified settlement fund structure.</p>
+                        <div class="case-result">Result: Tax Bill Reduced to $125K</div>
+                    </div>
+                    <div class="case-card">
+                        <h3>Malibu Estate Owner</h3>
+                        <p><strong>Threat:</strong> Adult child's divorce threatened to attach parents' fire settlement.</p>
+                        <p><strong>Protection:</strong> Family Limited Partnership with anti-alienation provisions.</p>
+                        <div class="case-result">Result: Zero Settlement Exposed</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="process-section">
+            <div class="container">
+                <h2>Our Asset Protection Process</h2>
+                <div class="process-grid">
+                    <div class="process-card">
+                        <div class="process-number">1</div>
+                        <h3>Threat Assessment</h3>
+                        <p>Analyze your specific vulnerabilities and identify current and future risks to your recovery.</p>
+                    </div>
+                    <div class="process-card">
+                        <div class="process-number">2</div>
+                        <h3>Strategy Design</h3>
+                        <p>Create customized protection plan based on settlement size, family situation, and risk profile.</p>
+                    </div>
+                    <div class="process-card">
+                        <div class="process-number">3</div>
+                        <h3>Implementation</h3>
+                        <p>Form entities, draft documents, and transfer assets with proper legal formalities.</p>
+                    </div>
+                    <div class="process-card">
+                        <div class="process-number">4</div>
+                        <h3>Integration</h3>
+                        <p>Coordinate with your estate plan, tax strategy, and insurance for comprehensive protection.</p>
+                    </div>
+                    <div class="process-card">
+                        <div class="process-number">5</div>
+                        <h3>Maintenance</h3>
+                        <p>Annual reviews and updates ensure continued effectiveness as laws and circumstances change.</p>
+                    </div>
+                    <div class="process-card">
+                        <div class="process-number">6</div>
+                        <h3>Defense Support</h3>
+                        <p>If threats materialize, we coordinate defense strategy with litigation counsel.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <div class="container">
+                <h2>Asset Protection FAQs</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3>Is asset protection legal?</h3>
+                        <p>Absolutely. Asset protection is legal, ethical, and smart when done properly. It's illegal only when used to defraud existing creditors. That's why timing is critical.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Will I lose control of my assets?</h3>
+                        <p>No. Modern asset protection maintains your beneficial access and control while shielding from creditors. You can still use, enjoy, and benefit from protected assets.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How much does asset protection cost?</h3>
+                        <p>Basic protection starts at $5,000. Comprehensive strategies range from $10,000-$25,000 depending on complexity. This is minimal compared to losing your entire settlement.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Can I protect assets after being sued?</h3>
+                        <p>Limited options exist, but transfers after lawsuits or claims can be reversed as fraudulent. This is why we emphasize protecting assets BEFORE problems arise.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Do I need protection if I have insurance?</h3>
+                        <p>Yes! Insurance has limits, exclusions, and can be denied. Asset protection is your backup when insurance fails or isn't enough.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How long does protection last?</h3>
+                        <p>Properly structured protection lasts indefinitely with periodic maintenance. We provide ongoing support to ensure continued effectiveness.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="footer-cta" id="contact">
+            <div class="container">
+                <h2 style="font-size:3em;margin-bottom:30px;color:#90EE90">Don't Let Them Take What the Fire Didn't</h2>
+                
+                <div class="urgency-box">
+                    <p style="font-size:1.3em;font-weight:bold;margin-bottom:15px">⏰ Time-Sensitive Protection</p>
+                    <p>Asset protection MUST be implemented before threats materialize. Once you're sued or receive a claim, it's too late. Every day without protection is a day at risk.</p>
+                </div>
+                
+                <div style="background:rgba(255,255,255,0.1);padding:40px;border-radius:10px;margin:40px 0">
+                    <h3 style="font-size:1.8em;margin-bottom:25px;color:#ffd700">Free Asset Protection Analysis Includes:</h3>
+                    <p style="font-size:1.2em;margin-bottom:15px">✓ Personal threat assessment</p>
+                    <p style="font-size:1.2em;margin-bottom:15px">✓ Custom protection strategy outline</p>
+                    <p style="font-size:1.2em;margin-bottom:15px">✓ Cost-benefit analysis</p>
+                    <p style="font-size:1.2em;margin-bottom:15px">✓ Implementation timeline</p>
+                    <p style="font-size:1.2em">✓ Integration with existing planning</p>
+                </div>
+                
+                <div style="font-size:1.3em;margin:40px 0">
+                    <p style="font-weight:bold;color:#ffd700;font-size:1.5em;margin-bottom:20px">Protect Your Recovery Today</p>
+                    <p>📞 Direct Line: 818-291-6217</p>
+                    <p>📧 Email: rozsa@fireclaimslawyer.com</p>
+                    <p>💬 Text: 818-434-4541</p>
+                    <p style="margin-top:15px">Confidential Consultations • Evening/Weekend Available</p>
+                </div>
+                
+                <button onclick="openModal()" class="cta-button" style="font-size:1.3em;padding:20px 50px;background:#ffd700;color:#1a1a1a">Get Your Free Protection Analysis Now</button>
+                
+                <p style="margin-top:40px;font-size:0.9em;opacity:0.8">
+                    Law Offices of Rozsa Gyene | 450 N Brand Blvd Suite 600, Glendale CA 91203<br>
+                    25+ Years Protecting California Families | Asset Protection Attorney
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal -->
+    <div id="analysisModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2>Get Your Free Asset Protection Analysis</h2>
+                <p>Discover Your Vulnerabilities & Protection Options</p>
+            </div>
+            <div class="modal-body">
+                <form action="https://getform.io/f/bolzgzla" method="POST" class="analysis-form">
+                    <div class="form-group">
+                        <label class="form-label">First Name</label>
+                        <input type="text" name="first_name" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Last Name</label>
+                        <input type="text" name="last_name" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email Address</label>
+                        <input type="email" name="email" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Phone Number</label>
+                        <input type="tel" name="phone" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Which fire affected you?</label>
+                        <select name="fire_affected" class="form-select" required>
+                            <option value="">Select a fire</option>
+                            <option value="Pacific Palisades Fire">Pacific Palisades Fire</option>
+                            <option value="Eaton Fire">Eaton Fire</option>
+                            <option value="Santa Maria Fire">Santa Maria Fire</option>
+                            <option value="Other California Fire">Other California Fire</option>
+                            <option value="Not a fire victim">Not a fire victim</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Estimated Settlement/Asset Value</label>
+                        <select name="asset_value" class="form-select">
+                            <option value="">Select range (optional)</option>
+                            <option value="Under $500,000">Under $500,000</option>
+                            <option value="$500,000 - $1 Million">$500,000 - $1 Million</option>
+                            <option value="$1 Million - $2 Million">$1 Million - $2 Million</option>
+                            <option value="$2 Million - $5 Million">$2 Million - $5 Million</option>
+                            <option value="Over $5 Million">Over $5 Million</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">What assets concern you most? (Optional)</label>
+                        <textarea name="asset_concerns" class="form-textarea" placeholder="E.g., insurance settlement, lawsuit recovery, rebuilt home, rental properties..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Primary protection goals</label>
+                        <select name="protection_goals" class="form-select">
+                            <option value="">Select your main concern</option>
+                            <option value="Lawsuit protection">Protection from lawsuits</option>
+                            <option value="Creditor protection">Shield from creditors</option>
+                            <option value="Divorce protection">Safeguard in divorce</option>
+                            <option value="Tax minimization">Minimize taxes</option>
+                            <option value="Privacy">Maintain privacy</option>
+                            <option value="General protection">General asset protection</option>
+                        </select>
+                    </div>
+                    <input type="hidden" name="form_type" value="asset_protection_analysis_request">
+                    <input type="hidden" name="analysis_requested" value="Asset Protection Analysis for Fire Victims">
+                    <button type="submit" class="form-button">Get My Free Protection Analysis</button>
+                    <p class="form-note">Your analysis will be prepared and sent within 24 hours. We'll also schedule a confidential consultation to discuss your protection options.</p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Navigation -->
+    <script>
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('navbarMenu');
+            const btn = document.querySelector('.mobile-menu-btn');
+            
+            menu.classList.toggle('active');
+            btn.classList.toggle('active');
+        }
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const navbar = document.querySelector('.navbar');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            
+            if (!navbar.contains(event.target)) {
+                document.getElementById('navbarMenu').classList.remove('active');
+                menuBtn.classList.remove('active');
+            }
+        });
+        
+        // Modal functions
+        function openModal() {
+            const modal = document.getElementById('analysisModal');
+            modal.style.display = 'block';
+            setTimeout(() => {
+                modal.classList.add('show');
+            }, 10);
+        }
+        
+        function closeModal() {
+            const modal = document.getElementById('analysisModal');
+            modal.classList.remove('show');
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 300);
+        }
+        
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('analysisModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>
