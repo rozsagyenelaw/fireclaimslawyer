@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fire Victim Legal Help - Law Offices of Rozsa Gyene | 25+ Years Experience</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        /* Simplified Navigation Bar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .navbar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            gap: 2rem;
+        }
+        
+        .navbar-logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            text-decoration: none;
+            letter-spacing: -0.02em;
+            transition: color 0.3s ease;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        
+        .navbar-logo:hover {
+            color: #dc2626;
+        }
+        
+        .navbar-menu {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-grow: 1;
+            justify-content: flex-end;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.2rem;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-link {
+            color: #475569;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.85rem;
+            padding: 0.5rem 0;
+            transition: color 0.3s ease;
+            white-space: nowrap;
+        }
+        
+        .nav-link:hover {
+            color: #dc2626;
+        }
+        
+        .nav-link.active {
+            color: #dc2626;
+            font-weight: 600;
+        }
+        
+        .navbar-cta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-shrink: 0;
+        }
+        
+        .phone-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #dc2626;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+        
+        .phone-link:hover {
+            transform: translateY(-2px);
+        }
+        
+        .btn-nav {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            color: white;
+            padding: 0.65rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 4px 14px rgba(220, 38, 38, 0.25);
+            white-space: nowrap;
+        }
+        
+        .btn-nav:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(220, 38, 38, 0.35);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        
+        .hamburger {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: #1a1a1a;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .hamburger::before,
+        .hamburger::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 2px;
+            background: #1a1a1a;
+            transition: all 0.3s ease;
+        }
+        
+        .hamburger::before {
+            top: -8px;
+        }
+        
+        .hamburger::after {
+            bottom: -8px;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 1300px) {
+            .nav-links {
+                gap: 0.8rem;
+            }
+            
+            .nav-link {
+                font-size: 0.8rem;
+            }
+            
+            .navbar-logo {
+                font-size: 1.2rem;
+            }
+        }
+        
+        @media (max-width: 1100px) {
+            .nav-links {
+                gap: 0.6rem;
+            }
+            
+            .nav-link {
+                font-size: 0.75rem;
+            }
+            
+            .phone-link {
+                font-size: 0.85rem;
+            }
+            
+            .btn-nav {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.8rem;
+            }
+        }
+        
+        @media (max-width: 968px) {
+            .navbar-menu {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                bottom: auto;
+                max-height: calc(100vh - 70px);
+                background: white;
+                flex-direction: column;
+                padding: 2rem;
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+                overflow-y: auto;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+                z-index: 999;
+            }
+            
+            .navbar-menu.active {
+                transform: translateX(0);
+                height: auto;
+                max-height: calc(100vh - 70px);
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                width: 100%;
+                gap: 0.5rem;
+            }
+            
+            .nav-link {
+                padding: 1rem;
+                font-size: 1.1rem;
+                width: 100%;
+                text-align: left;
+                border-bottom: 1px solid #f1f5f9;
+            }
+            
+            .navbar-cta {
+                flex-direction: column;
+                width: 100%;
+                margin-top: 2rem;
+                padding-top: 2rem;
+                border-top: 1px solid #e5e7eb;
+            }
+            
+            .phone-link {
+                font-size: 1.2rem;
+            }
+            
+            .btn-nav {
+                width: 100%;
+                padding: 1rem;
+                font-size: 1rem;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+        
+        .mobile-menu-btn.active .hamburger {
+            background: transparent;
+        }
+        
+        .mobile-menu-btn.active .hamburger::before {
+            transform: rotate(45deg);
+            top: 0;
+        }
+        
+        .mobile-menu-btn.active .hamburger::after {
+            transform: rotate(-45deg);
+            bottom: 0;
+        }
+        
+        /* Main Content Styles */
+        main {
+            margin-top: 70px; /* Space for fixed navbar */
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: #1a1a1a;
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: #ffa500;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary {
+            background: #dc2626;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .btn-primary:hover {
+            background: #b91c1c;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border: 2px solid white;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .btn-secondary:hover {
+            background: white;
+            color: #dc2626;
+        }
+        
+        /* Alert Banner */
+        .alert-banner {
+            background: #ffd700;
+            color: #000;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        /* Fire Updates Section */
+        .fire-updates {
+            padding: 60px 20px;
+            background: #f8f8f8;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+        }
+        
+        .fire-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .fire-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            border-top: 4px solid #dc2626;
+        }
+        
+        .fire-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .fire-card h3 {
+            color: #dc2626;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .fire-card.active {
+            border-top-color: #ff0000;
+            position: relative;
+        }
+        
+        .fire-card.active::before {
+            content: 'ACTIVE';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #ff0000;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        /* Intake Form Section */
+        .intake-form-section {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+        }
+        
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 50px rgba(0,0,0,0.1);
+        }
+        
+        .form-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+        
+        .form-header h2 {
+            font-size: 2.5rem;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+        }
+        
+        .form-header p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+        
+        .progress-bar {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .progress-bar::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #e5e7eb;
+            z-index: 1;
+        }
+        
+        .progress-step {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            flex: 1;
+        }
+        
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: #e5e7eb;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 0.5rem;
+            font-weight: 600;
+            color: #666;
+            transition: all 0.3s ease;
+        }
+        
+        .progress-step.active .step-number {
+            background: #dc2626;
+            color: white;
+        }
+        
+        .progress-step.completed .step-number {
+            background: #10b981;
+            color: white;
+        }
+        
+        .step-label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .intake-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-label {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #1a1a1a;
+            font-size: 0.95rem;
+        }
+        
+        .form-label .required {
+            color: #dc2626;
+        }
+        
+        .form-input,
+        .form-select,
+        .form-textarea {
+            padding: 0.75rem 1rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+        
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: #dc2626;
+            box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        
+        .form-checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .form-checkbox {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+        
+        .submit-button {
+            background: #dc2626;
+            color: white;
+            padding: 1.25rem 3rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+        
+        .submit-button:hover {
+            background: #b91c1c;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(220, 38, 38, 0.3);
+        }
+        
+        .form-footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e5e7eb;
+        }
+        
+        .form-footer p {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 80px 20px;
+            background: white;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .service-card {
+            padding: 2rem;
+            border-radius: 12px;
+            background: #f8f8f8;
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .service-card h3 {
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .service-card a {
+            color: #dc2626;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        
+        .service-card a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Stats Section */
+        .stats {
+            background: #1a1a1a;
+            color: white;
+            padding: 60px 20px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+        
+        .stat-item h3 {
+            font-size: 3rem;
+            color: #ffd700;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: #dc2626;
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-section p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #0a0a0a;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .contact-info {
+            margin-bottom: 2rem;
+        }
+        
+        .contact-info p {
+            margin: 0.5rem 0;
+            font-size: 1.1rem;
+        }
+        
+        .contact-info a {
+            color: #ffd700;
+            text-decoration: none;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 968px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-container {
+                padding: 2rem 1.5rem;
+            }
+            
+            .progress-bar {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-content">
+                <!-- Logo -->
+                <a href="/" class="navbar-logo">Law Offices of Rozsa Gyene</a>
+                
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <span class="hamburger"></span>
+                </button>
+                
+                <!-- Navigation Menu -->
+                <div class="navbar-menu" id="navbarMenu">
+                    <ul class="nav-links">
+                        <li><a href="/" class="nav-link active">Home</a></li>
+                        <li><a href="/eaton-fire" class="nav-link">Eaton Fire</a></li>
+                        <li><a href="/pacific-palisades-fire" class="nav-link">Pacific Palisades Fire</a></li>
+                        <li><a href="/other-california-fires" class="nav-link">Other California Fires</a></li>
+                        <li><a href="/insurance-claim" class="nav-link">Insurance Claims</a></li>
+                        <li><a href="/estate-planning" class="nav-link">Estate Planning</a></li>
+                        <li><a href="/asset-protection" class="nav-link">Asset Protection</a></li>
+                        <li><a href="/resources" class="nav-link">Resources</a></li>
+                        <li><a href="/about" class="nav-link">About</a></li>
+                    </ul>
+                    
+                    <!-- CTA Section -->
+                    <div class="navbar-cta">
+                        <a href="tel:818-291-6217" class="phone-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+                            </svg>
+                            (818) 291-6217
+                        </a>
+                        <a href="#intake-form" class="btn-nav">Free Case Review</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main>
+        <!-- Alert Banner -->
+        <div class="alert-banner">
+            🔥 URGENT: Time limits apply to all fire claims. Call now for free consultation: 818-291-6217
+        </div>
+        
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>Fire Destroyed Your Life?<br>We'll Fight for Everything You Lost.</h1>
+                <p class="subtitle">25+ Years Fighting Insurance Companies & Utility Giants for Fire Victims</p>
+                <p>From the Pacific Palisades to fires across California - Maximum compensation for your home, belongings, and life disruption.</p>
+                <div class="hero-buttons">
+                    <a href="#intake-form" class="btn-primary">Get Legal Help Now</a>
+                    <a href="tel:818-291-6217" class="btn-secondary">Call: (818) 291-6217</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Current Fire Updates -->
+        <section class="fire-updates">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Current Fire Cases We're Handling</h2>
+                    <p>Immediate legal help for victims of recent California wildfires</p>
+                </div>
+                <div class="fire-grid">
+                    <div class="fire-card active">
+                        <h3>Santa Maria Fire</h3>
+                        <p><strong>Status:</strong> ACTIVELY BURNING</p>
+                        <p><strong>Location:</strong> Santa Barbara County</p>
+                        <p>Multiple evacuations, agricultural losses mounting. We're investigating all potential causes.</p>
+                        <a href="/other-california-fires" class="btn-primary" style="margin-top: 1rem;">Get Help Now</a>
+                    </div>
+                    <div class="fire-card">
+                        <h3>Pacific Palisades Fire</h3>
+                        <p><strong>20,000+ acres</strong> burned</p>
+                        <p><strong>5,000+ structures</strong> destroyed</p>
+                        <p>SCE equipment under investigation. Insurance companies denying claims.</p>
+                        <a href="/pacific-palisades-fire" class="btn-primary" style="margin-top: 1rem;">Learn More</a>
+                    </div>
+                    <div class="fire-card">
+                        <h3>Eaton Fire</h3>
+                        <p><strong>14,000+ acres</strong> affected</p>
+                        <p><strong>Altadena/Pasadena</strong> devastated</p>
+                        <p>Thousands displaced. Multiple ignition sources under investigation.</p>
+                        <a href="/eaton-fire" class="btn-primary" style="margin-top: 1rem;">Get Help</a>
+                    </div>
+                    <div class="fire-card">
+                        <h3>Hurst Fire</h3>
+                        <p><strong>700+ acres</strong> in Sylmar area</p>
+                        <p><strong>850+ structures</strong> threatened</p>
+                        <p>Foothill communities impacted. Hillside properties face unique challenges.</p>
+                        <a href="/other-california-fires" class="btn-primary" style="margin-top: 1rem;">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Intake Form Section -->
+        <section class="intake-form-section" id="intake-form">
+            <div class="container">
+                <div class="form-container">
+                    <div class="form-header">
+                        <h2>Start Your Free Case Review</h2>
+                        <p>Takes less than 3 minutes • 100% Confidential • No Obligation</p>
+                    </div>
+                    
+                    <div class="progress-bar">
+                        <div class="progress-step active">
+                            <div class="step-number">1</div>
+                            <div class="step-label">Basic Info</div>
+                        </div>
+                        <div class="progress-step">
+                            <div class="step-number">2</div>
+                            <div class="step-label">Fire Details</div>
+                        </div>
+                        <div class="progress-step">
+                            <div class="step-number">3</div>
+                            <div class="step-label">Insurance</div>
+                        </div>
+                    </div>
+                    
+                    <form action="https://getform.io/f/bolzgzla" method="POST" enctype="multipart/form-data" class="intake-form">
+                        <!-- Step 1: Basic Information -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">First Name <span class="required">*</span></label>
+                                <input type="text" name="first_name" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Last Name <span class="required">*</span></label>
+                                <input type="text" name="last_name" class="form-input" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Phone Number <span class="required">*</span></label>
+                                <input type="tel" name="phone" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Email Address <span class="required">*</span></label>
+                                <input type="email" name="email" class="form-input" required>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 2: Fire Details -->
+                        <div class="form-group">
+                            <label class="form-label">Which fire affected your property? <span class="required">*</span></label>
+                            <select name="fire_incident" class="form-select" required>
+                                <option value="">Select a fire incident</option>
+                                <option value="Pacific Palisades Fire">Pacific Palisades Fire</option>
+                                <option value="Eaton Fire">Eaton Fire (Altadena/Pasadena)</option>
+                                <option value="Hurst Fire">Hurst Fire (Sylmar)</option>
+                                <option value="Santa Maria Fire">Santa Maria Fire</option>
+                                <option value="Other California Fire">Other California Fire</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Property Address Affected <span class="required">*</span></label>
+                            <input type="text" name="property_address" class="form-input" placeholder="Street Address, City, CA ZIP" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Type of Property <span class="required">*</span></label>
+                                <select name="property_type" class="form-select" required>
+                                    <option value="">Select property type</option>
+                                    <option value="Primary Residence">Primary Residence</option>
+                                    <option value="Rental Property">Rental Property</option>
+                                    <option value="Commercial Property">Commercial Property</option>
+                                    <option value="Vacation Home">Vacation Home</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Property Status <span class="required">*</span></label>
+                                <select name="property_status" class="form-select" required>
+                                    <option value="">Select status</option>
+                                    <option value="Total Loss">Total Loss</option>
+                                    <option value="Partial Damage">Partial Damage</option>
+                                    <option value="Smoke Damage Only">Smoke Damage Only</option>
+                                    <option value="Evacuated - Unknown Status">Evacuated - Unknown Status</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 3: Insurance Information -->
+                        <div class="form-group">
+                            <label class="form-label">Insurance Company <span class="required">*</span></label>
+                            <select name="insurance_company" class="form-select" required>
+                                <option value="">Select your insurance company</option>
+                                <option value="State Farm">State Farm</option>
+                                <option value="Allstate">Allstate</option>
+                                <option value="Farmers">Farmers</option>
+                                <option value="USAA">USAA</option>
+                                <option value="AAA">AAA</option>
+                                <option value="Liberty Mutual">Liberty Mutual</option>
+                                <option value="Nationwide">Nationwide</option>
+                                <option value="Progressive">Progressive</option>
+                                <option value="Travelers">Travelers</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Have you filed an insurance claim?</label>
+                            <select name="claim_filed" class="form-select">
+                                <option value="">Select an option</option>
+                                <option value="Yes - Pending">Yes - Pending</option>
+                                <option value="Yes - Partially Paid">Yes - Partially Paid</option>
+                                <option value="Yes - Denied">Yes - Denied</option>
+                                <option value="No - Not Yet">No - Not Yet</option>
+                                <option value="No - Need Help">No - Need Help Filing</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Upload Insurance Policy (Optional)</label>
+                            <input type="file" name="insurance_policy" class="form-input" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx">
+                            <small style="color: #666; margin-top: 0.25rem;">Accepted formats: PDF, JPG, PNG, DOC (Max 10MB)</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Tell us about your losses and current situation</label>
+                            <textarea name="description" class="form-textarea" rows="4" placeholder="Please describe what you lost, any immediate needs, and any issues with your insurance company..."></textarea>
+                        </div>
+                        
+                        <div class="form-checkbox-group">
+                            <input type="checkbox" name="consent" class="form-checkbox" id="consent" required>
+                            <label for="consent">I agree to be contacted by Law Offices of Rozsa Gyene regarding my case</label>
+                        </div>
+                        
+                        <button type="submit" class="submit-button">Submit Free Case Review</button>
+                    </form>
+                    
+                    <div class="form-footer">
+                        <p>
+                            <strong>Your information is 100% confidential.</strong><br>
+                            We'll review your case within 24 hours and contact you to discuss your options.<br>
+                            No fees unless we win your case.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Services Section -->
+        <section class="services">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Complete Legal Services for Fire Victims</h2>
+                    <p>One firm handling every aspect of your fire recovery</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">🏠</div>
+                        <h3>Insurance Claim Help</h3>
+                        <p>Fighting denials, delays, and lowball offers. We know their tactics and how to beat them.</p>
+                        <a href="/insurance-claim">Learn More →</a>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">⚡</div>
+                        <h3>Utility Company Lawsuits</h3>
+                        <p>Holding PG&E, SCE, and SDG&E accountable when their negligence causes fires.</p>
+                        <a href="/utility-lawsuits">Learn More →</a>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">⚖️</div>
+                        <h3>Bad Faith Claims</h3>
+                        <p>When insurers break their promise, we make them pay - often beyond policy limits.</p>
+                        <a href="/insurance-bad-faith">Learn More →</a>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">💰</div>
+                        <h3>Underinsured Recovery</h3>
+                        <p>Policy limits not enough? We find additional sources to fully compensate your losses.</p>
+                        <a href="/underinsured-claims">Learn More →</a>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">👥</div>
+                        <h3>Class Action Cases</h3>
+                        <p>Join forces with other victims for powerful collective action and shared resources.</p>
+                        <a href="/class-action">Learn More →</a>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🛡️</div>
+                        <h3>Asset & Estate Protection</h3>
+                        <p>Protect your settlement from creditors and ensure your family's future security.</p>
+                        <a href="/asset-protection">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Stats Section -->
+        <section class="stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <h3>25+</h3>
+                        <p>Years Experience</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>$500M+</h3>
+                        <p>Recovered for Clients</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>5,000+</h3>
+                        <p>Fire Victims Helped</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>100%</h3>
+                        <p>No Win, No Fee</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>Don't Let Time Run Out on Your Claim</h2>
+                <p>California law has strict deadlines. Every day matters.</p>
+                <div class="hero-buttons">
+                    <a href="#intake-form" class="btn-secondary" style="background: white; color: #dc2626;">Get Your Free Case Review</a>
+                    <a href="tel:818-291-6217" class="btn-secondary">Call Now: (818) 291-6217</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="contact-info">
+                    <h3 style="margin-bottom: 1rem;">Law Offices of Rozsa Gyene</h3>
+                    <p>450 N Brand Blvd Suite 600</p>
+                    <p>Glendale, CA 91203</p>
+                    <p style="margin-top: 1rem;">
+                        <strong>Phone:</strong> <a href="tel:818-291-6217">818-291-6217</a><br>
+                        <strong>Email:</strong> <a href="mailto:rozsa@fireclaimslawyer.com">rozsa@fireclaimslawyer.com</a><br>
+                        <strong>Text:</strong> <a href="sms:818-434-4541">818-434-4541</a>
+                    </p>
+                </div>
+                <p style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.8;">
+                    © 2025 Law Offices of Rozsa Gyene. All rights reserved. | 25+ Years Serving California Fire Victims
+                </p>
+            </div>
+        </footer>
+    </main>
+    
+    <!-- JavaScript for Navigation -->
+    <script>
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('navbarMenu');
+            const btn = document.querySelector('.mobile-menu-btn');
+            
+            menu.classList.toggle('active');
+            btn.classList.toggle('active');
+        }
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const navbar = document.querySelector('.navbar');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            
+            if (!navbar.contains(event.target)) {
+                document.getElementById('navbarMenu').classList.remove('active');
+                menuBtn.classList.remove('active');
+            }
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
