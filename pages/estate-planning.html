@@ -1,1 +1,682 @@
 
+        .intro-section,.fire-specific-section,.protection-section,.benefits-section,.pricing-section,.testimonial-section,.faq-section {padding:60px 20px}
+        .intro-section,.pricing-section,.testimonial-section {background:#f8f9fa}
+        .fire-specific-section,.benefits-section,.faq-section {background:white}
+        .services-section,.process-section {background:#2c3e50;color:white;padding:60px 20px}
+        .process-section {background:#1a1a1a}
+        
+        /* New Questionnaire CTA Section */
+        .questionnaire-cta-section {
+            background: linear-gradient(135deg, #4169E1 0%, #1E3A8A 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .questionnaire-cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+        
+        .questionnaire-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .questionnaire-cta-section h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+        
+        .questionnaire-cta-section p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+        
+        .questionnaire-btn {
+            display: inline-block;
+            background: white;
+            color: #4169E1;
+            padding: 1.25rem 3rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+        
+        .questionnaire-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+        }
+        
+        .intro-content {max-width:900px;margin:0 auto;text-align:center}
+        
+        /* Cards and Grids */
+        .concern-cards,.service-grid,.testimonial-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:30px;margin-top:40px}
+        .pricing-cards,.process-steps {display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;margin-top:40px}
+        .process-steps {grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+        .protection-strategies {display:grid;grid-template-columns:repeat(auto-fit,minmax(400px,1fr));gap:40px;margin-top:40px}
+        
+        .concern-card {background:#fff5f5;padding:35px;border-radius:10px;border-left:5px solid #ff4444;box-shadow:0 3px 15px rgba(0,0,0,0.1)}
+        .concern-card h3 {color:#ff4444}
+        .concern-card ul {list-style:none;padding:0;margin-top:15px}
+        .concern-card li {padding:8px 0 8px 25px;position:relative}
+        .concern-card li::before {content:'→';position:absolute;left:0;color:#ff4444;font-weight:bold}
+        
+        .service-box {background:rgba(255,255,255,0.1);padding:30px;border-radius:10px;border:2px solid #4169E1;text-align:center;transition:transform 0.3s}
+        .service-box:hover {transform:translateY(-5px);background:rgba(255,255,255,0.15)}
+        .service-icon {font-size:3em;margin-bottom:20px;color:#87CEEB}
+        .service-box h3 {color:#87CEEB}
+        
+        .strategy-box,.pricing-card,.testimonial {background:white;padding:40px;border-radius:10px;box-shadow:0 5px 20px rgba(0,0,0,0.1)}
+        .strategy-box h3 {color:#4169E1;margin-bottom:20px;font-size:1.8em}
+        .strategy-box ul {list-style:none;padding:0}
+        .strategy-box li {padding:10px 0;border-bottom:1px solid #eee}
+        .strategy-box li:last-child {border-bottom:none}
+        
+        /* Timeline */
+        .benefit-timeline {max-width:900px;margin:40px auto}
+        .timeline-item {display:flex;align-items:center;margin:30px 0;background:#f8f8f8;padding:30px;border-radius:10px;box-shadow:0 3px 10px rgba(0,0,0,0.1)}
+        .timeline-icon {background:#4169E1;color:white;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5em;flex-shrink:0;margin-right:30px}
+        
+        /* Process */
+        .process-step {text-align:center;padding:30px;background:rgba(255,255,255,0.05);border-radius:10px;border:1px solid rgba(255,255,255,0.2)}
+        .step-number {display:inline-block;width:50px;height:50px;background:#ffd700;color:#1a1a1a;border-radius:50%;line-height:50px;font-size:1.3em;font-weight:bold;margin-bottom:20px}
+        
+        /* Pricing */
+        .pricing-card {text-align:center;position:relative}
+        .pricing-card.featured {border:3px solid #ffd700;transform:scale(1.05)}
+        .pricing-card.featured::before {content:'MOST POPULAR';position:absolute;top:-15px;left:50%;transform:translateX(-50%);background:#ffd700;color:#1a1a1a;padding:5px 20px;border-radius:20px;font-weight:bold;font-size:0.9em}
+        .pricing-card h3 {font-size:1.8em;margin-bottom:20px;color:#4169E1}
+        .price {font-size:2.5em;font-weight:bold;color:#1a1a1a;margin-bottom:20px}
+        .pricing-features {list-style:none;padding:0;margin:20px 0;text-align:left}
+        .pricing-features li {padding:10px 0;border-bottom:1px solid #eee}
+        .pricing-features li::before {content:'✓ ';color:#4CAF50;font-weight:bold}
+        
+        /* Testimonial */
+        .testimonial {font-style:italic}
+        .testimonial-author {margin-top:20px;font-style:normal;font-weight:bold;color:#666}
+        
+        /* FAQ */
+        .faq-container {max-width:900px;margin:0 auto}
+        .faq-item {background:#f8f8f8;margin:20px 0;padding:30px;border-radius:10px;border-left:4px solid #4169E1}
+        .faq-item h3 {color:#4169E1}
+        
+        /* Footer CTA */
+        .footer-cta {background:linear-gradient(135deg,#1a1a1a 0%,#2c3e50 100%);color:white;padding:80px 20px;text-align:center}
+        
+        /* Modal */
+        .modal {display:none;position:fixed;z-index:2000;left:0;top:0;width:100%;height:100%;background-color:rgba(0,0,0,0.8);opacity:0;transition:opacity 0.3s ease;overflow-y:auto}
+        .modal.show {opacity:1}
+        .modal-content {background-color:#fefefe;margin:5% auto;margin-bottom:5%;padding:0;width:90%;max-width:600px;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,0.3);transform:translateY(-50px);transition:transform 0.3s ease;position:relative}
+        .modal.show .modal-content {transform:translateY(0)}
+        .modal-header {background:linear-gradient(135deg,#4169E1 0%,#1E3A8A 100%);color:white;padding:2rem;border-radius:12px 12px 0 0;text-align:center}
+        .modal-header h2 {font-size:2rem;margin-bottom:0.5rem}
+        .modal-header p {font-size:1.1rem;opacity:0.9}
+        .close {color:white;float:right;font-size:28px;font-weight:bold;cursor:pointer;transition:all 0.3s ease}
+        .close:hover {transform:scale(1.2)}
+        .modal-body {padding:2.5rem}
+        .download-form {display:flex;flex-direction:column;gap:1.5rem}
+        .form-group {display:flex;flex-direction:column}
+        .form-label {font-weight:600;margin-bottom:0.5rem;color:#333;font-size:1rem}
+        .form-input {padding:0.875rem;border:2px solid #e5e7eb;border-radius:8px;font-size:1rem;transition:all 0.3s ease;font-family:inherit}
+        .form-input:focus {outline:none;border-color:#4169E1;box-shadow:0 0 0 3px rgba(65,105,225,0.1)}
+        .form-button {background:linear-gradient(135deg,#4169E1 0%,#1E3A8A 100%);color:white;padding:1rem 2rem;border:none;border-radius:8px;font-size:1.1rem;font-weight:600;cursor:pointer;transition:all 0.3s ease;box-shadow:0 4px 15px rgba(65,105,225,0.3)}
+        .form-button:hover {transform:translateY(-2px);box-shadow:0 6px 20px rgba(65,105,225,0.4)}
+        .form-note {text-align:center;font-size:0.9rem;color:#666;margin-top:1rem}
+        
+        /* Mobile */
+        @media (max-width:768px) {
+            h1 {font-size:2.5em}
+            .timeline-item {flex-direction:column;text-align:center}
+            .timeline-icon {margin-right:0;margin-bottom:20px}
+            .pricing-card.featured {transform:scale(1)}
+            .modal-content {width:95%;margin:2% auto;margin-bottom:2%;max-height:96vh;overflow-y:auto}
+            .modal-header {position:sticky;top:0;z-index:10}
+            .modal-body {padding:1.5rem;padding-bottom:2rem}
+            .questionnaire-cta-section h2 {font-size:2rem}
+            .questionnaire-btn {padding:1rem 2rem;font-size:1.1rem}
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-content">
+                <!-- Logo -->
+                <a href="/" class="navbar-logo">Law Offices of Rozsa Gyene</a>
+                
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <span class="hamburger"></span>
+                </button>
+                
+                <!-- Navigation Menu -->
+                <div class="navbar-menu" id="navbarMenu">
+                    <ul class="nav-links">
+                        <li><a href="/" class="nav-link">Home</a></li>
+                        <li><a href="/eaton-fire" class="nav-link">Eaton Fire</a></li>
+                        <li><a href="/pacific-palisades-fire" class="nav-link">Pacific Palisades Fire</a></li>
+                        <li><a href="/other-california-fires" class="nav-link">Other California Fires</a></li>
+                        <li><a href="/insurance-claim" class="nav-link">Insurance Claims</a></li>
+                        <li><a href="/estate-planning" class="nav-link active">Estate Planning</a></li>
+                        <li><a href="/asset-protection" class="nav-link">Asset Protection</a></li>
+                        <li><a href="/resources" class="nav-link">Resources</a></li>
+                        <li><a href="/about" class="nav-link">About</a></li>
+                    </ul>
+                    
+                    <!-- CTA Section -->
+                    <div class="navbar-cta">
+                        <a href="tel:818-291-6217" class="phone-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+                            </svg>
+                            (818) 291-6217
+                        </a>
+                        <a href="/#intake-form" class="btn-nav">Free Case Review</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main>
+        <section class="hero-section">
+            <div class="container">
+                <div class="experience-badge">25+ Years of Estate Planning Excellence</div>
+                <h1>Estate Planning for Fire Victims</h1>
+                <p class="subtitle">Protect Your Recovery. Secure Your Family's Future. Rebuild with Confidence.</p>
+                <p style="font-size:1.3em;margin-bottom:30px">After losing everything, proper estate planning ensures your recovery stays protected.</p>
+                <a href="https://square.site/book/0W2A8PKKPYC21/law-offices-of-rozsa-gyene-glendale-ca" class="cta-button" target="_blank">Schedule Your Estate Planning Consultation</a>
+            </div>
+        </section>
+
+        <section class="intro-section">
+            <div class="container">
+                <div class="intro-content">
+                    <h2>Why Fire Victims Need Specialized Estate Planning</h2>
+                    <p style="font-size:1.2em;margin-bottom:25px">After a devastating fire, you're not just rebuilding your home - you're rebuilding your entire financial life. With 25+ years of experience, I understand the unique challenges fire victims face.</p>
+                    <p style="font-size:1.1em">Your insurance settlements, lawsuit recoveries, and government assistance create new estate planning needs. Without proper planning, your recovery could be lost to taxes, creditors, or family disputes.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="fire-specific-section">
+            <div class="container">
+                <h2>Unique Estate Planning Concerns for Fire Victims</h2>
+                <div class="concern-cards">
+                    <div class="concern-card">
+                        <h3>🔥 Sudden Wealth from Settlements</h3>
+                        <p>Large insurance payouts and lawsuit settlements create immediate tax and asset protection concerns:</p>
+                        <ul>
+                            <li>Capital gains tax planning</li>
+                            <li>Income tax minimization strategies</li>
+                            <li>Asset protection from future creditors</li>
+                            <li>Investment planning for lump sums</li>
+                        </ul>
+                    </div>
+                    <div class="concern-card">
+                        <h3>📄 Lost Documents & Records</h3>
+                        <p>Fire destroyed your important papers. We help you rebuild your estate plan from scratch:</p>
+                        <ul>
+                            <li>Recreate wills and trusts</li>
+                            <li>Replace lost deeds and titles</li>
+                            <li>Restore beneficiary designations</li>
+                            <li>Document family heirlooms lost</li>
+                        </ul>
+                    </div>
+                    <div class="concern-card">
+                        <h3>👨‍👩‍👧‍👦 Changed Family Dynamics</h3>
+                        <p>Trauma and displacement affect family relationships and planning needs:</p>
+                        <ul>
+                            <li>Updated guardian nominations</li>
+                            <li>Revised inheritance plans</li>
+                            <li>Family support trusts</li>
+                            <li>Emotional trauma considerations</li>
+                        </ul>
+                    </div>
+                    <div class="concern-card">
+                        <h3>🏗️ Rebuilding Phase Risks</h3>
+                        <p>The 2-3 year rebuilding process creates unique vulnerabilities:</p>
+                        <ul>
+                            <li>Contractor liability issues</li>
+                            <li>Construction loan protections</li>
+                            <li>Temporary housing arrangements</li>
+                            <li>Multiple property considerations</li>
+                        </ul>
+                    </div>
+                    <div class="concern-card">
+                        <h3>💰 Government Benefits Protection</h3>
+                        <p>Preserve eligibility while maximizing recovery:</p>
+                        <ul>
+                            <li>FEMA assistance coordination</li>
+                            <li>SBA loan considerations</li>
+                            <li>Medi-Cal/Medicare planning</li>
+                            <li>Special needs trust options</li>
+                        </ul>
+                    </div>
+                    <div class="concern-card">
+                        <h3>⚖️ Ongoing Litigation Assets</h3>
+                        <p>Protect potential recoveries from utility and insurance lawsuits:</p>
+                        <ul>
+                            <li>Lawsuit proceeds planning</li>
+                            <li>Structured settlement options</li>
+                            <li>Class action considerations</li>
+                            <li>Future claim protections</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Estate Planning Questionnaire CTA Section -->
+        <section class="questionnaire-cta-section">
+            <div class="container">
+                <div class="questionnaire-content">
+                    <h2>Start Your Estate Plan Today</h2>
+                    <p>Complete our comprehensive estate planning questionnaire to get your personalized plan started.</p>
+                    <p style="font-size:1.1em;margin-bottom:2rem">Save time and ensure accuracy by filling out your information online before your consultation.</p>
+                    <a href="/estate-planning-questionnaire-intake-form" class="questionnaire-btn">
+                        Complete Estate Planning Questionnaire →
+                    </a>
+                    <p style="font-size:0.9em;margin-top:1.5rem;opacity:0.9">
+                        Takes 15-20 minutes • Secure & Confidential • Save Progress Anytime
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="services-section">
+            <div class="container">
+                <h2>Comprehensive Estate Planning Services</h2>
+                <p style="text-align:center;font-size:1.2em;margin-bottom:40px">With 25+ years of experience, I provide the full spectrum of estate planning tools fire victims need.</p>
+                <div class="service-grid">
+                    <div class="service-box">
+                        <div class="service-icon">🏛️</div>
+                        <h3>Revocable Living Trusts</h3>
+                        <p>Avoid probate, maintain privacy, and ensure smooth asset transfer while maintaining full control during your lifetime.</p>
+                    </div>
+                    <div class="service-box">
+                        <div class="service-icon">🛡️</div>
+                        <h3>Asset Protection Trusts</h3>
+                        <p>Shield your recovery from creditors, lawsuits, and predators while maintaining beneficial access to your assets.</p>
+                    </div>
+                    <div class="service-box">
+                        <div class="service-icon">📜</div>
+                        <h3>Wills & Pour-Over Wills</h3>
+                        <p>Comprehensive backup protection ensuring all assets are distributed according to your wishes.</p>
+                    </div>
+                    <div class="service-box">
+                        <div class="service-icon">🏥</div>
+                        <h3>Healthcare Directives</h3>
+                        <p>Advance healthcare directives and HIPAA releases ensuring your medical wishes are honored.</p>
+                    </div>
+                    <div class="service-box">
+                        <div class="service-icon">💼</div>
+                        <h3>Financial Powers of Attorney</h3>
+                        <p>Durable powers for financial management during rebuilding or if you become incapacitated.</p>
+                    </div>
+                    <div class="service-box">
+                        <div class="service-icon">👶</div>
+                        <h3>Guardian Nominations</h3>
+                        <p>Ensure your children are cared for by your chosen guardians with proper financial protections.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="protection-section">
+            <div class="container">
+                <h2>Fire Recovery Protection Strategies</h2>
+                <div class="protection-strategies">
+                    <div class="strategy-box">
+                        <h3>Settlement Protection Planning</h3>
+                        <ul>
+                            <li><strong>Irrevocable Life Insurance Trusts:</strong> Protect life insurance proceeds from estate taxes</li>
+                            <li><strong>Qualified Personal Residence Trusts:</strong> Reduce estate taxes on rebuilt homes</li>
+                            <li><strong>Charitable Remainder Trusts:</strong> Convert settlements to lifetime income with tax benefits</li>
+                            <li><strong>Dynasty Trusts:</strong> Protect wealth for multiple generations</li>
+                            <li><strong>Domestic Asset Protection Trusts:</strong> Maximum creditor protection in select states</li>
+                        </ul>
+                    </div>
+                    <div class="strategy-box">
+                        <h3>Tax Minimization Strategies</h3>
+                        <ul>
+                            <li><strong>Settlement Structure Planning:</strong> Minimize taxes on large recoveries</li>
+                            <li><strong>Qualified Settlement Funds:</strong> Defer taxation on lawsuit proceeds</li>
+                            <li><strong>Like-Kind Exchanges:</strong> Defer gains on property replacements</li>
+                            <li><strong>Opportunity Zone Investments:</strong> Defer and reduce capital gains</li>
+                            <li><strong>Gift and Estate Tax Planning:</strong> Maximize tax-free transfers</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="benefits-section">
+            <div class="container">
+                <h2>Benefits of Proper Estate Planning After Fire Loss</h2>
+                <div class="benefit-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-icon">🔒</div>
+                        <div>
+                            <h3>Immediate Protection</h3>
+                            <p>Your insurance settlements and lawsuit recoveries are immediately protected from creditors, predators, and excessive taxation.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon">📈</div>
+                        <div>
+                            <h3>Tax Savings</h3>
+                            <p>Save thousands to millions in taxes through proper structuring of settlements and strategic estate planning.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon">🏡</div>
+                        <div>
+                            <h3>Family Security</h3>
+                            <p>Ensure your family is protected during rebuilding and beyond, with clear instructions and financial safeguards.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon">⚡</div>
+                        <div>
+                            <h3>Avoid Probate</h3>
+                            <p>Your family avoids costly, time-consuming probate proceedings when they're already dealing with trauma.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon">🎯</div>
+                        <div>
+                            <h3>Legacy Protection</h3>
+                            <p>Even though you lost physical heirlooms, create a lasting legacy through proper planning and wealth preservation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="process-section">
+            <div class="container">
+                <h2 style="color:#ffd700">Our Estate Planning Process</h2>
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <h3>Free Consultation</h3>
+                        <p>Discuss your fire recovery situation and estate planning needs</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <h3>Asset Analysis</h3>
+                        <p>Review settlements, properties, and recovery expectations</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <h3>Custom Strategy</h3>
+                        <p>Design a plan tailored to your specific situation and goals</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <h3>Document Drafting</h3>
+                        <p>Prepare comprehensive estate planning documents</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">5</div>
+                        <h3>Review & Sign</h3>
+                        <p>Explain everything clearly and execute documents properly</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">6</div>
+                        <h3>Ongoing Support</h3>
+                        <p>Regular reviews and updates as your recovery progresses</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="pricing-section">
+            <div class="container">
+                <h2>Transparent, Compassionate Pricing</h2>
+                <p style="text-align:center;font-size:1.2em;margin-bottom:40px">Special rates for fire victims. Payment plans available.</p>
+                <div class="pricing-cards">
+                    <div class="pricing-card">
+                        <h3>Essential Protection</h3>
+                        <div class="price">$2,500</div>
+                        <ul class="pricing-features">
+                            <li>Revocable Living Trust</li>
+                            <li>Pour-Over Will</li>
+                            <li>Financial Power of Attorney</li>
+                            <li>Healthcare Directives</li>
+                            <li>HIPAA Authorizations</li>
+                            <li>Basic Tax Planning</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-card featured">
+                        <h3>Comprehensive Plan</h3>
+                        <div class="price">$4,500</div>
+                        <ul class="pricing-features">
+                            <li>Everything in Essential</li>
+                            <li>Asset Protection Trust</li>
+                            <li>Advanced Tax Planning</li>
+                            <li>Minor's Trusts</li>
+                            <li>Settlement Structuring</li>
+                            <li>Annual Review Included</li>
+                            <li>Deed Transfers Included</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-card">
+                        <h3>Premium Protection</h3>
+                        <div class="price">$7,500+</div>
+                        <ul class="pricing-features">
+                            <li>Everything in Comprehensive</li>
+                            <li>Irrevocable Trusts</li>
+                            <li>Business Succession Planning</li>
+                            <li>Multi-State Planning</li>
+                            <li>Family Limited Partnerships</li>
+                            <li>Lifetime Support</li>
+                            <li>Emergency Updates</li>
+                        </ul>
+                    </div>
+                </div>
+                <p style="text-align:center;margin-top:30px;font-size:1.1em">
+                    <strong>Fire Victim Discount:</strong> 20% off all packages. Payment plans with 0% interest available.
+                </p>
+            </div>
+        </section>
+
+        <section class="testimonial-section">
+            <div class="container">
+                <h2>What Fire Victims Say</h2>
+                <div class="testimonial-grid">
+                    <div class="testimonial">
+                        <p>"After losing everything in the Camp Fire, we received a large settlement. The estate planning saved us over $300,000 in taxes and protected our children's future. Worth every penny."</p>
+                        <p class="testimonial-author">- Paradise Fire Survivors</p>
+                    </div>
+                    <div class="testimonial">
+                        <p>"We lost all our documents in the Woolsey Fire. They helped us rebuild our entire estate plan and protected our recovery funds. The peace of mind is priceless."</p>
+                        <p class="testimonial-author">- Malibu Family</p>
+                    </div>
+                    <div class="testimonial">
+                        <p>"25 years of experience really shows. They understood our unique situation as fire victims and created a plan that protected our settlement while we rebuild."</p>
+                        <p class="testimonial-author">- Wine Country Fire Victims</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <div class="container">
+                <h2>Estate Planning FAQs for Fire Victims</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <h3>Should I wait until after my settlement to do estate planning?</h3>
+                        <p>No! Planning before you receive large settlements allows for better tax planning and asset protection. We can update your plan as your situation evolves.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>I lost all my documents in the fire. Can you help?</h3>
+                        <p>Absolutely. With 25+ years of experience, I regularly help fire victims recreate and improve their estate plans. We'll obtain necessary records and create new, better documents.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How does estate planning protect my fire settlement?</h3>
+                        <p>Proper trusts can protect settlements from creditors, lawsuits, and predators while minimizing taxes. This ensures your recovery money actually helps you rebuild.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What if I'm still in litigation with insurance or utilities?</h3>
+                        <p>We plan for expected recoveries and structure your estate to maximize protection when settlements arrive. Early planning provides the most options.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Do I need estate planning if I don't have much left?</h3>
+                        <p>Yes! You're likely to receive settlements, and everyone needs healthcare directives and powers of attorney. Plus, our fire victim discounts make it affordable.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="footer-cta" id="contact">
+            <div class="container">
+                <h2 style="font-size:3em;margin-bottom:30px;color:#87CEEB">Protect Your Recovery. Secure Your Future.</h2>
+                <div style="background:rgba(255,255,255,0.1);padding:40px;border-radius:10px;margin:40px 0">
+                    <h3 style="font-size:1.8em;margin-bottom:25px;color:#ffd700">With 25+ Years of Experience, I Understand Your Needs</h3>
+                    <p style="font-size:1.2em;margin-bottom:15px">✓ Free consultation for all fire victims</p>
+                    <p style="font-size:1.2em;margin-bottom:15px">✓ 20% fire victim discount on all services</p>
+                    <p style="font-size:1.2em;margin-bottom:15px">✓ Flexible payment plans available</p>
+                    <p style="font-size:1.2em;margin-bottom:15px">✓ Home visits available for displaced families</p>
+                    <p style="font-size:1.2em">✓ Evening and weekend appointments</p>
+                </div>
+                <div style="font-size:1.3em;margin:40px 0">
+                    <p style="font-weight:bold;color:#ffd700;font-size:1.5em;margin-bottom:20px">Schedule Your Free Estate Planning Consultation</p>
+                    <p>📞 Direct Line: 818-291-6217</p>
+                    <p>📧 Email: rozsa@fireclaimslawyer.com</p>
+                    <p>💬 Text: 818-434-4541</p>
+                    <p style="margin-top:15px">In-Person • Video Conference • Phone Consultations Available</p>
+                </div>
+                <button onclick="openModal()" class="cta-button" style="font-size:1.3em;padding:20px 50px;border:none;cursor:pointer">Get Your Free Estate Planning Guide for Fire Victims</button>
+                <p style="margin-top:20px">
+                    <a href="/estate-planning-questionnaire-intake-form" style="color:#87CEEB;text-decoration:underline;font-size:1.1em">
+                        Or Start Your Estate Plan Now - Complete Our Online Questionnaire →
+                    </a>
+                </p>
+                <p style="margin-top:40px;font-size:0.9em;opacity:0.8">
+                    Law Offices of Rozsa Gyene | 450 N Brand Blvd Suite 600, Glendale CA 91203<br>
+                    Licensed in California. Member of the State Bar Estate Planning Section. 25+ years serving California families.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal -->
+    <div id="downloadModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2>Get Your Free Estate Planning Guide</h2>
+                <p>Essential Planning Tips for Fire Victims</p>
+            </div>
+            <div class="modal-body">
+                <form action="https://getform.io/f/bolzgzla" method="POST" class="download-form">
+                    <div class="form-group">
+                        <label class="form-label">First Name</label>
+                        <input type="text" name="first_name" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Last Name</label>
+                        <input type="text" name="last_name" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email Address</label>
+                        <input type="email" name="email" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Phone (Optional)</label>
+                        <input type="tel" name="phone" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Which fire affected you?</label>
+                        <select name="fire_affected" class="form-input">
+                            <option value="">Select a fire</option>
+                            <option value="Pacific Palisades Fire">Pacific Palisades Fire</option>
+                            <option value="Eaton Fire">Eaton Fire</option>
+                            <option value="Santa Maria Fire">Santa Maria Fire</option>
+                            <option value="Other California Fire">Other California Fire</option>
+                            <option value="Not a fire victim">Not a fire victim</option>
+                        </select>
+                    </div>
+                    <input type="hidden" name="form_type" value="estate_planning_guide_request">
+                    <input type="hidden" name="guide_requested" value="Estate Planning Guide for Fire Victims">
+                    <button type="submit" class="form-button">Send Me The Free Guide</button>
+                    <p class="form-note">Your guide will be emailed immediately. We'll also follow up with additional resources to help protect your recovery.</p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('navbarMenu');
+            const btn = document.querySelector('.mobile-menu-btn');
+            
+            menu.classList.toggle('active');
+            btn.classList.toggle('active');
+        }
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const navbar = document.querySelector('.navbar');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            
+            if (!navbar.contains(event.target)) {
+                document.getElementById('navbarMenu').classList.remove('active');
+                menuBtn.classList.remove('active');
+            }
+        });
+        
+        // Modal functions
+        function openModal() {
+            const modal = document.getElementById('downloadModal');
+            modal.style.display = 'block';
+            setTimeout(() => {
+                modal.classList.add('show');
+            }, 10);
+        }
+        
+        function closeModal() {
+            const modal = document.getElementById('downloadModal');
+            modal.classList.remove('show');
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 300);
+        }
+        
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('downloadModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>
