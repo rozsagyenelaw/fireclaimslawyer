@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>California Wildfire Victims Legal Help - All Fires | Law Offices of Rozsa Gyene</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        /* Simplified Navigation Bar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .navbar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            gap: 2rem;
+        }
+        
+        .navbar-logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            text-decoration: none;
+            letter-spacing: -0.02em;
+            transition: color 0.3s ease;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        
+        .navbar-logo:hover {
+            color: #dc2626;
+        }
+        
+        .navbar-menu {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-grow: 1;
+            justify-content: flex-end;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.2rem;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-link {
+            color: #475569;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.85rem;
+            padding: 0.5rem 0;
+            transition: color 0.3s ease;
+            white-space: nowrap;
+        }
+        
+        .nav-link:hover {
+            color: #dc2626;
+        }
+        
+        .nav-link.active {
+            color: #dc2626;
+            font-weight: 600;
+        }
+        
+        .navbar-cta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-shrink: 0;
+        }
+        
+        .phone-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #dc2626;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+        
+        .phone-link:hover {
+            transform: translateY(-2px);
+        }
+        
+        .btn-nav {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            color: white;
+            padding: 0.65rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 4px 14px rgba(220, 38, 38, 0.25);
+            white-space: nowrap;
+        }
+        
+        .btn-nav:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(220, 38, 38, 0.35);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        
+        .hamburger {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: #1a1a1a;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .hamburger::before,
+        .hamburger::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 2px;
+            background: #1a1a1a;
+            transition: all 0.3s ease;
+        }
+        
+        .hamburger::before {
+            top: -8px;
+        }
+        
+        .hamburger::after {
+            bottom: -8px;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 1300px) {
+            .nav-links {
+                gap: 0.8rem;
+            }
+            
+            .nav-link {
+                font-size: 0.8rem;
+            }
+            
+            .navbar-logo {
+                font-size: 1.2rem;
+            }
+        }
+        
+        @media (max-width: 1100px) {
+            .nav-links {
+                gap: 0.6rem;
+            }
+            
+            .nav-link {
+                font-size: 0.75rem;
+            }
+            
+            .phone-link {
+                font-size: 0.85rem;
+            }
+            
+            .btn-nav {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.8rem;
+            }
+        }
+        
+        @media (max-width: 968px) {
+            .navbar-menu {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                bottom: auto;
+                max-height: calc(100vh - 70px);
+                background: white;
+                flex-direction: column;
+                padding: 2rem;
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+                overflow-y: auto;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+                z-index: 999;
+            }
+            
+            .navbar-menu.active {
+                transform: translateX(0);
+                height: auto;
+                max-height: calc(100vh - 70px);
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                width: 100%;
+                gap: 0.5rem;
+            }
+            
+            .nav-link {
+                padding: 1rem;
+                font-size: 1.1rem;
+                width: 100%;
+                text-align: left;
+                border-bottom: 1px solid #f1f5f9;
+            }
+            
+            .navbar-cta {
+                flex-direction: column;
+                width: 100%;
+                margin-top: 2rem;
+                padding-top: 2rem;
+                border-top: 1px solid #e5e7eb;
+            }
+            
+            .phone-link {
+                font-size: 1.2rem;
+            }
+            
+            .btn-nav {
+                width: 100%;
+                padding: 1rem;
+                font-size: 1rem;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+        
+        .mobile-menu-btn.active .hamburger {
+            background: transparent;
+        }
+        
+        .mobile-menu-btn.active .hamburger::before {
+            transform: rotate(45deg);
+            top: 0;
+        }
+        
+        .mobile-menu-btn.active .hamburger::after {
+            transform: rotate(-45deg);
+            bottom: 0;
+        }
+        
+        /* Main Content Styles */
+        main {
+            margin-top: 70px;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23111" width="1200" height="600"/><path fill="%23ff4444" opacity="0.2" d="M0 200L100 250L200 200L300 250L400 200L500 250L600 200L700 250L800 200L900 250L1000 200L1100 250L1200 200V600H0V200Z"/><path fill="%23ff6666" opacity="0.2" d="M0 300L100 350L200 300L300 350L400 300L500 350L600 300L700 350L800 300L900 350L1000 300L1100 350L1200 300V600H0V300Z"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            color: #ffa500;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #ff4444;
+            color: white;
+            padding: 15px 40px;
+            font-size: 1.2em;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        
+        .cta-button:hover {
+            background: #cc0000;
+        }
+        
+        .alert-banner {
+            background: #ffd700;
+            color: #000;
+            padding: 20px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        
+        .active-fires-section {
+            background: #fff5f5;
+            padding: 60px 20px;
+        }
+        
+        .fire-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .fire-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-top: 5px solid #ff4444;
+            position: relative;
+        }
+        
+        .fire-card.active {
+            border-top-color: #ff0000;
+        }
+        
+        .fire-card.active::before {
+            content: 'ACTIVE';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #ff0000;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.8em;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.6; }
+            100% { opacity: 1; }
+        }
+        
+        .fire-card h3 {
+            color: #ff4444;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+        
+        .fire-stats {
+            margin: 15px 0;
+            padding: 15px;
+            background: #f8f8f8;
+            border-radius: 5px;
+        }
+        
+        .fire-stats p {
+            margin: 5px 0;
+            font-size: 0.95em;
+        }
+        
+        .historic-fires-section {
+            background: white;
+            padding: 60px 20px;
+        }
+        
+        .year-section {
+            margin: 40px 0;
+        }
+        
+        .year-header {
+            background: #333;
+            color: white;
+            padding: 15px 25px;
+            font-size: 1.5em;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        
+        .fires-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .fire-item {
+            background: #f8f8f8;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #ff4444;
+        }
+        
+        .fire-item h4 {
+            color: #ff4444;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+        
+        .fire-item ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 10px;
+        }
+        
+        .fire-item li {
+            padding: 3px 0;
+            font-size: 0.9em;
+            color: #666;
+        }
+        
+        .services-section {
+            background: #2c3e50;
+            color: white;
+            padding: 60px 20px;
+        }
+        
+        .service-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .service-card {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid #ffa500;
+        }
+        
+        .service-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: #ffa500;
+        }
+        
+        .service-card h3 {
+            color: #ffa500;
+            margin-bottom: 15px;
+        }
+        
+        .regional-coverage {
+            background: #f8f9fa;
+            padding: 60px 20px;
+        }
+        
+        .region-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .region-box {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .region-box h3 {
+            color: #4169E1;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+        
+        .region-box ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .region-box li {
+            padding: 5px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .region-box li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #4169E1;
+            font-weight: bold;
+        }
+        
+        .footer-cta {
+            background: #1a1a1a;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .footer-cta h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #ffa500;
+        }
+        
+        .contact-info {
+            margin: 30px 0;
+            font-size: 1.2em;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+            
+            .fire-grid, .region-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-content">
+                <!-- Logo -->
+                <a href="/" class="navbar-logo">Law Offices of Rozsa Gyene</a>
+                
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <span class="hamburger"></span>
+                </button>
+                
+                <!-- Navigation Menu -->
+                <div class="navbar-menu" id="navbarMenu">
+                    <ul class="nav-links">
+                        <li><a href="/" class="nav-link">Home</a></li>
+                        <li><a href="/eaton-fire" class="nav-link">Eaton Fire</a></li>
+                        <li><a href="/pacific-palisades-fire" class="nav-link">Pacific Palisades Fire</a></li>
+                        <li><a href="/other-california-fires" class="nav-link active">Other California Fires</a></li>
+                        <li><a href="/insurance-claim" class="nav-link">Insurance Claims</a></li>
+                        <li><a href="/estate-planning" class="nav-link">Estate Planning</a></li>
+                        <li><a href="/asset-protection" class="nav-link">Asset Protection</a></li>
+                        <li><a href="/resources" class="nav-link">Resources</a></li>
+                        <li><a href="/about" class="nav-link">About</a></li>
+                    </ul>
+                    
+                    <!-- CTA Section -->
+                    <div class="navbar-cta">
+                        <a href="tel:818-291-6217" class="phone-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+                            </svg>
+                            (818) 291-6217
+                        </a>
+                        <a href="/#intake-form" class="btn-nav">Free Case Review</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="alert-banner">
+            🔥 NEW: Now helping Santa Maria Fire victims - Free consultations available 🔥
+        </div>
+
+        <section class="hero-section">
+            <div class="container">
+                <h1>California Wildfire Legal Help</h1>
+                <p class="subtitle">Representing Fire Victims Throughout California Since 1999</p>
+                <p style="font-size: 1.2em; margin-bottom: 30px;">From the Santa Maria Fire to fires across the state - we fight for maximum compensation.</p>
+                <a href="/#intake-form" class="cta-button">Get Help for Your Fire Claim</a>
+            </div>
+        </section>
+
+        <section class="active-fires-section">
+            <div class="container">
+                <h2 style="text-align: center; font-size: 2.5em; margin-bottom: 20px;">Currently Representing Victims Of:</h2>
+                
+                <div class="fire-grid">
+                    <div class="fire-card active">
+                        <h3>Santa Maria Fire</h3>
+                        <p><strong>Status:</strong> ACTIVELY BURNING</p>
+                        <p><strong>Location:</strong> Santa Barbara County</p>
+                        <div class="fire-stats">
+                            <p>• Threatening homes and businesses</p>
+                            <p>• Multiple evacuations ordered</p>
+                            <p>• Agricultural losses mounting</p>
+                            <p>• Smoke damage widespread</p>
+                        </div>
+                        <p style="margin-top: 15px;"><strong>We're actively investigating:</strong> Utility equipment, agricultural operations, and other potential causes.</p>
+                    </div>
+                    
+                    <div class="fire-card">
+                        <h3>Pacific Palisades Fire</h3>
+                        <p><strong>Location:</strong> Los Angeles County</p>
+                        <div class="fire-stats">
+                            <p>• 20,000+ acres burned</p>
+                            <p>• 5,000+ structures destroyed</p>
+                            <p>• $10B+ in damages</p>
+                            <p>• SCE equipment under investigation</p>
+                        </div>
+                    </div>
+                    
+                    <div class="fire-card">
+                        <h3>Eaton Fire</h3>
+                        <p><strong>Location:</strong> Los Angeles County</p>
+                        <div class="fire-stats">
+                            <p>• 14,000+ acres affected</p>
+                            <p>• 7,000+ structures damaged</p>
+                            <p>• Altadena/Pasadena areas</p>
+                            <p>• Cause under investigation</p>
+                        </div>
+                    </div>
+                    
+                    <div class="fire-card">
+                        <h3>Hurst Fire</h3>
+                        <p><strong>Location:</strong> Sylmar Area</p>
+                        <div class="fire-stats">
+                            <p>• 700+ acres burned</p>
+                            <p>• 850+ structures threatened</p>
+                            <p>• 7,000+ evacuated</p>
+                            <p>• Foothill communities impacted</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="historic-fires-section">
+            <div class="container">
+                <h2 style="text-align: center; font-size: 2.5em; margin-bottom: 40px;">We Also Represent Victims of Past California Fires</h2>
+                
+                <div class="year-section">
+                    <div class="year-header">2023-2024 Fires</div>
+                    <div class="fires-list">
+                        <div class="fire-item">
+                            <h4>York Fire</h4>
+                            <ul>
+                                <li>San Bernardino County</li>
+                                <li>93,405 acres burned</li>
+                                <li>Cross-state damage (CA/NV)</li>
+                            </ul>
+                        </div>
+                        <div class="fire-item">
+                            <h4>Park Fire</h4>
+                            <ul>
+                                <li>Butte, Tehama Counties</li>
+                                <li>429,603 acres burned</li>
+                                <li>700+ structures destroyed</li>
+                            </ul>
+                        </div>
+                        <div class="fire-item">
+                            <h4>Bridge Fire</h4>
+                            <ul>
+                                <li>Los Angeles, San Bernardino</li>
+                                <li>54,000+ acres burned</li>
+                                <li>Mountain communities affected</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="year-section">
+                    <div class="year-header">2020-2022 Major Fires</div>
+                    <div class="fires-list">
+                        <div class="fire-item">
+                            <h4>August Complex</h4>
+                            <ul>
+                                <li>1+ million acres</li>
+                                <li>Largest in CA history</li>
+                                <li>Multiple counties affected</li>
+                            </ul>
+                        </div>
+                        <div class="fire-item">
+                            <h4>Dixie Fire</h4>
+                            <ul>
+                                <li>963,309 acres burned</li>
+                                <li>Town of Greenville destroyed</li>
+                                <li>PG&E equipment caused</li>
+                            </ul>
+                        </div>
+                        <div class="fire-item">
+                            <h4>Caldor Fire</h4>
+                            <ul>
+                                <li>221,835 acres burned</li>
+                                <li>1,000+ structures lost</li>
+                                <li>South Lake Tahoe threatened</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="year-section">
+                    <div class="year-header">Historic Fires (Still Taking Cases)</div>
+                    <div class="fires-list">
+                        <div class="fire-item">
+                            <h4>Camp Fire (2018)</h4>
+                            <ul>
+                                <li>Paradise destroyed</li>
+                                <li>85 fatalities</li>
+                                <li>PG&E caused - $13.5B fund</li>
+                            </ul>
+                        </div>
+                        <div class="fire-item">
+                            <h4>Woolsey Fire (2018)</h4>
+                            <ul>
+                                <li>Malibu/Ventura Counties</li>
+                                <li>1,600+ structures destroyed</li>
+                                <li>SCE equipment suspected</li>
+                            </ul>
+                        </div>
+                        <div class="fire-item">
+                            <h4>Thomas Fire (2017)</h4>
+                            <ul>
+                                <li>281,893 acres burned</li>
+                                <li>Ventura/Santa Barbara</li>
+                                <li>SCE equipment caused</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="services-section">
+            <div class="container">
+                <h2 style="text-align: center; font-size: 2.5em; margin-bottom: 20px;">Complete Legal Services for All Fire Victims</h2>
+                
+                <div class="service-cards">
+                    <div class="service-card">
+                        <div class="service-icon">🏠</div>
+                        <h3>Insurance Claims</h3>
+                        <p>Fighting denials, delays, and underpayments for fire victims statewide</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">⚡</div>
+                        <h3>Utility Lawsuits</h3>
+                        <p>Holding PG&E, SCE, SDG&E accountable for fire damages</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">💰</div>
+                        <h3>Underinsured Claims</h3>
+                        <p>Finding coverage beyond policy limits for rebuilding</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">⚖️</div>
+                        <h3>Bad Faith Actions</h3>
+                        <p>Punishing insurers who wrongfully deny or delay</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">👥</div>
+                        <h3>Class Actions</h3>
+                        <p>Joining forces with other victims for maximum recovery</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">🛡️</div>
+                        <h3>Asset Protection</h3>
+                        <p>Protecting your settlement from creditors and lawsuits</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="regional-coverage">
+            <div class="container">
+                <h2 style="text-align: center; font-size: 2.5em; margin-bottom: 40px;">Statewide Fire Victim Representation</h2>
+                
+                <div class="region-grid">
+                    <div class="region-box">
+                        <h3>Northern California</h3>
+                        <ul>
+                            <li>Butte County (Paradise, Chico)</li>
+                            <li>Shasta County</li>
+                            <li>Lake County</li>
+                            <li>Mendocino County</li>
+                            <li>Sonoma County</li>
+                            <li>Napa County</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="region-box">
+                        <h3>Central California</h3>
+                        <ul>
+                            <li>Santa Barbara County</li>
+                            <li>San Luis Obispo County</li>
+                            <li>Monterey County</li>
+                            <li>Fresno County</li>
+                            <li>Madera County</li>
+                            <li>Central Coast regions</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="region-box">
+                        <h3>Southern California</h3>
+                        <ul>
+                            <li>Los Angeles County</li>
+                            <li>Ventura County</li>
+                            <li>Orange County</li>
+                            <li>San Bernardino County</li>
+                            <li>Riverside County</li>
+                            <li>San Diego County</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section style="background: white; padding: 60px 20px;">
+            <div class="container">
+                <h2 style="text-align: center; font-size: 2.5em; margin-bottom: 40px; color: #ff4444;">Why California Fire Victims Choose Us</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 900px; margin: 0 auto;">
+                    <div style="text-align: center;">
+                        <h3 style="font-size: 3em; color: #4169E1; margin-bottom: 10px;">25+</h3>
+                        <p style="font-size: 1.2em;">Years Fighting for Fire Victims</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <h3 style="font-size: 3em; color: #4169E1; margin-bottom: 10px;">$500M+</h3>
+                        <p style="font-size: 1.2em;">Recovered for Clients</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <h3 style="font-size: 3em; color: #4169E1; margin-bottom: 10px;">5,000+</h3>
+                        <p style="font-size: 1.2em;">Fire Victims Represented</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="footer-cta" id="contact">
+            <div class="container">
+                <h2>Get Help for Any California Wildfire Claim</h2>
+                <p style="font-size: 1.3em; margin: 20px 0;">From the Santa Maria Fire to fires across California - we're here to help.</p>
+                
+                <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 10px; margin: 30px auto; max-width: 800px;">
+                    <p style="font-size: 1.2em; margin-bottom: 15px;">✓ Free consultation for all fire victims</p>
+                    <p style="font-size: 1.2em; margin-bottom: 15px;">✓ No upfront costs - we only get paid when you win</p>
+                    <p style="font-size: 1.2em; margin-bottom: 15px;">✓ Home and video consultations available</p>
+                    <p style="font-size: 1.2em;">✓ Se Habla Español</p>
+                </div>
+                
+                <div class="contact-info">
+                    <p style="font-size: 1.5em; font-weight: bold; color: #ffa500;">24/7 Fire Victim Hotline</p>
+                    <p>📞 Call: <a href="tel:818-291-6217" style="color: white;">818-291-6217</a></p>
+                    <p>📧 Email: <a href="mailto:rozsa@fireclaimslawyer.com" style="color: white;">rozsa@fireclaimslawyer.com</a></p>
+                    <p>💬 Text: 818-434-4541</p>
+                </div>
+                
+                <a href="/#intake-form" class="cta-button" style="margin-top: 20px;">Start Your Free Case Review</a>
+                
+                <p style="margin-top: 30px; font-size: 1.1em;">
+                    <strong>Law Offices of Rozsa Gyene</strong><br>
+                    450 N Brand Blvd Suite 600, Glendale CA 91203
+                </p>
+                
+                <p style="margin-top: 20px; font-size: 0.9em; opacity: 0.8;">
+                    Licensed throughout California. Member of Consumer Attorneys of California.<br>
+                    Helping fire victims from Shasta to San Diego, from the coast to the Nevada border.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- JavaScript for Navigation -->
+    <script>
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('navbarMenu');
+            const btn = document.querySelector('.mobile-menu-btn');
+            
+            menu.classList.toggle('active');
+            btn.classList.toggle('active');
+        }
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const navbar = document.querySelector('.navbar');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            
+            if (!navbar.contains(event.target)) {
+                document.getElementById('navbarMenu').classList.remove('active');
+                menuBtn.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
