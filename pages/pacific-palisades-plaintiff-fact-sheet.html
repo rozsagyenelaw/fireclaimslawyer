@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacific Palisades Fire Litigation - Plaintiff Fact Sheet</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .header .case-info {
+            margin-top: 15px;
+            font-size: 1.1rem;
+        }
+
+        .progress-bar {
+            background: #f0f0f0;
+            height: 4px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            height: 100%;
+            width: 0%;
+            transition: width 0.3s;
+        }
+
+        .form-container {
+            padding: 40px;
+        }
+
+        .instructions {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 4px;
+        }
+
+        .instructions h3 {
+            color: #1976d2;
+            margin-bottom: 10px;
+        }
+
+        .instructions ul {
+            margin-left: 20px;
+            color: #555;
+        }
+
+        .instructions li {
+            margin: 8px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section-title {
+            color: #667eea;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 24px;
+            background: #667eea;
+            margin-right: 12px;
+        }
+
+        .subsection-title {
+            font-size: 1.2rem;
+            color: #555;
+            margin: 25px 0 15px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #555;
+        }
+
+        .required {
+            color: #e74c3c;
+            margin-left: 4px;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="number"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .radio-group,
+        .checkbox-group {
+            display: flex;
+            gap: 20px;
+            margin-top: 8px;
+            flex-wrap: wrap;
+        }
+
+        .radio-item,
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .radio-item input,
+        .checkbox-item input {
+            margin-right: 8px;
+        }
+
+        .property-card {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            background: #fafafa;
+        }
+
+        .property-number {
+            background: #667eea;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .add-button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+
+        .add-button:hover {
+            background: #5a67d8;
+        }
+
+        .remove-button {
+            background: #e74c3c;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-left: 10px;
+        }
+
+        .address-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .address-group .full-width {
+            grid-column: span 2;
+        }
+
+        .plaintiff-card {
+            border: 2px solid #667eea;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            background: #f8f9ff;
+        }
+
+        .vehicle-section {
+            background: #fff8dc;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        .info-message {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            color: #856404;
+            padding: 12px;
+            border-radius: 4px;
+            margin: 15px 0;
+        }
+
+        .submit-section {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid #e0e0e0;
+        }
+
+        .submit-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: 600;
+            transition: transform 0.3s;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .submit-button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .declaration-box {
+            background: #f5f5f5;
+            border: 2px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        .declaration-box h3 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .declaration-box p {
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .signature-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .form-container {
+                padding: 20px;
+            }
+            
+            .header h1 {
+                font-size: 1.5rem;
+            }
+            
+            .address-group,
+            .signature-section {
+                grid-template-columns: 1fr;
+            }
+            
+            .radio-group,
+            .checkbox-group {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        .conditional-section {
+            display: none;
+            margin-top: 15px;
+            padding: 15px;
+            background: #f0f4ff;
+            border-left: 3px solid #667eea;
+            border-radius: 4px;
+        }
+
+        .conditional-section.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+    
+    <div class="container">
+        <div class="header">
+            <h1>Pacific Palisades Fire Litigation</h1>
+            <div class="case-info">
+                <p>PLAINTIFF FACT SHEET</p>
+                <p>Lead Case No. 25STCV00731</p>
+            </div>
+        </div>
+        
+        <form id="pacificPalisadesFactSheet" class="form-container" name="pacific-palisades-fact-sheet" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you-fact-sheet">
+            <!-- Netlify Forms honeypot field -->
+            <input type="hidden" name="form-name" value="pacific-palisades-fact-sheet">
+            <p style="display:none;">
+                <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+            </p>
+
+            <!-- Instructions -->
+            <div class="instructions">
+                <h3>Important Instructions</h3>
+                <ul>
+                    <li>This Plaintiff Fact Sheet must be completed in accordance with the requirements set forth in the applicable Case Management Order</li>
+                    <li>The form may be completed by an individual plaintiff or by multiple plaintiffs within a household</li>
+                    <li>An Authorized Representative must complete the form for minors, deceased, or incapacitated individuals</li>
+                    <li>You may allege damages related to multiple loss locations</li>
+                    <li>If you have business-related damages, include the property address and select "Business Owner" as your relationship</li>
+                </ul>
+            </div>
+
+            <!-- Section A: Case Information -->
+            <div class="section">
+                <h2 class="section-title">Section A: Case Information</h2>
+                
+                <div class="form-group">
+                    <label for="originalCaseName">Original Case Name <span class="required">*</span></label>
+                    <input type="text" id="originalCaseName" name="originalCaseName" required 
+                           placeholder="e.g., JOHN DOE, et al v. Southern California Edison Company, et al">
+                </div>
+                
+                <div class="form-group">
+                    <label for="originalCaseNumber">Original Case Number <span class="required">*</span></label>
+                    <input type="text" id="originalCaseNumber" name="originalCaseNumber" required 
+                           placeholder="e.g., 25STCV00000">
+                </div>
+                
+                <div class="form-group">
+                    <label for="lawFirm">Law Firm (if represented)</label>
+                    <input type="text" id="lawFirm" name="lawFirm" placeholder="Law firm name">
+                </div>
+
+                <!-- Plaintiff Information -->
+                <h3 class="subsection-title">Plaintiff Information</h3>
+                
+                <div id="plaintiffsContainer">
+                    <div class="plaintiff-card">
+                        <span class="property-number">Plaintiff 1</span>
+                        
+                        <div class="form-group">
+                            <label>Plaintiff Type <span class="required">*</span></label>
+                            <div class="radio-group">
+                                <div class="radio-item">
+                                    <input type="radio" id="plaintiff1_type_individual" name="plaintiff1_type" value="individual" required>
+                                    <label for="plaintiff1_type_individual">Individual</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" id="plaintiff1_type_business" name="plaintiff1_type" value="business">
+                                    <label for="plaintiff1_type_business">Business</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" id="plaintiff1_type_trust" name="plaintiff1_type" value="trust">
+                                    <label for="plaintiff1_type_trust">Trust</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" id="plaintiff1_type_estate" name="plaintiff1_type" value="estate">
+                                    <label for="plaintiff1_type_estate">Estate</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="plaintiff1_name">Plaintiff Name or Entity Name <span class="required">*</span></label>
+                            <input type="text" id="plaintiff1_name" name="plaintiff1_name" required>
+                        </div>
+                        
+                        <div class="form-group" id="plaintiff1_dob_group">
+                            <label for="plaintiff1_dob">Individual Plaintiff Date of Birth</label>
+                            <input type="date" id="plaintiff1_dob" name="plaintiff1_dob">
+                        </div>
+                        
+                        <!-- Minor/Deceased/Incapacitated Section -->
+                        <div class="form-group">
+                            <label>Is this plaintiff a minor, deceased, or incapacitated?</label>
+                            <div class="radio-group">
+                                <div class="radio-item">
+                                    <input type="radio" id="plaintiff1_special_yes" name="plaintiff1_special" value="yes">
+                                    <label for="plaintiff1_special_yes">Yes</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" id="plaintiff1_special_no" name="plaintiff1_special" value="no" checked>
+                                    <label for="plaintiff1_special_no">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="plaintiff1_special_details" class="conditional-section">
+                            <div class="form-group">
+                                <label>Status</label>
+                                <select name="plaintiff1_status">
+                                    <option value="">Select...</option>
+                                    <option value="minor">Minor</option>
+                                    <option value="deceased">Deceased</option>
+                                    <option value="incapacitated">Incapacitated</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Name of Representative</label>
+                                <input type="text" name="plaintiff1_rep_name">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Relationship to Plaintiff</label>
+                                <input type="text" name="plaintiff1_relationship">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Capacity of Representation</label>
+                                <input type="text" name="plaintiff1_capacity">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>If court-appointed, provide:</label>
+                                <input type="text" name="plaintiff1_court_state" placeholder="State" style="margin-bottom: 10px;">
+                                <input type="text" name="plaintiff1_court_name" placeholder="Court" style="margin-bottom: 10px;">
+                                <input type="text" name="plaintiff1_court_case" placeholder="Case Number">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button type="button" class="add-button" onclick="addPlaintiff()">Add Another Plaintiff</button>
+                
+                <!-- Bankruptcy Information -->
+                <h3 class="subsection-title">Bankruptcy Information</h3>
+                <div class="form-group">
+                    <label>Has any plaintiff been a debtor in bankruptcy proceedings on or after the Pacific Palisades Fire?</label>
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="bankruptcy_yes" name="bankruptcy" value="yes">
+                            <label for="bankruptcy_yes">Yes</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="bankruptcy_no" name="bankruptcy" value="no" checked>
+                            <label for="bankruptcy_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="bankruptcy_details" class="conditional-section">
+                    <div class="form-group">
+                        <label>Plaintiff Name</label>
+                        <input type="text" name="bankruptcy_plaintiff_name">
+                    </div>
+                    <div class="form-group">
+                        <label>Bankruptcy Case Number</label>
+                        <input type="text" name="bankruptcy_case_number">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section B: Affected Properties -->
+            <div class="section">
+                <h2 class="section-title">Section B: Affected Properties</h2>
+                <p style="margin-bottom: 20px; color: #666;">List all properties that were affected by the Pacific Palisades Fire</p>
+                
+                <div id="propertiesContainer">
+                    <div class="property-card">
+                        <span class="property-number">Property 1</span>
+                        
+                        <div class="address-group">
+                            <div class="full-width">
+                                <label>Street Address <span class="required">*</span></label>
+                                <input type="text" name="property1_street" required>
+                            </div>
+                            <div>
+                                <label>City <span class="required">*</span></label>
+                                <input type="text" name="property1_city" value="Pacific Palisades" required>
+                            </div>
+                            <div>
+                                <label>ZIP Code <span class="required">*</span></label>
+                                <input type="text" name="property1_zip" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Assessor Parcel Number (APN)</label>
+                            <input type="text" name="property1_apn">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Is this property insured?</label>
+                            <div class="radio-group">
+                                <div class="radio-item">
+                                    <input type="radio" id="property1_insured_yes" name="property1_insured" value="yes">
+                                    <label for="property1_insured_yes">Yes</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" id="property1_insured_no" name="property1_insured" value="no">
+                                    <label for="property1_insured_no">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="property1_insurance_details" class="conditional-section">
+                            <div class="form-group">
+                                <label>Insurance Carrier</label>
+                                <input type="text" name="property1_carrier">
+                            </div>
+                            <div class="form-group">
+                                <label>Policy Number</label>
+                                <input type="text" name="property1_policy">
+                            </div>
+                            <div class="form-group">
+                                <label>Claim Number</label>
+                                <input type="text" name="property1_claim">
+                            </div>
+                        </div>
+                        
+                        <!-- Damage Questions -->
+                        <h4 style="margin-top: 25px; margin-bottom: 15px; color: #555;">Property Damage Details</h4>
+                        
+                        <div class="form-group">
+                            <label>Was there a dwelling at this location that was damaged?</label>
+                            <select name="property1_dwelling_damage">
+                                <option value="">Select...</option>
+                                <option value="total_loss">Total Loss</option>
+                                <option value="damaged">Damaged (Not Destroyed)</option>
+                                <option value="smoke_soot">Smoke/Soot Damage Only</option>
+                                <option value="no">No Damage</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Was there a commercial structure at this location that was damaged?</label>
+                            <select name="property1_commercial_damage">
+                                <option value="">Select...</option>
+                                <option value="total_loss">Total Loss</option>
+                                <option value="damaged">Damaged (Not Destroyed)</option>
+                                <option value="smoke_soot">Smoke/Soot Damage Only</option>
+                                <option value="no">No Damage</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Were there other structures at this location that were damaged?</label>
+                            <select name="property1_other_damage">
+                                <option value="">Select...</option>
+                                <option value="total_loss">Total Loss</option>
+                                <option value="damaged">Damaged (Not Destroyed)</option>
+                                <option value="smoke_soot">Smoke/Soot Damage Only</option>
+                                <option value="no">No Damage</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Did the real property sustain a diminution in value? (Owners Only)</label>
+                            <div class="radio-group">
+                                <div class="radio-item">
+                                    <input type="radio" name="property1_diminution" value="yes">
+                                    <label>Yes</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" name="property1_diminution" value="no">
+                                    <label>No</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" name="property1_diminution" value="na">
+                                    <label>N/A - Not Owner</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Was personal property damaged at this location?</label>
+                            <select name="property1_personal_damage">
+                                <option value="">Select...</option>
+                                <option value="total_loss">Total Loss</option>
+                                <option value="damaged">Damaged (Not Destroyed)</option>
+                                <option value="smoke_soot">Smoke/Soot Damage Only</option>
+                                <option value="no">No Damage</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Did you experience loss of use of this property?</label>
+                            <div class="radio-group">
+                                <div class="radio-item">
+                                    <input type="radio" name="property1_loss_use" value="yes">
+                                    <label>Yes</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" name="property1_loss_use" value="no">
+                                    <label>No</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button type="button" class="add-button" onclick="addProperty()">Add Another Property</button>
+            </div>
+
+            <!-- Section C: Individual Damages -->
+            <div class="section">
+                <h2 class="section-title">Section C: Individual Damages</h2>
+                
+                <div class="form-group">
+                    <label>Did you evacuate or shelter-in-place as a result of the Pacific Palisades Fire? <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="evac_evacuate" name="evacuation" value="evacuate" required>
+                            <label for="evac_evacuate">Evacuate</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="evac_shelter" name="evacuation" value="shelter">
+                            <label for="evac_shelter">Shelter-in-Place</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="evac_neither" name="evacuation" value="neither">
+                            <label for="evac_neither">Neither</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="evacuation_details" class="conditional-section">
+                    <div class="form-group">
+                        <label>Evacuation or Shelter-in-Place Address</label>
+                        <input type="text" name="evacuation_address">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Did you suffer emotional distress as a result?</label>
+                        <div class="radio-group">
+                            <div class="radio-item">
+                                <input type="radio" name="emotional_distress" value="yes">
+                                <label>Yes</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" name="emotional_distress" value="no">
+                                <label>No</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Did you suffer physical bodily injury as a result of the fire?</label>
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="injury_yes" name="physical_injury" value="yes">
+                            <label for="injury_yes">Yes</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="injury_no" name="physical_injury" value="no">
+                            <label for="injury_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="injury_details" class="conditional-section">
+                    <div class="form-group">
+                        <label>General nature of the injury</label>
+                        <textarea name="injury_nature"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Were you hospitalized?</label>
+                        <div class="radio-group">
+                            <div class="radio-item">
+                                <input type="radio" name="hospitalized" value="yes">
+                                <label>Yes</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" name="hospitalized" value="no">
+                                <label>No</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Did you suffer loss of personal income as a result of the fire?</label>
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="income_yes" name="income_loss" value="yes">
+                            <label for="income_yes">Yes</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="income_no" name="income_loss" value="no">
+                            <label for="income_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="income_details" class="conditional-section">
+                    <div class="form-group">
+                        <label>Cause of income loss</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="income_property" name="income_cause_property">
+                                <label for="income_property">Property damage/destruction</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="income_injury" name="income_cause_injury">
+                                <label for="income_injury">Physical injury</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Applicable loss location(s)</label>
+                        <input type="text" name="income_loss_locations">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section D: Business Damages -->
+            <div class="section">
+                <h2 class="section-title">Section D: Business Damages</h2>
+                
+                <div class="form-group">
+                    <label>Did you suffer loss of business profits as a result of the fire?</label>
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="business_yes" name="business_loss" value="yes">
+                            <label for="business_yes">Yes</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="business_no" name="business_loss" value="no">
+                            <label for="business_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="business_details" class="conditional-section">
+                    <div class="form-group">
+                        <label>Business Name</label>
+                        <input type="text" name="business_name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Business Address</label>
+                        <input type="text" name="business_address">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Applicable loss location(s)</label>
+                        <input type="text" name="business_loss_locations">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section E: Vehicles -->
+            <div class="section">
+                <h2 class="section-title">Section E: Vehicle Damages</h2>
+                
+                <div class="form-group">
+                    <label>Were any vehicles damaged or destroyed by the fire?</label>
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="vehicles_yes" name="vehicles_damaged" value="yes">
+                            <label for="vehicles_yes">Yes</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="vehicles_no" name="vehicles_damaged" value="no">
+                            <label for="vehicles_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="vehicles_container" class="conditional-section">
+                    <div class="vehicle-section">
+                        <h4>Vehicle 1</h4>
+                        
+                        <div class="form-group">
+                            <label>Title Owner(s)</label>
+                            <input type="text" name="vehicle1_owner">
+                        </div>
+                        
+                        <div class="address-group">
+                            <div>
+                                <label>Make</label>
+                                <input type="text" name="vehicle1_make">
+                            </div>
+                            <div>
+                                <label>Model</label>
+                                <input type="text" name="vehicle1_model">
+                            </div>
+                            <div>
+                                <label>Year</label>
+                                <input type="text" name="vehicle1_year">
+                            </div>
+                            <div>
+                                <label>VIN</label>
+                                <input type="text" name="vehicle1_vin">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Damage Status</label>
+                            <select name="vehicle1_damage">
+                                <option value="">Select...</option>
+                                <option value="destroyed">Destroyed</option>
+                                <option value="damaged">Damaged</option>
+                                <option value="smoke_soot">Smoke/Soot Damage Only</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Insured?</label>
+                            <div class="radio-group">
+                                <div class="radio-item">
+                                    <input type="radio" name="vehicle1_insured" value="yes">
+                                    <label>Yes</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" name="vehicle1_insured" value="no">
+                                    <label>No</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button type="button" class="add-button" onclick="addVehicle()">Add Another Vehicle</button>
+                </div>
+            </div>
+
+            <!-- Section F: Wrongful Death -->
+            <div class="section">
+                <h2 class="section-title">Section F: Wrongful Death</h2>
+                
+                <div class="form-group">
+                    <label>Are you asserting a claim for wrongful death or survival as a result of the Pacific Palisades Fire?</label>
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="wrongful_yes" name="wrongful_death" value="yes">
+                            <label for="wrongful_yes">Yes</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="wrongful_no" name="wrongful_death" value="no">
+                            <label for="wrongful_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="wrongful_details" class="conditional-section">
+                    <div class="form-group">
+                        <label>Name of Decedent</label>
+                        <input type="text" name="decedent_name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Date of Death</label>
+                        <input type="date" name="decedent_date">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Place of Death</label>
+                        <input type="text" name="decedent_place">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>List all known heirs</label>
+                        <textarea name="decedent_heirs"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Your relationship to decedent</label>
+                        <input type="text" name="decedent_relationship">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Declaration and Signature -->
+            <div class="section">
+                <h2 class="section-title">Declaration and Signature</h2>
+                
+                <div class="declaration-box">
+                    <h3>Declaration Under Penalty of Perjury</h3>
+                    <p>I hereby declare under penalty of perjury under the laws of the State of California that I have read the foregoing Plaintiff Fact Sheet and know its contents. The same is true of my own personal knowledge except for those matters stated on information and belief which I believe to be true.</p>
+                </div>
+                
+                <div class="signature-section">
+                    <div class="form-group">
+                        <label for="signature_name">Printed Name <span class="required">*</span></label>
+                        <input type="text" id="signature_name" name="signature_name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="signature_date">Date <span class="required">*</span></label>
+                        <input type="date" id="signature_date" name="signature_date" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="signature_email">Email for Confirmation <span class="required">*</span></label>
+                    <input type="email" id="signature_email" name="signature_email" required>
+                </div>
+                
+                <div class="form-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="agree_declaration" name="agree_declaration" required>
+                        <label for="agree_declaration">I understand that by submitting this form, I am signing it electronically and that my electronic signature is the legal equivalent of my manual signature on this Plaintiff Fact Sheet <span class="required">*</span></label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submit Section -->
+            <div class="submit-section">
+                <button type="submit" class="submit-button">Submit Plaintiff Fact Sheet</button>
+            </div>
+        </form>
+    </div>
+    
+    <script>
+        // Initialize counters
+        let plaintiffCount = 1;
+        let propertyCount = 1;
+        let vehicleCount = 1;
+        
+        // Progress tracking
+        function updateProgress() {
+            const form = document.getElementById('pacificPalisadesFactSheet');
+            const inputs = form.querySelectorAll('input[required], select[required]');
+            const filled = Array.from(inputs).filter(input => {
+                if (input.type === 'radio') {
+                    return form.querySelector(`input[name="${input.name}"]:checked`);
+                } else if (input.type === 'checkbox') {
+                    return input.checked;
+                }
+                return input.value;
+            });
+            
+            const percentage = (filled.length / inputs.length) * 100;
+            document.getElementById('progressFill').style.width = percentage + '%';
+        }
+        
+        // Add event listeners for progress updates
+        document.getElementById('pacificPalisadesFactSheet').addEventListener('input', updateProgress);
+        document.getElementById('pacificPalisadesFactSheet').addEventListener('change', updateProgress);
+        
+        // Handle conditional sections
+        // Plaintiff special status
+        document.getElementById('plaintiff1_special_yes').addEventListener('change', function() {
+            document.getElementById('plaintiff1_special_details').classList.add('show');
+        });
+        
+        document.getElementById('plaintiff1_special_no').addEventListener('change', function() {
+            document.getElementById('plaintiff1_special_details').classList.remove('show');
+        });
+        
+        // Property insurance
+        document.getElementById('property1_insured_yes').addEventListener('change', function() {
+            document.getElementById('property1_insurance_details').classList.add('show');
+        });
+        
+        document.getElementById('property1_insured_no').addEventListener('change', function() {
+            document.getElementById('property1_insurance_details').classList.remove('show');
+        });
+        
+        // Bankruptcy
+        document.getElementById('bankruptcy_yes').addEventListener('change', function() {
+            document.getElementById('bankruptcy_details').classList.add('show');
+        });
+        
+        document.getElementById('bankruptcy_no').addEventListener('change', function() {
+            document.getElementById('bankruptcy_details').classList.remove('show');
+        });
+        
+        // Evacuation
+        document.querySelectorAll('input[name="evacuation"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                if (this.value === 'evacuate' || this.value === 'shelter') {
+                    document.getElementById('evacuation_details').classList.add('show');
+                } else {
+                    document.getElementById('evacuation_details').classList.remove('show');
+                }
+            });
+        });
+        
+        // Physical injury
+        document.getElementById('injury_yes').addEventListener('change', function() {
+            document.getElementById('injury_details').classList.add('show');
+        });
+        
+        document.getElementById('injury_no').addEventListener('change', function() {
+            document.getElementById('injury_details').classList.remove('show');
+        });
+        
+        // Income loss
+        document.getElementById('income_yes').addEventListener('change', function() {
+            document.getElementById('income_details').classList.add('show');
+        });
+        
+        document.getElementById('income_no').addEventListener('change', function() {
+            document.getElementById('income_details').classList.remove('show');
+        });
+        
+        // Business loss
+        document.getElementById('business_yes').addEventListener('change', function() {
+            document.getElementById('business_details').classList.add('show');
+        });
+        
+        document.getElementById('business_no').addEventListener('change', function() {
+            document.getElementById('business_details').classList.remove('show');
+        });
+        
+        // Vehicles
+        document.getElementById('vehicles_yes').addEventListener('change', function() {
+            document.getElementById('vehicles_container').classList.add('show');
+        });
+        
+        document.getElementById('vehicles_no').addEventListener('change', function() {
+            document.getElementById('vehicles_container').classList.remove('show');
+        });
+        
+        // Wrongful death
+        document.getElementById('wrongful_yes').addEventListener('change', function() {
+            document.getElementById('wrongful_details').classList.add('show');
+        });
+        
+        document.getElementById('wrongful_no').addEventListener('change', function() {
+            document.getElementById('wrongful_details').classList.remove('show');
+        });
+        
+        // Add plaintiff function
+        function addPlaintiff() {
+            plaintiffCount++;
+            const container = document.getElementById('plaintiffsContainer');
+            const newCard = document.createElement('div');
+            newCard.className = 'plaintiff-card';
+            newCard.innerHTML = `
+                <span class="property-number">Plaintiff ${plaintiffCount}</span>
+                <button type="button" class="remove-button" onclick="removePlaintiff(this)">Remove</button>
+                
+                <div class="form-group">
+                    <label>Plaintiff Type <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="plaintiff${plaintiffCount}_type_individual" name="plaintiff${plaintiffCount}_type" value="individual" required>
+                            <label for="plaintiff${plaintiffCount}_type_individual">Individual</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="plaintiff${plaintiffCount}_type_business" name="plaintiff${plaintiffCount}_type" value="business">
+                            <label for="plaintiff${plaintiffCount}_type_business">Business</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="plaintiff${plaintiffCount}_type_trust" name="plaintiff${plaintiffCount}_type" value="trust">
+                            <label for="plaintiff${plaintiffCount}_type_trust">Trust</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="plaintiff${plaintiffCount}_type_estate" name="plaintiff${plaintiffCount}_type" value="estate">
+                            <label for="plaintiff${plaintiffCount}_type_estate">Estate</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Plaintiff Name or Entity Name <span class="required">*</span></label>
+                    <input type="text" name="plaintiff${plaintiffCount}_name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Individual Plaintiff Date of Birth</label>
+                    <input type="date" name="plaintiff${plaintiffCount}_dob">
+                </div>
+            `;
+            container.appendChild(newCard);
+            updateProgress();
+        }
+        
+        // Add property function
+        function addProperty() {
+            propertyCount++;
+            const container = document.getElementById('propertiesContainer');
+            const newCard = document.createElement('div');
+            newCard.className = 'property-card';
+            newCard.innerHTML = `
+                <span class="property-number">Property ${propertyCount}</span>
+                <button type="button" class="remove-button" onclick="removeProperty(this)">Remove</button>
+                
+                <div class="address-group">
+                    <div class="full-width">
+                        <label>Street Address <span class="required">*</span></label>
+                        <input type="text" name="property${propertyCount}_street" required>
+                    </div>
+                    <div>
+                        <label>City <span class="required">*</span></label>
+                        <input type="text" name="property${propertyCount}_city" value="Pacific Palisades" required>
+                    </div>
+                    <div>
+                        <label>ZIP Code <span class="required">*</span></label>
+                        <input type="text" name="property${propertyCount}_zip" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Assessor Parcel Number (APN)</label>
+                    <input type="text" name="property${propertyCount}_apn">
+                </div>
+                
+                <div class="form-group">
+                    <label>Was there a dwelling at this location that was damaged?</label>
+                    <select name="property${propertyCount}_dwelling_damage">
+                        <option value="">Select...</option>
+                        <option value="total_loss">Total Loss</option>
+                        <option value="damaged">Damaged (Not Destroyed)</option>
+                        <option value="smoke_soot">Smoke/Soot Damage Only</option>
+                        <option value="no">No Damage</option>
+                    </select>
+                </div>
+            `;
+            container.appendChild(newCard);
+            updateProgress();
+        }
+        
+        // Add vehicle function
+        function addVehicle() {
+            vehicleCount++;
+            const container = document.getElementById('vehicles_container');
+            const newSection = document.createElement('div');
+            newSection.className = 'vehicle-section';
+            newSection.innerHTML = `
+                <h4>Vehicle ${vehicleCount}</h4>
+                <button type="button" class="remove-button" onclick="removeVehicle(this)">Remove</button>
+                
+                <div class="form-group">
+                    <label>Title Owner(s)</label>
+                    <input type="text" name="vehicle${vehicleCount}_owner">
+                </div>
+                
+                <div class="address-group">
+                    <div>
+                        <label>Make</label>
+                        <input type="text" name="vehicle${vehicleCount}_make">
+                    </div>
+                    <div>
+                        <label>Model</label>
+                        <input type="text" name="vehicle${vehicleCount}_model">
+                    </div>
+                    <div>
+                        <label>Year</label>
+                        <input type="text" name="vehicle${vehicleCount}_year">
+                    </div>
+                    <div>
+                        <label>VIN</label>
+                        <input type="text" name="vehicle${vehicleCount}_vin">
+                    </div>
+                </div>
+            `;
+            // Insert before the Add button
+            const addButton = container.querySelector('.add-button');
+            container.insertBefore(newSection, addButton);
+        }
+        
+        // Remove functions
+        function removePlaintiff(button) {
+            button.parentElement.remove();
+            updateProgress();
+        }
+        
+        function removeProperty(button) {
+            button.parentElement.remove();
+            updateProgress();
+        }
+        
+        function removeVehicle(button) {
+            button.parentElement.remove();
+        }
+        
+        // Form submission
+        document.getElementById('pacificPalisadesFactSheet').addEventListener('submit', function(e) {
+            // The form will submit normally to Netlify
+            const submitButton = document.querySelector('.submit-button');
+            submitButton.textContent = 'Submitting...';
+            submitButton.disabled = true;
+        });
+    </script>
+</body>
+</html>
