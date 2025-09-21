@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eaton Fire Liability Questionnaire</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        .form-container {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section-title {
+            color: #667eea;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 24px;
+            background: #667eea;
+            margin-right: 12px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #555;
+        }
+
+        .required {
+            color: #e74c3c;
+            margin-left: 4px;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="email"],
+        input[type="tel"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .radio-group,
+        .checkbox-group {
+            display: flex;
+            gap: 20px;
+            margin-top: 8px;
+        }
+
+        .radio-item,
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .radio-item input,
+        .checkbox-item input {
+            margin-right: 8px;
+        }
+
+        .subsection {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 15px;
+            margin-left: 20px;
+        }
+
+        .witness-details {
+            display: none;
+        }
+
+        .witness-details.show {
+            display: block;
+        }
+
+        .add-button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+
+        .add-button:hover {
+            background: #5a67d8;
+        }
+
+        .remove-button {
+            background: #e74c3c;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-left: 10px;
+        }
+
+        .plaintiff-card {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            background: #fafafa;
+        }
+
+        .document-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .document-table th,
+        .document-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .document-table th {
+            background: #f5f5f5;
+            font-weight: 600;
+        }
+
+        .submit-section {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .submit-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: 600;
+            transition: transform 0.3s;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .submit-button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .progress-bar {
+            background: #f0f0f0;
+            height: 4px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            height: 100%;
+            width: 0%;
+            transition: width 0.3s;
+        }
+
+        .info-box {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .info-box p {
+            color: #1976d2;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .form-container {
+                padding: 20px;
+            }
+            
+            .header h1 {
+                font-size: 1.5rem;
+            }
+            
+            .radio-group,
+            .checkbox-group {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+    
+    <div class="container">
+        <div class="header">
+            <h1>Eaton Fire Liability Questionnaire</h1>
+            <p>Please complete all required fields accurately</p>
+        </div>
+        
+        <form id="eatonFireForm" class="form-container" name="eaton-fire-questionnaire" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you">
+            <!-- Netlify Forms honeypot field -->
+            <input type="hidden" name="form-name" value="eaton-fire-questionnaire">
+            <p style="display:none;">
+                <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+            </p>
+            <!-- Section A: Plaintiff Information -->
+            <div class="section">
+                <h2 class="section-title">Section A: Plaintiff Information</h2>
+                
+                <!-- Case Information -->
+                <div class="form-group">
+                    <label for="caseName">Original Case Name <span class="required">*</span></label>
+                    <input type="text" id="caseName" name="caseName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="caseNumber">Original Case Number <span class="required">*</span></label>
+                    <input type="text" id="caseNumber" name="caseNumber" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="lawFirm">Law Firm (if represented)</label>
+                    <input type="text" id="lawFirm" name="lawFirm">
+                </div>
+                
+                <!-- Plaintiff Information -->
+                <div id="plaintiffsContainer">
+                    <h3 style="margin-top: 30px; margin-bottom: 20px;">Plaintiff Details</h3>
+                    <div class="plaintiff-card">
+                        <div class="form-group">
+                            <label>Plaintiff Type <span class="required">*</span></label>
+                            <div class="radio-group">
+                                <div class="radio-item">
+                                    <input type="radio" id="type1_individual" name="plaintiff1_type" value="individual" required>
+                                    <label for="type1_individual">Individual</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" id="type1_business" name="plaintiff1_type" value="business">
+                                    <label for="type1_business">Business</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" id="type1_trust" name="plaintiff1_type" value="trust">
+                                    <label for="type1_trust">Trust</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" id="type1_estate" name="plaintiff1_type" value="estate">
+                                    <label for="type1_estate">Estate</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="plaintiff1_name">Plaintiff Name <span class="required">*</span></label>
+                            <input type="text" id="plaintiff1_name" name="plaintiff1_name" placeholder="First Middle Last or Entity Name" required>
+                        </div>
+                        
+                        <div class="form-group" id="dob1_group">
+                            <label for="plaintiff1_dob">Date of Birth (if individual)</label>
+                            <input type="date" id="plaintiff1_dob" name="plaintiff1_dob">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Is this plaintiff a minor, deceased, or incapacitated?</label>
+                            <div class="radio-group">
+                                <div class="radio-item">
+                                    <input type="radio" id="special1_yes" name="plaintiff1_special" value="yes">
+                                    <label for="special1_yes">Yes</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" id="special1_no" name="plaintiff1_special" value="no" checked>
+                                    <label for="special1_no">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="special1_details" class="subsection" style="display: none;">
+                            <div class="form-group">
+                                <label>Status</label>
+                                <select name="plaintiff1_status">
+                                    <option value="">Select...</option>
+                                    <option value="minor">Minor</option>
+                                    <option value="deceased">Deceased</option>
+                                    <option value="incapacitated">Incapacitated</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Representative Name</label>
+                                <input type="text" name="plaintiff1_rep_name" placeholder="First Middle Last">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Relationship to Plaintiff</label>
+                                <input type="text" name="plaintiff1_relationship">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Capacity of Representation</label>
+                                <input type="text" name="plaintiff1_capacity">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>If court-appointed, provide details:</label>
+                                <input type="text" name="plaintiff1_court_state" placeholder="State">
+                                <input type="text" name="plaintiff1_court_name" placeholder="Court" style="margin-top: 10px;">
+                                <input type="text" name="plaintiff1_court_case" placeholder="Case Number" style="margin-top: 10px;">
+                            </div>
+                            
+                            <div id="death1_details" style="display: none;">
+                                <div class="form-group">
+                                    <label>Date of Death</label>
+                                    <input type="date" name="plaintiff1_death_date">
+                                </div>
+                                <div class="form-group">
+                                    <label>Place of Death</label>
+                                    <input type="text" name="plaintiff1_death_place">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button type="button" class="add-button" onclick="addPlaintiff()">Add Another Plaintiff</button>
+            </div>
+            
+            <!-- Section B: Witness Questions -->
+            <div class="section">
+                <h2 class="section-title">Section B: Witness Questions</h2>
+                <p style="margin-bottom: 20px; color: #666;">Answer for each plaintiff in the household who is age 13 or older</p>
+                
+                <!-- Question 1 -->
+                <div class="form-group">
+                    <label>1. Do you believe you witnessed the EATON FIRE ignite? <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="witnessed_yes" name="witnessed_ignite" value="yes" required>
+                            <label for="witnessed_yes">Yes</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="witnessed_no" name="witnessed_ignite" value="no">
+                            <label for="witnessed_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="witnessDetails" class="witness-details">
+                    <div class="subsection">
+                        <p style="margin-bottom: 15px; font-weight: 500;">If yes, did you see:</p>
+                        
+                        <div class="form-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="saw_downed" name="saw_downed">
+                                <label for="saw_downed">Downed power lines or utility poles?</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="saw_transformers" name="saw_transformers">
+                                <label for="saw_transformers">Exploding transformers?</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="saw_sparking" name="saw_sparking">
+                                <label for="saw_sparking">Sparking lines or wires?</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="saw_trees" name="saw_trees">
+                                <label for="saw_trees">Trees or tree branches falling onto power lines?</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="saw_equipment" name="saw_equipment">
+                                <label for="saw_equipment">Other electrical or utility equipment failures?</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="saw_other" name="saw_other">
+                                <label for="saw_other">Any other event that you believe potentially caused or contributed to the ignition or spread of the fire?</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group" id="otherExplanation" style="display: none;">
+                            <label>Please explain:</label>
+                            <textarea name="other_explanation"></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Date and Time of Observation</label>
+                            <input type="datetime-local" name="observation_datetime">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Your Location at Time of Observation</label>
+                            <input type="text" name="observation_location" placeholder="Location description">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Address at Time of Observation</label>
+                            <input type="text" name="observation_address" placeholder="Street Address">
+                            <input type="text" name="observation_city" placeholder="City" style="margin-top: 10px;">
+                            <input type="text" name="observation_zip" placeholder="Zip Code" style="margin-top: 10px;">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Question 2 -->
+                <div class="form-group">
+                    <label>2. Do you know someone who may have witnessed the fire ignite or said they did?</label>
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="know_witness_yes" name="know_witness" value="yes">
+                            <label for="know_witness_yes">Yes</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="know_witness_no" name="know_witness" value="no">
+                            <label for="know_witness_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="witnessContactsContainer" style="display: none;">
+                    <div class="subsection">
+                        <h4>Witness Contact Information</h4>
+                        <div id="witnessContacts">
+                            <div class="witness-contact">
+                                <div class="form-group">
+                                    <label>Name</label>
+                                    <input type="text" name="witness1_name">
+                                </div>
+                                <div class="form-group">
+                                    <label>Address</label>
+                                    <input type="text" name="witness1_address">
+                                </div>
+                                <div class="form-group">
+                                    <label>Phone</label>
+                                    <input type="tel" name="witness1_phone">
+                                </div>
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="email" name="witness1_email">
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="add-button" onclick="addWitness()">Add Another Witness</button>
+                    </div>
+                </div>
+                
+                <!-- Question 3 -->
+                <div class="form-group">
+                    <label>3. Please identify any person who took photos/videos that you are producing:</label>
+                    <textarea name="photo_takers" placeholder="Name, Address, Phone, Email, Related Bates Numbers"></textarea>
+                </div>
+                
+                <!-- Question 4 -->
+                <div class="form-group">
+                    <label>4. Other than news/media, do you have personal knowledge of SCE or SCE's equipment causing or contributing to the ignition/spread of the EATON FIRE?</label>
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="sce_knowledge_yes" name="sce_knowledge" value="yes">
+                            <label for="sce_knowledge_yes">Yes</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="sce_knowledge_no" name="sce_knowledge" value="no">
+                            <label for="sce_knowledge_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group" id="sceKnowledgeDetails" style="display: none;">
+                    <label>Please describe what you know and the source:</label>
+                    <textarea name="sce_knowledge_details"></textarea>
+                </div>
+                
+                <!-- Question 5 -->
+                <div class="form-group">
+                    <label>5. Other than news/media, do you have personal knowledge of any person or entity other than SCE causing or contributing to the ignition/spread of the EATON FIRE?</label>
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="other_knowledge_yes" name="other_knowledge" value="yes">
+                            <label for="other_knowledge_yes">Yes</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="other_knowledge_no" name="other_knowledge" value="no">
+                            <label for="other_knowledge_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group" id="otherKnowledgeDetails" style="display: none;">
+                    <label>Please describe what you know and the source:</label>
+                    <textarea name="other_knowledge_details"></textarea>
+                </div>
+                
+                <!-- Question 6 -->
+                <div class="form-group">
+                    <label>6. Have you communicated with any third party who claims to have personal knowledge of SCE or SCE's equipment causing or contributing to the ignition/spread of the EATON FIRE?</label>
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="sce_third_yes" name="sce_third_party" value="yes">
+                            <label for="sce_third_yes">Yes</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="sce_third_no" name="sce_third_party" value="no">
+                            <label for="sce_third_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group" id="sceThirdDetails" style="display: none;">
+                    <label>Please identify the person(s) and what they told you:</label>
+                    <textarea name="sce_third_details"></textarea>
+                </div>
+                
+                <!-- Question 7 -->
+                <div class="form-group">
+                    <label>7. Have you communicated with any third party who claims to have personal knowledge of any person or entity (other than SCE) causing or contributing to the ignition/spread of the EATON FIRE?</label>
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="other_third_yes" name="other_third_party" value="yes">
+                            <label for="other_third_yes">Yes</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="other_third_no" name="other_third_party" value="no">
+                            <label for="other_third_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group" id="otherThirdDetails" style="display: none;">
+                    <label>Please identify the person(s) and what they told you:</label>
+                    <textarea name="other_third_details"></textarea>
+                </div>
+                
+                <!-- Question 8 -->
+                <div class="form-group">
+                    <label>8. Did you receive any official/governmental evacuation notices in January 2025 prior to or during the Eaton Fire?</label>
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="evac_yes" name="evacuation_notice" value="yes">
+                            <label for="evac_yes">Yes</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="evac_no" name="evacuation_notice" value="no">
+                            <label for="evac_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group" id="evacuationDetails" style="display: none;">
+                    <label>Please provide details about the evacuation notice(s):</label>
+                    <textarea name="evacuation_details" placeholder="Your name, when you received notices, who provided them"></textarea>
+                </div>
+            </div>
+            
+            <!-- Section C: Document Production -->
+            <div class="section">
+                <h2 class="section-title">Section C: Requests for Production</h2>
+                <p style="margin-bottom: 20px; color: #666;">Provide responsive documents for any Plaintiff in the household, regardless of age</p>
+                
+                <table class="document-table">
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Description</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>All documents or communications received via any public record request relating to the Eaton Fire</td>
+                            <td>
+                                <select name="doc1_status">
+                                    <option value="">Select...</option>
+                                    <option value="will_produce">Has Documents and Will Produce</option>
+                                    <option value="no_documents">Does Not Have Documents</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>All photos, videos, digital and/or thermal renderings that show Eaton Canyon between 5:30 pm January 7, 2025 and 5:30 pm January 8, 2025</td>
+                            <td>
+                                <select name="doc2_status">
+                                    <option value="">Select...</option>
+                                    <option value="will_produce">Has Documents and Will Produce</option>
+                                    <option value="no_documents">Does Not Have Documents</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>All photos, videos, security camera recordings, doorbell recordings showing the Eaton Fire between 5:30 pm January 7, 2025 and 5:30 pm January 8, 2025</td>
+                            <td>
+                                <select name="doc3_status">
+                                    <option value="">Select...</option>
+                                    <option value="will_produce">Has Documents and Will Produce</option>
+                                    <option value="no_documents">Does Not Have Documents</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>All photos, videos, and/or digital/thermal renderings that show the ignition or cause of the Eaton Fire between 5:30 pm January 7, 2025 and 7:30 pm January 7, 2025</td>
+                            <td>
+                                <select name="doc4_status">
+                                    <option value="">Select...</option>
+                                    <option value="will_produce">Has Documents and Will Produce</option>
+                                    <option value="no_documents">Does Not Have Documents</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>All video or photographs in your possession taken in Eaton Canyon between September 1, 2024 and January 8, 2025</td>
+                            <td>
+                                <select name="doc5_status">
+                                    <option value="">Select...</option>
+                                    <option value="will_produce">Has Documents and Will Produce</option>
+                                    <option value="no_documents">Does Not Have Documents</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>All photos, videos showing electrical facilities/equipment SCE owns/operates in the General Origin Area between 5:30 pm January 7, 2025 and 7:30 pm January 7, 2025</td>
+                            <td>
+                                <select name="doc6_status">
+                                    <option value="">Select...</option>
+                                    <option value="will_produce">Has Documents and Will Produce</option>
+                                    <option value="no_documents">Does Not Have Documents</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>All official/governmental evacuation notices received on January 6, 7, and/or 8, 2025</td>
+                            <td>
+                                <select name="doc7_status">
+                                    <option value="">Select...</option>
+                                    <option value="will_produce">Has Documents and Will Produce</option>
+                                    <option value="no_documents">Does Not Have Documents</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="info-box">
+                    <p>Note: All photos and videos should be produced in native format. Please prepare these documents for submission along with this questionnaire.</p>
+                </div>
+            </div>
+            
+            <!-- Submit Section -->
+            <div class="submit-section">
+                <button type="submit" class="submit-button">Submit Questionnaire</button>
+            </div>
+        </form>
+    </div>
+    
+    <script>
+        // Initialize form
+        let plaintiffCount = 1;
+        let witnessCount = 1;
+        
+        // Progress tracking
+        function updateProgress() {
+            const form = document.getElementById('eatonFireForm');
+            const inputs = form.querySelectorAll('input[required], select[required]');
+            const filled = Array.from(inputs).filter(input => {
+                if (input.type === 'radio') {
+                    return form.querySelector(`input[name="${input.name}"]:checked`);
+                }
+                return input.value;
+            });
+            
+            const percentage = (filled.length / inputs.length) * 100;
+            document.getElementById('progressFill').style.width = percentage + '%';
+        }
+        
+        // Add event listeners for progress updates
+        document.getElementById('eatonFireForm').addEventListener('input', updateProgress);
+        document.getElementById('eatonFireForm').addEventListener('change', updateProgress);
+        
+        // Handle witness details visibility
+        document.getElementById('witnessed_yes').addEventListener('change', function() {
+            document.getElementById('witnessDetails').classList.add('show');
+        });
+        
+        document.getElementById('witnessed_no').addEventListener('change', function() {
+            document.getElementById('witnessDetails').classList.remove('show');
+        });
+        
+        // Handle "other" explanation visibility
+        document.getElementById('saw_other').addEventListener('change', function() {
+            const otherExp = document.getElementById('otherExplanation');
+            if (this.checked) {
+                otherExp.style.display = 'block';
+            } else {
+                otherExp.style.display = 'none';
+            }
+        });
+        
+        // Handle witness contacts visibility
+        document.querySelector('input[name="know_witness"][value="yes"]').addEventListener('change', function() {
+            if (this.checked) {
+                document.getElementById('witnessContactsContainer').style.display = 'block';
+            }
+        });
+        
+        document.querySelector('input[name="know_witness"][value="no"]').addEventListener('change', function() {
+            if (this.checked) {
+                document.getElementById('witnessContactsContainer').style.display = 'none';
+            }
+        });
+        
+        // Handle SCE knowledge details
+        document.querySelector('input[name="sce_knowledge"][value="yes"]').addEventListener('change', function() {
+            if (this.checked) {
+                document.getElementById('sceKnowledgeDetails').style.display = 'block';
+            }
+        });
+        
+        document.querySelector('input[name="sce_knowledge"][value="no"]').addEventListener('change', function() {
+            if (this.checked) {
+                document.getElementById('sceKnowledgeDetails').style.display = 'none';
+            }
+        });
+        
+        // Handle other knowledge details
+        document.querySelector('input[name="other_knowledge"][value="yes"]').addEventListener('change', function() {
+            if (this.checked) {
+                document.getElementById('otherKnowledgeDetails').style.display = 'block';
+            }
+        });
+        
+        document.querySelector('input[name="other_knowledge"][value="no"]').addEventListener('change', function() {
+            if (this.checked) {
+                document.getElementById('otherKnowledgeDetails').style.display = 'none';
+            }
+        });
+        
+        // Handle SCE third party details
+        document.querySelector('input[name="sce_third_party"][value="yes"]').addEventListener('change', function() {
+            if (this.checked) {
+                document.getElementById('sceThirdDetails').style.display = 'block';
+            }
+        });
+        
+        document.querySelector('input[name="sce_third_party"][value="no"]').addEventListener('change', function() {
+            if (this.checked) {
+                document.getElementById('sceThirdDetails').style.display = 'none';
+            }
+        });
+        
+        // Handle other third party details
+        document.querySelector('input[name="other_third_party"][value="yes"]').addEventListener('change', function() {
+            if (this.checked) {
+                document.getElementById('otherThirdDetails').style.display = 'block';
+            }
+        });
+        
+        document.querySelector('input[name="other_third_party"][value="no"]').addEventListener('change', function() {
+            if (this.checked) {
+                document.getElementById('otherThirdDetails').style.display = 'none';
+            }
+        });
+        
+        // Handle evacuation details
+        document.querySelector('input[name="evacuation_notice"][value="yes"]').addEventListener('change', function() {
+            if (this.checked) {
+                document.getElementById('evacuationDetails').style.display = 'block';
+            }
+        });
+        
+        document.querySelector('input[name="evacuation_notice"][value="no"]').addEventListener('change', function() {
+            if (this.checked) {
+                document.getElementById('evacuationDetails').style.display = 'none';
+            }
+        });
+        
+        // Handle special plaintiff details
+        document.getElementById('special1_yes').addEventListener('change', function() {
+            if (this.checked) {
+                document.getElementById('special1_details').style.display = 'block';
+            }
+        });
+        
+        document.getElementById('special1_no').addEventListener('change', function() {
+            if (this.checked) {
+                document.getElementById('special1_details').style.display = 'none';
+            }
+        });
+        
+        // Handle deceased status
+        document.querySelector('select[name="plaintiff1_status"]').addEventListener('change', function() {
+            const deathDetails = document.getElementById('death1_details');
+            if (this.value === 'deceased') {
+                deathDetails.style.display = 'block';
+            } else {
+                deathDetails.style.display = 'none';
+            }
+        });
+        
+        // Add plaintiff function
+        function addPlaintiff() {
+            plaintiffCount++;
+            const container = document.getElementById('plaintiffsContainer');
+            const newCard = document.createElement('div');
+            newCard.className = 'plaintiff-card';
+            newCard.innerHTML = `
+                <button type="button" class="remove-button" onclick="removePlaintiff(this)">Remove Plaintiff</button>
+                <div class="form-group">
+                    <label>Plaintiff Type <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="type${plaintiffCount}_individual" name="plaintiff${plaintiffCount}_type" value="individual" required>
+                            <label for="type${plaintiffCount}_individual">Individual</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="type${plaintiffCount}_business" name="plaintiff${plaintiffCount}_type" value="business">
+                            <label for="type${plaintiffCount}_business">Business</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="type${plaintiffCount}_trust" name="plaintiff${plaintiffCount}_type" value="trust">
+                            <label for="type${plaintiffCount}_trust">Trust</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="type${plaintiffCount}_estate" name="plaintiff${plaintiffCount}_type" value="estate">
+                            <label for="type${plaintiffCount}_estate">Estate</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Plaintiff Name <span class="required">*</span></label>
+                    <input type="text" name="plaintiff${plaintiffCount}_name" placeholder="First Middle Last or Entity Name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Date of Birth (if individual)</label>
+                    <input type="date" name="plaintiff${plaintiffCount}_dob">
+                </div>
+            `;
+            container.appendChild(newCard);
+            updateProgress();
+        }
+        
+        // Remove plaintiff function
+        function removePlaintiff(button) {
+            button.parentElement.remove();
+            updateProgress();
+        }
+        
+        // Add witness function
+        function addWitness() {
+            witnessCount++;
+            const container = document.getElementById('witnessContacts');
+            const newWitness = document.createElement('div');
+            newWitness.className = 'witness-contact';
+            newWitness.innerHTML = `
+                <hr style="margin: 20px 0;">
+                <button type="button" class="remove-button" onclick="removeWitness(this)">Remove Witness</button>
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" name="witness${witnessCount}_name">
+                </div>
+                <div class="form-group">
+                    <label>Address</label>
+                    <input type="text" name="witness${witnessCount}_address">
+                </div>
+                <div class="form-group">
+                    <label>Phone</label>
+                    <input type="tel" name="witness${witnessCount}_phone">
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="witness${witnessCount}_email">
+                </div>
+            `;
+            container.appendChild(newWitness);
+        }
+        
+        // Remove witness function
+        function removeWitness(button) {
+            button.parentElement.remove();
+        }
+        
+        // Form submission
+        document.getElementById('eatonFireForm').addEventListener('submit', function(e) {
+            // Don't prevent default - let Netlify handle the form submission
+            // The form will submit normally to Netlify Forms
+            
+            // Optional: Show loading state
+            const submitButton = document.querySelector('.submit-button');
+            submitButton.textContent = 'Submitting...';
+            submitButton.disabled = true;
+            
+            // The form will naturally submit to Netlify
+            // Netlify will handle the redirect to /thank-you
+        });
+    </script>
+</body>
+</html>
