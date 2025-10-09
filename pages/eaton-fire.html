@@ -548,6 +548,102 @@
             font-size: 1.5rem;
         }
         
+        /* Questionnaire CTA Section */
+        .questionnaire-cta {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .questionnaire-cta::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+        
+        .questionnaire-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .questionnaire-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .questionnaire-cta h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+        
+        .questionnaire-cta p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+        
+        .questionnaire-benefits {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .benefit-item {
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 0.75rem 1.5rem;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .btn-questionnaire {
+            background: white;
+            color: #667eea;
+            padding: 1.25rem 3rem;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.25rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-questionnaire:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+        }
+        
+        .questionnaire-note {
+            margin-top: 1.5rem;
+            font-size: 0.95rem;
+            opacity: 0.85;
+        }
+        
         /* Trust Bar */
         .trust-bar {
             background: #f8fafc;
@@ -732,11 +828,6 @@
             animation: pulse 4s ease-in-out infinite;
         }
         
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.5; }
-            50% { transform: scale(1.1); opacity: 0.8; }
-        }
-        
         .cta-content {
             position: relative;
             z-index: 1;
@@ -874,6 +965,15 @@
                 font-size: 2rem;
             }
             
+            .questionnaire-cta h2 {
+                font-size: 2rem;
+            }
+            
+            .questionnaire-benefits {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
             .trust-number {
                 font-size: 2.5rem;
             }
@@ -991,6 +1091,29 @@
                     <li>7,000+ structures destroyed</li>
                     <li>Altadena devastated</li>
                 </ul>
+            </div>
+        </section>
+
+        <!-- Questionnaire CTA Section -->
+        <section class="questionnaire-cta">
+            <div class="container">
+                <div class="questionnaire-content">
+                    <div class="questionnaire-icon">📋</div>
+                    <h2>Complete Your Free Case Evaluation</h2>
+                    <p>Take 5 minutes to complete our detailed questionnaire. This helps us understand your case and fight for maximum compensation.</p>
+                    <div class="questionnaire-benefits">
+                        <div class="benefit-item">✓ Comprehensive case review</div>
+                        <div class="benefit-item">✓ Identify all possible claims</div>
+                        <div class="benefit-item">✓ No obligation consultation</div>
+                    </div>
+                    <a href="eaton-fire-questionnaire.html" class="btn-questionnaire">
+                        Start Free Evaluation
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                    <p class="questionnaire-note">Takes 5-10 minutes • Completely confidential</p>
+                </div>
             </div>
         </section>
 
@@ -1118,8 +1241,11 @@
                     </p>
                     
                     <div class="cta-buttons">
+                        <a href="eaton-fire-questionnaire.html" class="btn-cta-secondary">
+                            Complete Case Questionnaire
+                        </a>
                         <a href="/#intake-form" class="btn-cta-secondary">
-                            Fill Out Case Review Form
+                            Quick Contact Form
                         </a>
                     </div>
                 </div>
